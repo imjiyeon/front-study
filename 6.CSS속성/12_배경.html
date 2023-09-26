@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>background</title>
+    <style>
+        div{
+            width: 500px;
+            height: 300px;
+            margin: 20px;
+            border: solid 1px;
+        }
+        #div1 { 
+            background-color: yellow; /* 1번째 div에 배경색 지정 */
+        }
+        .img_div {
+            background-image: url('https://i.ibb.co/3493r17/cat.jpg'); /* 2~7번째 div에 배경이미지 지정 */
+        }    
+        #div3 {
+            background-repeat: repeat-x; /* 배경이미지 수평 반복 */
+        }
+        #div4 {
+            background-repeat: repeat-y;   /* 배경이미지 수직 반복 */
+        }
+        #div5 {
+            background-repeat: no-repeat;  /* 배경이미지 반복 없음 */
+        }
+        #div6 {
+            background-repeat: no-repeat;
+            background-position: top right; /* 배경이미지 위치를 우상단에 지정 */
+        }
+        #div7 {
+            background-repeat: no-repeat;
+            background-size: 100px 100px; /* 왼쪽에서의거리 위에서의거리 */
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2" class="img_div"></div> <!-- repeat의 기본값이 repeat(수직/수평반복) -->
+    <div id="div3" class="img_div"></div>
+    <div id="div4" class="img_div"></div>
+    <div id="div5" class="img_div"></div>
+    <div id="div6" class="img_div"></div>
+    <div id="div7" class="img_div"></div>
+</body>
+</html>

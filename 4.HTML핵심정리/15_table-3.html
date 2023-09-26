@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>table, colgroup</title>
+  <style>
+    table,th,td {
+      border: 1px solid #ccc;
+      border-collapse: separate;
+    }
+
+    th,td {
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>표 만들기-상품페이지2</h1>
+  <table>
+    <caption>선물용과 가정용 상품 구성</caption>
+
+    <!-- colgroup은 테이블에 미리 스타일을 적용하기 위해 사용함 -->
+    <colgroup>
+      <col style="background-color:#eee;"> <!-- 1번째 열에 회색 배경색 지정 -->
+      <col> <!-- 2번째 열에 스타일 없음 -->
+      <col style="width:150px"> <!-- 3번째 열 크기를 150px로 지정 -->
+      <col style="width:150px"> <!-- 4번째 열 크기를 150px로 지정 -->
+    </colgroup>
+    <thead>
+      <tr>
+        <th>용도</th>
+        <th>중량</th>
+        <th>개수</t>
+        <th>가격</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="2">선물용</td>
+        <td>3kg</td>
+        <td>11~16과</td>
+        <td>35,000원</td>
+      </tr>
+      <tr>
+        <td>5kg</td>
+        <td>18~26과</td>
+        <td>52,000원</td>
+      </tr>
+      <tr>
+        <td rowspan="2">가정용</td>
+        <td>3kg</td>
+        <td>11~16과</td>
+        <td>30,000원</td>
+      </tr>
+      <tr>
+        <td>5kg</td>
+        <td>18~26과</td>
+        <td>47,000원</td>
+      </tr>
+      
+    </tbody>
+  </table>
+</body>
+
+</html>
+
+

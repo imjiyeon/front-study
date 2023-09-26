@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        /* div에 공통적으로 크기 설정 */
+        div {
+            width: 100px;
+            height: 100px;
+            margin:10px;
+            background-color: orange;
+        }
+        .box1 {
+            border: 4px solid red;
+            padding: 10px;
+            box-sizing: content-box; /* 내용만 너비로 계산 */
+        }
+        .box2 {
+            border: 4px solid red;
+            padding: 10px;
+            box-sizing: border-box; /* 내용 + 내부여백 + 테두리선을 모두 포함하여 너비로 계산 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 개발자 도구-요소선택-computed 탭에서 해당 div의 크기 확인하세요  -->
+    <div class="box1">hello</div> <!-- 가로 128px (100 + 4*2 + 10*2), 세로 128px -->
+    <div class="box2">hello</div> <!-- 가로 100px, 세로 100px -->
+</body>
+
+</html>

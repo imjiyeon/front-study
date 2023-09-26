@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>예약 접수</title>
+	<style>
+		ul {
+			list-style: none;  /* 목록 표기 없애기 */
+		}
+
+		li {
+			line-height: 50px;  /* 항목 높이 늘리기 */
+		}
+
+		label {
+			width: 60px; /* 라벨 크기 늘리기 */
+			float: left; /* 글자 왼쪽 정렬과 display: inline-block; 속성을 포함 */
+		}
+	</style>
+</head>
+<body>
+	<h1>예약 정보</h1>
+	<form>
+		<ul>	<!-- 세개의 입력필드를 위아래로 정렬하기 위해 목록으로 만듬 -->
+			<li>
+				<label for="r-name">이 름</label>
+				<input type="text" id="r-name">
+			</li>
+			<li>
+				<label for="r-phone">휴대폰</label>
+				<input type="tel" id="r-phone">
+			</li>
+			<li>
+				<label for="r-email">이메일</label>
+				<input type="email" id="r-email">
+			</li>
+			<li>
+				<input type="submit" value="예약하기">
+			</li>
+		</ul>
+	</form>
+</body>
+</html>
+
+<!-- 입력양식 작성하기-1 -->

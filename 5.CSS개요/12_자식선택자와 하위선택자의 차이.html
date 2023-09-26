@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 자식선택자 */
+        /* ul > li {
+            color: red;
+        } */
+        /* 하위선택자 */
+        ul li {
+            color: red;
+        }
+        /* 하위 선택자가 자식 선택자에 비해 범위가 더 넓음 */
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li>사과</li>
+            <li>딸기</li>
+            <li id="orange" class="orange">오렌지</li>
+            <!-- 1.ul 안에 포함이 되어있지만 부모는 ol이므로 빨간색 적용 안됨 -->
+            <!-- 2.ul의 자식은 아니지만 하위요소이므로 빨간색적용됨 -->
+            <ol>
+                <li>ul안에 ol리스트</li> 
+            </ol>
+        </ul>
+        <div>당근</div>
+        <p>토마토</p>
+        <span class="orange">오렌지</span>
+    </div>
+    <span class="orange">오렌지</span>
+</body>
+
+</html>

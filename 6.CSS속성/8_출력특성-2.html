@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>display-inline-block</title>
+    <style>
+         span {
+            background: orange;
+            border: 1px solid;
+            margin: 10px;
+        }
+        #span1 {
+            width: 300px;
+            height: 100px; /* inline요소는 크기를 변경할 수 없음 */
+        }
+        #span2 {
+            width: 300px;
+            height: 100px;
+            display: inline-block; /* inline-block로 변경하면 블록요소처럼 크기 변경 가능 */
+        }
+    </style>
+</head>
+<body>
+    <h1>display속성 inline-block</h1>
+    <!-- inline-block요소에는 button, input, select 등이 있음 -->
+    <div>
+        <span id="span1">hello</span> <!-- span은 인라인요소로 크기를 변경할 수 없음 -->
+        <span id="span2">world</span> <!-- display를 블록으로 변경하여 크기를 변경할 수 있음  -->
+    </div>
+</body>
+</html>
+
+<!-- 
+인라인 블록 요소는 블록처럼 크기와 여백을 변경할 수 있다
+하지만 크기를 지정하지않는 다면 인라인처럼 컨텐츠만큼 길이가 줄어든다 
+ -->

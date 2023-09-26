@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* 태그명으로 선택 */
+        li {
+            color: red;
+        }
+        /* 여러 선택자를 중복으로 선택 */
+        p, span {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 이전 예제의 body 복사 -->
+    <div>
+        <ul> 
+            <li>사과</li> <!-- 사과, 딸기, 오렌지 텍스트가 빨간색으로 출력됨 -->
+            <li>딸기</li>
+            <li>오렌지</li>
+        </ul>
+        <div>당근</div>
+        <p>토마토</p> <!-- 토마토와 오렌지 모두 파랑색으로 출력됨 -->
+        <span>오렌지</span>
+    </div>
+</body>
+
+</html>

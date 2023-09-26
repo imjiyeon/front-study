@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 내장방식 -->
+    <!-- important 플래그 > id > class > 태그 -->
+    <style>
+        div { color: red !important; } /* important 플래그가 제일 우선 적용됨 */
+        #color_yellow { color: yellow; }
+        .color_green { color: green; }
+    </style>
+</head>
+
+<body>
+    <h1>여러방법으로 스타일 작성하고 우선순위 보기</h1>
+    <div id="color_yellow" class="color_green" style="color: orange;"> <!-- 인라인방식 -->
+        Hello world!     <!-- 빨간색 글자로 출력 -->
+    </div>
+</body>
+
+</html>

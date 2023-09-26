@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* disabled 속성을 가진 요소를 선택함 */
+        [disabled] { color: red; }
+        /* type="password" 속성을 가진 요소를 선택함  */
+        [type="password"] { color: blue; }
+        /* value="안녕하세요" 속성을 가진 요소를 선택함 */
+        [value="안녕하세요"] { color: orange }
+    </style>
+</head>
+
+<body>
+    <h1>속성으로 입력필드 꾸미기</h1>
+    <input type="text" value="안녕하세요">
+    <input type="password" value="1234">
+    <input type="text" value="ABCD" disabled> <!-- disabled은 그자체가 불리언값 true이므로 값을 생략함 -->
+</body>
+
+</html>

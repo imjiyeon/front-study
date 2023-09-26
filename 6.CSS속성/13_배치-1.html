@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>position-static</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        p {
+            border: solid 1px;
+            width: 300px;
+            height: 100px;
+        }
+
+        .child1 {
+            background-color: lavender;
+        }
+
+        .child2 {
+            background-color: darkgray;
+        }
+
+        .child3 {
+            background-color: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <p class="child1">child1</p>
+        <p class="child2">child2</p>
+        <p class="child3">child3</p>
+    </div>
+</body>
+
+</html>
+
+<!--
+요소의 기본 position 값은 static이다
+static은 요소가 추가되면 위에서 아래로 쌓는다
+블록요소: 위에서 아래로
+인라인요소: 왼쪽에서 오른쪽으로
+-->

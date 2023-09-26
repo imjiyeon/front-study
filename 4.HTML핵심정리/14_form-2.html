@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>form과 fieldset</title>
+    <style>
+      label{
+      display: inline-block;
+      width: 100px;
+      }
+      input{
+      border:1px solid gray;
+      }
+    </style>
+  </head>
+  <body> 
+    <h1>로그인 입력폼 만들기</h1>
+
+    <form action="#" method="post">
+
+      <!-- fieldset은 입력필드를 내용이 비슷한 요소끼리 묶음  -->
+      <fieldset>
+          <legend>로그인</legend> <!-- 필드셋의 제목 -->
+            <div>
+              <label for="user_id">ID</label>
+              <input type="text" id="user_id"/>
+            </div>
+            <div>
+              <label for="user_pw">PW</label>
+              <input type="password" id="user_pw" />
+            </div>
+        </fieldset>
+      </form>
+  </body>
+</html>

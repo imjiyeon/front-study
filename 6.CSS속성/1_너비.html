@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* witdh와 height의 기본값은 auto */
+        #div1 {
+            background-color: orange;
+        }
+        #div2 {
+            height: 100px; /* 높이 */
+            background-color: skyblue;
+        }
+        span {
+            background-color: gray;
+            width: 300px;
+            height: 300px;  /* 인라인요소는 크기를 변경할 수 없음 */
+        }
+    </style>
+</head>
+<body>
+    <h1>요소의 크기 변경/확인하기</h1>
+    <!-- 블록요소 -->
+    <div id="div1">hello world</div> <!-- 부모의 크기만큼 가로가 늘어남. 콘텐츠 크기만큼 세로가 늘어남. -->
+    <div id="div2">hello world</div> <!-- 높이만 100px로 변경 -->
+    <!-- 인라인요소 -->
+    <span>안녕하세요</span> <!-- 콘텐츠 크기만큼 가로/세로가 늘어남 -->
+</body>
+</html>

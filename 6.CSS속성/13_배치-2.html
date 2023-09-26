@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>position-relative</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        p {
+            border: solid 1px;
+            width: 300px;
+            height: 100px;
+        }
+
+        .child1 {
+            background-color: lavender;
+        }
+
+        .child2 {
+            background-color: darkgray;
+            position: relative;
+            right: 50px;
+            top: 50px;
+        }
+
+        .child3 {
+            background-color: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <p class="child1">child1</p>
+        <p class="child2">child2</p>
+        <p class="child3">child3</p>
+    </div>
+</body>
+
+</html>
+
+<!--
+position을 relative로 지정하면 본인의 원래 위치로부터 이동한다
+예제의 두번째 요소는 자기 자신을 기준으로 왼쪽으로 50px 아래로 50px만큼 이동했다
+-->
