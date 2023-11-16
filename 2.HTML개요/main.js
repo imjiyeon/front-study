@@ -1,1 +1,1 @@
-console.log('hello world!');
+console.log('hello world!'); //브라우저 콘솔창에 문자열 출력하기
