@@ -1,4 +1,6 @@
+/* 스타일 */
+
 div {
-    color: red;
-    font-size: 100px;
+    color: red; /* 글자색 */
+    font-size: 100px; /* 글자크기 */
 }
