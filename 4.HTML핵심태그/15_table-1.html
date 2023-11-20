@@ -2,27 +2,27 @@
 <html lang="ko">
 
 <head>
-    <title>table, tr, td</title>
+    <title>table</title>
 
     <style>
-        /*  테이블, 셀에 테두리 추가 */
-        table,td { /* 태그를 중복으로 선택 */
+        /*  테이블, 셀에 테두리 넣기 */
+        table, td {
             border: 1px solid #ccc;
             border-collapse: collapse;  /* 테이블과 셀 사이의 간격 없애기 */
         }
-         /* 셀에 여백 주기 */
+        /* 셀에 여백 주기 */
         td {
-            padding: 10px 50px; /* 위/아래, 왼쪽/오른쪽 */
+            padding: 10px 50px; /* 위아래, 왼쪽오른쪽 */
         }
     </style>
 </head>
 
 <body>
-    <h1>표 만들기</h1>
+    <h2>표 만들기</h2>
+
     <table>
-        <tr>
-            <!-- 행 -->
-            <td>A</td> <!-- 열 -->
+        <tr> <!-- 행 -->          
+            <td>A</td> <!-- 셀 -->
             <td>B</td>
         </tr>
         <tr>
