@@ -2,27 +2,27 @@
 <html lang="ko">
 
 <head>
-  <title>checkbox, radio</title>
+  <title>input</title>
 </head>
 
 <body>
-  <h1>미리 값 만들어 놓고 사용자 선택 받기</h1>
+  <h1>체크박스, 라디오버튼 만들기</h1>
 
   <!-- 체크박스 -->
   <p>
-    <label for="c1">사과</label> <!-- 입력필드에 이름 표 붙이기. 연결하고 싶은 필드의 아이디 지정 -->
+    <label for="c1">사과</label> <!-- 입력필드와 라벨 연결 -->
     <input type="checkbox" id="c1" /> <!-- 라벨을 선택하면 체크박스가 선택됨 -->
     <label for="c2">바나나</label>
-    <input type="checkbox" id="c2" checked /> <!-- 기본값 지정. 바나나에 체크됨 -->
+    <input type="checkbox" id="c2" checked /> <!-- 기본값 지정. 바나나에 체크된 상태로 나타남 -->
   </p>
   <!-- 라디오버튼 -->
   <p>
     <label for="h1">축구</label>
-    <input type="radio" id="h1" name="hobby"> <!-- name속성을 사용하여 그룹으로 묶으면 그룹당 하나만 선택 가능 -->
+    <input type="radio" id="h1" name="hobby"> <!-- name속성을 사용하여 그룹으로 묶기 -->
     <label for="h2">야구</label>
-    <input type="radio" id="h2" name="hobby" checked> <!-- 기본값 지정. 야구가 선택됨 -->
+    <input type="radio" id="h2" name="hobby" checked> <!-- 기본값 지정. 야구가 선택된 상태로 나타남 -->
     <label for="h3">농구</label>
-    <input type="radio" id="h3" name="hobby"> <!-- 농구를 선택하면 축구가 해제됨 -->
+    <input type="radio" id="h3" name="hobby">
   </p>
 </body>
 

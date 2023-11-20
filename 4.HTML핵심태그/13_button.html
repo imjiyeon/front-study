@@ -2,28 +2,27 @@
 <html lang="ko">
 
 <head>
-	<title>button textarea select</title>
+	<title>여러가지 입력 필드</title>
 </head>
 
 <body>
-	<h1>버튼 만들기</h1>
-	<!-- 버튼 -->
+	<h3>버튼 만들기</h3>
 	<p>
-		<!-- onclick속성에는 버튼을 클릭했을 때 수행할 코드를 자바스크립트로 작성 -->
+		<!-- onclick속성에는 버튼을 클릭했을 때 수행할 자바스크립트 코드 작성 -->
 		<button type="button" onclick="alert('버튼1을 눌렀습니다!')">버튼1</button>
 		<!-- input 태그의 type 속성을 button으로 지정하여 버튼 만들기 -->
 		<input type="button" onclick="alert('버튼2을 눌렀습니다!')" value="버튼2"> <!--  버튼을 누르면 메세지가 팝업됨 -->
 	</p>
-	<!-- 텍스트 -->
+
+	<h3>텍스트상자 만들기</h3>
 	<p>
-		<!-- 여러줄의 텍스트를 입력할 때 사용 -->
-		<textarea cols="30" rows="10"></textarea> <!-- col: 한줄당 글자의 수 row: 화면에 표시할 줄의 수 -->
+		<textarea rows="10" cols="30"></textarea> <!-- row: 화면에 표시할 줄의 수, col: 한줄당 글자의 수 -->
 	</p>
-	<!-- 셀렉트박스 -->
+
+	<h3>셀렉트박스 만들기</h3>
 	<p>
-		<!-- 여러가지 값 목록을 만들어 놓고 사용자의 선택을 받을 때 사용함 -->
 		<select>
-			<option value="red">붉은색</option> <!-- 태그사이에는 화면에 표시할 값을 작성하고 내부적으로 사용할 값은 value속성에 작성 -->
+			<option value="red">붉은색</option> <!-- 컨텐츠는 화면에 표시할 값을 작성하고 내부적으로 사용할 값은 value속성에 작성 -->
 			<option value="black">검은색</option>
 			<option value="blue">파란색</option>
 		</select>
