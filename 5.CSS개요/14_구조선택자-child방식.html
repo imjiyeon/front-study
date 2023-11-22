@@ -9,14 +9,14 @@
             padding: 20px; /* 안쪽여백 */
         }
         /* 각각 배경색 처리*/
-        li:nth-child(1) {  background-color: red; }  /* li 태그 중에서 첫번째 요소를 선택 */
-        li:nth-child(2) { background-color: orange; }
-        li:nth-child(3) { background-color: yellow; }
-        li:nth-child(4) { background-color: green; }
-        li:nth-child(5) { background-color: blue; }
+        ul > li:nth-child(1) {  background-color: red; }  /* li 태그 중에서 첫번째 요소를 선택 */
+        ul > li:nth-child(2) { background-color: orange; }
+        ul > li:nth-child(3) { background-color: yellow; }
+        ul > li:nth-child(4) { background-color: green; }
+        ul > li:nth-child(5) { background-color: blue; }
         /* 첫번째와 마지막 양쪽 요소에 테두리 처리 */
-        li:first-child { border: 2px solid; } /* li 태그 중에서 첫번째 요소를 선택 */       
-        li:last-child { border: 2px solid; } /* li 태그 중에서 마지막 요소를 선택 */ 
+        ul > li:first-child { border: 2px solid; } /* li 태그 중에서 첫번째 요소를 선택 */       
+        ul > li:last-child { border: 2px solid; } /* li 태그 중에서 마지막 요소를 선택 */ 
     </style>
 </head>
 
