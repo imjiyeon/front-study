@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        [disabled] {
+            color: blue;
+        }
+        #box2 > [type="password"] {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+
+        <fieldset id="box1">
+            <legend>주소입력</legend>
+            <input type="text" value="인천시 남동구 구월동" disabled>   
+            <input type="text" placeholder="나머지 주소입력">        
+        </fieldset>
+
+        <fieldset id="box2">
+            <legend>로그인창</legend>
+            <input type="text" value="user1">
+            <input type="password" value="1234">
+        </fieldset>
+
+    </form>
+</body>
+</html>
