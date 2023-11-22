@@ -4,10 +4,9 @@
 <head>
   <title>table</title>
   <style>
-    /*  테이블, 헤더셀, 데이터셀에 테두리 추가 */
     table,th,td {
       border: 1px solid #ccc;
-      border-collapse: collapse;
+      border-collapse: collapse;  /* 테이블과 셀 사이의 간격 없애기 */
     }
     th,td {
       padding: 10px 20px;
@@ -25,7 +24,7 @@
       <tr>
         <th>용도</th> <!-- 제목셀 th -->
         <th>중량</th>
-        <th>개수</t>
+        <th>개수</th>
         <th>가격</th>
       </tr>
     </thead>
@@ -39,7 +38,7 @@
       </tr>
       <tr>
         <!-- 첫번째 행에서 행을 합쳤으므로 셀 생략 -->
-        <td>5kg</td> 
+        <td>5kg</td>
         <td>18~26과</td>
         <td>52,000원</td>
       </tr>
