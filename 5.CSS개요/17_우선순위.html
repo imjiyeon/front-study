@@ -2,19 +2,29 @@
 <html lang="en">
 
 <head>
-    <!-- 내장방식 -->
     <!-- important 플래그 > id > class > 태그 -->
+    <!-- style 속성 > style 태그 -->
     <style>
-        div { color: red !important; } /* important 플래그가 제일 우선 적용됨 */
-        #color_yellow { color: yellow; }
-        .color_green { color: green; }
+        /* important 플래그가 우선 적용됨 */
+        div {
+            color: red !important;
+        }
+    
+        #color_yellow {
+            color: yellow;
+        }
+
+        .color_green {
+            color: green;
+        }
     </style>
 </head>
 
 <body>
-    <h1>여러방법으로 스타일 작성하고 우선순위 보기</h1>
-    <div id="color_yellow" class="color_green" style="color: orange;"> <!-- 인라인방식 -->
-        Hello world!     <!-- 빨간색 글자로 출력 -->
+    <h2>여러방법으로 스타일 작성하고 우선순위 보기</h2>
+
+    <div id="color_yellow" class="color_green" style="color: orange;">  <!-- 직접 스타일 작성 -->
+        Hello world!
     </div>
 </body>
 

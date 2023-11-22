@@ -3,19 +3,22 @@
 
 <head>
     <style>
-        /* 상위 div에 글자를 빨간색으로 변경 */
-        .animal { color: red; }
+        /* 상위 div의 텍스트를 빨간색으로 변경 */
+        #animal {
+            color: red;
+        }
     </style>
 </head>
 
 <body>
     <h1>스타일 물려주기</h1>
-    <div class="animal">동물 <!-- 부모 div가 가진 스타일이 자식 div에 상속됨 -->
-        <div class="tiger">호랑이</div> <!-- 호랑이, 사자, 코끼리도 빨간색으로 변경됨 -->
-        <div class="lion">사자</div>
-        <div class="elephant">코끼리</div>
+    <div id="animal">동물
+        <!-- 부모 div가 가진 스타일이 자식 div에 상속됨 -->
+        <div id="tiger">호랑이</div> <!-- 호랑이, 사자, 코끼리도 빨간색으로 변경됨 -->
+        <div id="lion">사자</div>
+        <div id="elephant">코끼리</div>
     </div>
-    <div class="plant">식물</div>
+    <div id="plant">식물</div>
 </body>
 
 </html>
