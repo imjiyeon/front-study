@@ -8,23 +8,21 @@
     <style>
         /* 선택자 사이에 >기호가 들어감. 태그선택자 > 클래스선택자 */
         /* ul 태그의 자식이면서 class="orange" 속성은 가진 태그를 찾아서 스타일 적용 */
-        ul > .orange {
+        ul>.orange {
             color: red;
         }
     </style>
 </head>
 
 <body>
-    <div>
-        <ul>
-            <li>사과</li>
-            <li>딸기</li>
-            <li id="orange" class="orange">오렌지</li>  <!-- 빨간색 글자로 출력 -->
-        </ul>
-        <div>당근</div>
-        <p>토마토</p>
-        <span class="orange">오렌지</span>
-    </div>
+    <ul>
+        <li>사과</li>
+        <li>딸기</li>
+        <li id="orange" class="orange">오렌지</li> <!-- 빨간색 글자로 출력 -->
+    </ul>
+    <div>당근</div>
+    <p>토마토</p>
+    <span class="orange">오렌지</span>
 </body>
 
 </html>
