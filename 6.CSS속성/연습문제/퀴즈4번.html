@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>상자 배치하기</title>
+    <style>
+        .box {
+            width: 600px;
+            height: 400px;
+        }
+
+        .header {
+            height: 10%;
+            background-color: gray;
+        }
+
+        .footer {
+            height: 10%;
+            background-color: gray;
+        }
+
+        .container {
+            height: 80%;
+            display: flex;
+        }
+
+        .left {
+            width: 20%;
+            background-color: skyblue;
+        }
+
+        .center {
+            width: 60%;
+            background-color: gainsboro;
+        }
+
+        .right {
+            width: 20%;
+            background-color: red;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="header">header</div>
+        <div class="container">
+            <div class="left">left</div>
+            <div class="center">center</div>
+            <div class="right">right</div>
+        </div>
+        <div class="footer">footer</div>
+    </div>
+</body>
+
+</html>
