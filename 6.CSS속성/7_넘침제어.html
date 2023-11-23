@@ -2,64 +2,50 @@
 <html lang="en">
 
 <head>
+    <title>Document</title>
+
     <style>
-        .parent1 {
+        .parent {
             width: 200px;
             height: 150px;
             background-color: royalblue;
             margin: 20px;
-        }
-        .child1 {
-            width: 300px; /* 자식의 가로 너비를 부모보다 넓은 300px로 입력 */
-            height: 100px;
-            background-color: orange;
         }
 
-        .parent2 {
-            width: 200px;
-            height: 150px;
-            background-color: royalblue;
-            margin: 20px;
-            overflow: hidden; /* 부모보다 넘치는 자식요소를 잘라냄 */
-        }
-        .child2 {
+        /* 자식의 가로 너비를 부모보다 넓은 300px로 입력 */
+        .child {
             width: 300px;
             height: 100px;
             background-color: orange;
         }
 
-        .parent3 {
-            width: 200px;
-            height: 150px;
-            background-color: royalblue;
-            margin: 20px;
-            overflow: scroll; /* 넘치는 부분을 잘라내고 스크롤바 생성*/
+        /* 부모보다 넘치는 자식요소를 잘라냄 */
+        .p2 {
+            overflow: hidden;
         }
-        .child3 {
-            width: 300px;
-            height: 100px;
-            background-color: orange;
+
+        /* 넘치는 부분을 잘라내고 스크롤바 생성*/
+        .p3 {
+            overflow: scroll;
+
         }
     </style>
 </head>
 
 <body>
-    <div class="parent1"> <!-- 넘치는 부분을 그대로 출력 -->
-        <div class="child1"></div>
+    <!-- 넘치는 부분을 그대로 출력 -->
+    <div class="parent p1">
+        <div class="child"></div>
+    </div>
+    <!-- 부모보다 넘치는 자식요소를 잘라냄 -->
+    <div class="parent p2">
+        <div class="child"></div>
+    </div>
+    <!-- 넘치는 부분이 잘려나갔지만 좌우 스크롤을 통해 전체내용을 볼 수 있음 -->
+    <div class="parent p3">
+        <div class="child"></div>
     </div>
 
-    <div class="parent2"> <!-- 부모보다 넘치는 자식요소를 잘라냄 -->
-        <div class="child2"></div> 
-    </div>
-
-    <div class="parent3"> <!-- 넘치는 부분이 잘려나갔지만 좌우 스크롤을 통해 전체내용을 볼 수 있음 -->
-        <div class="child3"></div>
-    </div>
-    
 </body>
 
 </html>
-
-<!--
-overflow속성은 내용이 요소의 크기 이상으로 넘칠때, 보여지는 것을 제어한다
- -->
