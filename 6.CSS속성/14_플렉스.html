@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>display-flex</title>
     <style>
-        * { margin: 0; }
+        * {
+            margin: 0;
+        }
 
-        div { margin-top: 20px; }
+        /* 모든 div를 flex 컨테이너로 지정 */
+        div {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        /* 자손들이 수평으로 정렬됨 */
+        .parent1 {
+            flex-direction: row;
+
+        }
+
+        /* 자손들이 수직으로 정렬됨 */
+        .parent2 {
+            flex-direction: column;
+
+        }
+
+        /* 자손들의 가로길이가 부모보다 커지면 줄바꿈 */
+        .parent3 {
+            flex-wrap: wrap;
+
+        }
+
+        /* 자손들을 가운데 정렬 */
+        .parent4 {
+            border: 3px solid red;
+            justify-content: center;
+
+        }
 
         p {
             border: solid 1px;
@@ -24,45 +56,25 @@
         .child3 {
             background-color: gold;
         }
-
-        .parent {
-            display: flex;  /* 모든 div를 flex 컨테이너로 지정 */
-        }
-
-        #parent1 {
-            flex-direction: row; /* 자손들이 수평으로 정렬됨 */
-        }
-
-        #parent2 {
-            flex-direction: column; /* 자손들이 수직으로 정렬됨 */
-        }
-
-        #parent3 {
-            flex-wrap: wrap; /* 자손들의 가로길이가 부모보다 커지면 줄바꿈 */
-        }
-
-        #parent4 {
-            border: 3px solid red;
-            justify-content: center; /* 자손들을 가운데 정렬 */
-        }
     </style>
 </head>
+
 <body>
     <h1>flex로 자식요소들 정렬하기</h1>
 
-    <div class="parent" id="parent1">
+    <div class="parent1">
         <p class="child1">child1</p>
         <p class="child2">child2</p>
         <p class="child3">child3</p>
     </div>
 
-    <div class="parent" id="parent2">
+    <div class="parent2">
         <p class="child1">child1</p>
         <p class="child2">child2</p>
         <p class="child3">child3</p>
     </div>
 
-    <div class="parent" id="parent3">
+    <div class="parent3">
         <p class="child1">child1</p>
         <p class="child2">child2</p>
         <p class="child3">child3</p>
@@ -71,10 +83,11 @@
         <p class="child3">child6</p>
     </div>
 
-    <div class="parent" id="parent4">
+    <div class="parent4">
         <p class="child1">child1</p>
         <p class="child2">child2</p>
         <p class="child3">child3</p>
     </div>
 </body>
+
 </html>

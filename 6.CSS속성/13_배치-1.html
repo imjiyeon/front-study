@@ -6,7 +6,7 @@
     <style>
         * {
             margin: 0;
-            padding: 0
+            padding: 0;
         }
 
         p {
@@ -30,6 +30,7 @@
 </head>
 
 <body>
+    <!-- position속성의 기본값은 static으로, 위에서 아래로 쌓인다 -->
     <div class="parent">
         <p class="child1">child1</p>
         <p class="child2">child2</p>
@@ -40,8 +41,6 @@
 </html>
 
 <!--
-요소의 기본 position 값은 static이다
-static은 요소가 추가되면 위에서 아래로 쌓는다
-블록요소: 위에서 아래로
-인라인요소: 왼쪽에서 오른쪽으로
+블록요소: 수직방향
+인라인요소: 수평방향
 -->
