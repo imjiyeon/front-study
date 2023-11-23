@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>블록요소의 수평나열 처리법</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        div {
+            width: 700px;
+            border: solid 1px black;
+            margin: 20px;
+            padding: 10px;
+        }
+
+        p {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        /* 단점: 요소사이에 공백이 발생. 계산을 잘못하면 줄이 무너짐 */
+        .parent1>p {
+            display: inline-block;
+            margin: 0 30px;
+        }
+
+        /* 단점: 부모가 자손의 높이를 인식하지 못함. 계산을 잘못하면 줄이 무너짐 */
+        .parent2>p {
+            float: left;
+            margin: 0 30px;
+        }
+
+        /* 부모에 높이를 주면 해결됨 */
+        .parent2 {
+            height: 100px;
+        }
+
+        /* 공백발생 안함. 부모가 자식의 높이 인식함. */
+        .parent3 {
+            display: flex;
+        }
+
+        /* 계산이 잘못되어도 자식의 크기가 자동으로 줄어듬 */
+        .parent3>p {
+            margin: 0 30px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h3>display: inline-block</h3>
+    <div class="parent1">
+        <p>child1</p>
+        <p>child2</p>
+        <p>child3</p>
+        <p>child4</p>
+        <p>child5</p>
+    </div>
+
+    <h3>float: left</h3>
+    <div class="parent2">
+        <p>child1</p>
+        <p>child2</p>
+        <p>child3</p>
+        <p>child4</p>
+        <p>child5</p>
+    </div>
+
+    <h3>display: flex</h3>
+    <div class="parent3">
+        <p>child1</p>
+        <p>child2</p>
+        <p>child3</p>
+        <p>child4</p>
+        <p>child5</p>
+    </div>
+
+</body>
+
+</html>
