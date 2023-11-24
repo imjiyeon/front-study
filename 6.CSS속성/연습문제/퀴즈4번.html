@@ -4,25 +4,28 @@
 <head>
     <title>상자 배치하기</title>
     <style>
+        * {
+            text-align: center;
+        }
+
         .box {
             width: 600px;
             height: 400px;
         }
 
-        .header {
-            height: 10%;
-            background-color: gray;
-        }
-
-        .footer {
+        header {
             height: 10%;
             background-color: gray;
         }
 
         /* 플렉스 컨테이너로 지정. 기본값이 수평정렬 */
-        .container {
+        section {
             height: 80%;
             display: flex;
+        }
+
+        section > div {
+            font-weight: bold;
         }
 
         .left {
@@ -40,19 +43,30 @@
             background-color: red;
         }
 
+        footer {
+            height: 10%;
+            background-color: gray;
+        }
     </style>
 </head>
 
 <body>
+
+    <h2>영역을 구분하는 태그들 header, section, footer</h2>
+
     <div class="box">
-        <div class="header">header</div>
-        <div class="container">
+
+        <header>header</header> <!-- 상단 -->
+
+        <section> <!-- 본문. 구역을 나누는 태그로 여러개 사용 가능 -->
             <div class="left">left</div>
             <div class="center">center</div>
             <div class="right">right</div>
-        </div>
-        <div class="footer">footer</div>
+        </section>
+
+        <footer>footer</footer> <!-- 하단 -->
     </div>
+
 </body>
 
 </html>
