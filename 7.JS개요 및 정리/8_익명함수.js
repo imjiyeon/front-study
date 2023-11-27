@@ -1,26 +1,24 @@
-/* 익명함수 */
 
-// 이름이 있는 함수
-function hello(){
-    console.log('Hello~');
+//익명함수를 만들고 변수에 저장하여 사용
+const hello = function() { 
+    console.log('hello~');
 }
 hello();
 
-// 이름이 없는 함수
-//함수를 선언할 때는 이름이 없었지만, 변수에 대입하여 변수의 이름이 함수 이름이 됨
-const world = function() { 
-    console.log('World~');
-}
-world();
+//HTML문서를 클릭시 이벤트 호출하는 코드 작성하기
 
-//익명함수를 사용하는 경우
-//HTML문서를 클릭하면 handler 이벤트가 호출되는 코드 작성하기
-function handler(){
-    console.log('Clicked!');
-}
-document.body.addEventListener('click', handler); //함수를 미리 선언하고 인자로 사용
+// 이벤트리스너는 특정이벤트가 일어나면 코드를 수행하는 함수이다
+// 인자: 이벤트종류, 수행할 함수
 
-// 함수를 재사용할 필요가 없다면 익명함수를 사용하는 것이 편리함
-document.body.addEventListener('click', function (){
-    console.log('Clicked!');
+// 함수를 미리 선언하고 인자로 사용
+// function handler(){
+//     alert('Clicked!');
+// }
+// document.addEventListener('click', handler);
+
+// 익명함수를 인자로 사용
+document.addEventListener('click', function (){
+    alert('Clicked!');
 });
+
+//일반함수는 재사용되는 기능에 사용하고, 익명함수는 한번만 사용되는 기능에 사용한다

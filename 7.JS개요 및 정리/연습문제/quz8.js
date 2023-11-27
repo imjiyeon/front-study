@@ -1,22 +1,14 @@
-// Q. child객체에 parent객체를 상속받으세요. 
-//     그리고 child객체의 성,국가,나이를 '김', '미국', 20 으로 변경하고 객체의 모든 정보를 출력하세요
+// Q. 4번문제를 함수로 변경하세요.
 
-// 정답
-const child = {
-    age: 10
+const func = (arr) => {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if((typeof arr[i]) == 'number'){
+            sum =  sum + arr[i];
+        }
+    }
+    console.log(sum);
 }
 
-const parent = {
-    firstName: '이',
-    country: '한국'
-}
-
-child.__proto__ = parent;
-child.firstName = '김';
-child.country = '미국';
-child.age = 20;
-
-console.log(child.firstName); // 김
-console.log(child.country); // 미국
-console.log(child.age); // 20
- 
+const arr = [1,'aa', true, 5, 10];
+func(arr);

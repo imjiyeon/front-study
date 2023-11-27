@@ -1,15 +1,13 @@
-// Q6. 4번문제를 함수를 사용하여 호출하는 형태로 바꾸세요
+// Q. 3번문제를 함수로 변경하세요.
 
-// 정답
-function func(arr){
-    let sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-        if((typeof arr[i]) == 'number'){
-            sum =  sum + arr[i];
+const func = (a, b) => {
+    for(let i =0; i < b; i++){
+        let result = '';
+        for(let j=0; j<a; j++){
+            result = result + '*';
         }
+        console.log(result);
     }
-    console.log(sum);
 }
-
-const arr = [1,'aa', true, 5, 10];
-func(arr);
+const a = 5, b = 3;
+func(a, b);
