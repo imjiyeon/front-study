@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<script src="../js/jquery-3.7.1.min.js"></script>
+	<script>
+		$(function () {
+			// 입력필드에 포커싱이 되면 배경을 핑크로 변경
+			$("#user_id, #user_pw").on("focus",
+				function () {
+					$(this)
+						.css({
+							"background-color": "pink"
+						});
+				});
+			// 포커스아웃되면 배경을 하늘색으로 변경
+			$("#user_id, #user_pw").on("focusout",
+				function () {
+					$(this)
+						.css({
+							"background-color": "aqua"
+						});
+				});
+		});
+	</script>
+</head>
+
+<body>
+	<p>
+		<label for="user_id">ID</label>
+		<input type="text" name="user_id" id="user_id">
+	</p>
+	<p>
+		<label for="user_pw">PW</label>
+		<input type="password" name="user_pw" id="user_pw">
+	</p>
+</body>
+
+</html>

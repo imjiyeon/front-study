@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<script src="../js/jquery-3.7.1.min.js"></script>
+	<script>
+		$(function () {
+			// 버튼위에 마우스를 올리면 배경을 하늘색으로 변경
+			$(".btn1").hover(function () {
+				$(".span1")
+					.css({
+						"background-color": "aqua"
+					});
+			});
+			// 버튼위에 마우스를 올리면 배경을 핑크색으로 변경
+			$(".btn2").on({
+				"mouseover": function () {
+					$(".btn2").next()
+						.css({
+							"background-color": "pink"
+						});
+				}
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<p>
+		<button class="btn1">버튼1</button>
+		<span class="span1">텍스트1</span>
+	</p>
+	<p>
+		<button class="btn2">버튼2</button>
+		<span class="span2">텍스트2</span>
+	</p>
+</body>
+
+</html>

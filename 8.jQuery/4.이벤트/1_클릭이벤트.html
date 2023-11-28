@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<script src="../js/jquery-3.7.1.min.js"></script>
+	<script>
+		$(function () {
+			// 버튼을 클릭하면 텍스트의 색을 변경
+			$(".btn1").click(function () {
+				$("span")
+					.css({
+						"color": "red"
+					});
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<button class="btn1">버튼1</button>
+	<span>텍스트1</span>
+</body>
+
+</html>
