@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="../../js/jquery-3.7.1.min.js"></script>
+    <script src="./main.js"></script>
+    <style>
+        button {
+            font-weight: bold;
+            width: 40px;
+            margin-right: 10px;
+            padding: 5px;
+        }
+
+        .select_button {
+            background-color: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>두수를 입력하고, 계산기능을 선택하세요!</h3>
+    <p>
+        <label for="num1">숫자1</label>
+        <input type="number" id="num1" name="num1">
+    </p>
+
+    <p>
+        <label for="num2">숫자2</label>
+        <input type="number" id="num2" name="num2">
+    </p>
+
+    <p>
+        <button>+</button>
+        <button>-</button>
+        <button>*</button>
+        <button>/</button>
+    </p>
+
+    <hr>
+
+    <p>
+        <span>결과 = </span>
+        <span class="result">?</span>
+    </p>
+
+</body>
+
+</html>

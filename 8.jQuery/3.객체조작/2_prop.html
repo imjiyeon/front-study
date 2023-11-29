@@ -5,16 +5,13 @@
 	<script src="../js/jquery-3.7.1.min.js"></script>
 	<script>
 		$(function () {
-			// 첫번째 체크박스의 상태 꺼내기
-			var checked1 = $("#chk1").prop("checked");
-			console.log(checked1);
-			// 두번째 체크박스의 상태 꺼내기
-			var checked2 = $("#chk2").prop("checked");
-			console.log(checked2);
-			// 첫번째 체크박스의 상태 변경하기
-			$("#chk3").prop("checked", true);
-			// 셀렉트박스에서 선택된 아이템 확인하기
-			var selectedIndex = $("select").prop("selectedIndex");
+			const status1 = $("#chk1").prop("checked"); // 첫번째 체크박스의 상태 꺼내기		
+			console.log(status1); 
+			const status2 = $("#chk2").prop("checked"); // 두번째 체크박스의 상태 꺼내기		
+			console.log(status2); 
+			$("#chk3").prop("checked", true); // 세번째 체크박스의 상태 변경하기
+
+			const selectedIndex = $("select").prop("selectedIndex"); // 셀렉트박스에서 선택된 아이템 꺼내기
 			console.log(selectedIndex);
 		});
 	</script>
