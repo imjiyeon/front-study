@@ -1,12 +1,15 @@
 // Q. 2번문제를 함수로 변경하세요.
 
-function fun(arr) {
-    const food1 = foodList[0];
-    const food2 = foodList[foodList.length - 1];
-    const result = food1 + ' ' + food2;
+function func(arr) { //매개변수로 배열 받기
+    const firstValue = arr[0];
+    const lastValue = arr[arr.length - 1];
+    const result = firstValue + ' ' + lastValue;
 
-    return result; //결과반환
+    console.log(result);
 }
 
-const foodList = ['Pizza', 'Hamburger', 'Chicken', 'Steak'];
-console.log(fun());
+const arr1 = ['Pizza', 'Hamburger', 'Chicken', 'Steak'];
+func(arr1);
+
+const arr2 = ['Apple', 'Banana', 'Cherry'];
+func(arr2);
