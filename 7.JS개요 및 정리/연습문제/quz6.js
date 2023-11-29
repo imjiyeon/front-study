@@ -9,7 +9,7 @@ function func(arr) { //매개변수로 배열 받기
 }
 
 const arr1 = ['Pizza', 'Hamburger', 'Chicken', 'Steak'];
-func(arr1);
+func(arr1); // Pizza Steak
 
 const arr2 = ['Apple', 'Banana', 'Cherry'];
-func(arr2);
+func(arr2); // Apple Cherry

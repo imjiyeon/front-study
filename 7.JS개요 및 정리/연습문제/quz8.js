@@ -12,7 +12,7 @@ const func = (arr) => { //매개변수로 배열 전달받기
 }
 
 const arr1 = [1,'aa', true, 5, 10];
-console.log('첫번째 배열의 합계: ' + func(arr1)); //결과 출력
+console.log('첫번째 배열의 합계: ' + func(arr1)); //16
 
 const arr2 = ['bb', true, 55, 7, false];
-console.log('두번째 배열의 합계: ' + func(arr2)); //결과 출력
+console.log('두번째 배열의 합계: ' + func(arr2)); //62
