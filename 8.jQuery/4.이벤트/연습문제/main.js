@@ -9,11 +9,10 @@ $(function () {
         const result_span = $(".result");
 
         $('button').each(function(index, item){
-            item.classList.remove('select_button');
+            $(this).removeClass('select_button');
         });
 
-        this.classList.add('select_button'); // 클래스 추가
-        // this.addClass("select_button"); // 제이쿼리 메소드로 엘리먼트를 찾지않아서, addClass메소드 사용불가
+        $(this).addClass("select_button"); // 클래스 추가
 
         switch (textContent) {
             case '+':

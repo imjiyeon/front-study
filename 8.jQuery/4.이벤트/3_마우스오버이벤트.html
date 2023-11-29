@@ -7,7 +7,7 @@
 		$(function () {
 			// 버튼위에 마우스를 올리면 배경을 하늘색으로 변경
 			$(".btn1").hover(function () {
-				$(".span1")
+				$(this).next()
 					.css({
 						"background-color": "aqua"
 					});
@@ -15,7 +15,7 @@
 			// 버튼위에 마우스를 올리면 배경을 핑크색으로 변경
 			$(".btn2").on({
 				"mouseover": function () {
-					$(".btn2").next()
+					$(this).next()
 						.css({
 							"background-color": "pink"
 						});

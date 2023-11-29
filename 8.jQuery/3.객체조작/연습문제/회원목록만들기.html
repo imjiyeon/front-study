@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="../../js/jquery-3.7.1.min.js"></script>
+    <script>
+        function addMember() {
+            const name = $("#name").val();
+            const age = $("#age").val();
+
+            const tr = `<tr><td>${name}</td><td>${age}</td></tr>`;
+            $("table").append(tr);
+        }
+    </script>
+    <style>
+        div {
+            margin-bottom: 30px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid;
+            /* 테이블과 셀 사이의 간격 없애기 */
+            border-collapse: collapse;
+            padding: 5px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>회원 등록하기</h3>
+
+    <div>
+        <input id="name" type="text" placeholder="이름 입력" />
+        <input id="age" type="number" placeholder="나이 입력" />
+        <button onclick="addMember()">새로운 회원 등록</button>
+    </div>
+
+    <table>
+        <caption>회원목록</caption>
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+        </tr>
+        <tr>
+            <td>둘리</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>또치</td>
+            <td>18</td>
+        </tr>
+    </table>
+</body>
+
+</html>
