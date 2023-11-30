@@ -5,12 +5,13 @@
     <script src="../../js/jquery-3.7.1.min.js"></script>
     <script>
         function addMember() {
-            // 입력필드에서 이름과 나이 꺼내기
+            // 1.입력필드에서 이름과 나이 꺼내기
             const name = $("#name").val();
             const age = $("#age").val();
-            // tr 태그 만들기. 문자열에 변수를 삽입할때는 백틱문자 사용
-            const tr = `<tr><td>${name}</td><td>${age}</td></tr>`;
-            //테이블 내부에 태그 추가
+            // 2.테이블에 새로운 회원 추가
+            // tr 태그 만들기
+            const tr = `<tr><td>${name}</td><td>${age}</td></tr>`; //문자열에 변수를 삽입할때는 백틱문자 사용
+            // 테이블에 태그 추가
             $("table").append(tr);
         }
     </script>
@@ -36,6 +37,7 @@
     <form action="#">
         <input id="name" type="text" placeholder="이름 입력" />
         <input id="age" type="number" placeholder="나이 입력" />
+        <!-- onclick() : 수행할 자바스크립트 코드 or 함수 -->
         <button onclick="addMember()">새로운 회원 등록</button>
         <button type="reset">초기화</button>
     </form>
