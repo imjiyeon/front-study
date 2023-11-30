@@ -5,15 +5,17 @@
     <script src="../../js/jquery-3.7.1.min.js"></script>
     <script>
         function addMember() {
+            // 입력필드에서 이름과 나이 꺼내기
             const name = $("#name").val();
             const age = $("#age").val();
-
+            // tr 태그 만들기. 문자열에 변수를 삽입할때는 백틱문자 사용
             const tr = `<tr><td>${name}</td><td>${age}</td></tr>`;
+            //테이블 내부에 태그 추가
             $("table").append(tr);
         }
     </script>
     <style>
-        div {
+        form {
             margin-bottom: 30px;
         }
 
@@ -31,11 +33,12 @@
 <body>
     <h3>회원 등록하기</h3>
 
-    <div>
+    <form action="#">
         <input id="name" type="text" placeholder="이름 입력" />
         <input id="age" type="number" placeholder="나이 입력" />
         <button onclick="addMember()">새로운 회원 등록</button>
-    </div>
+        <button type="reset">초기화</button>
+    </form>
 
     <table>
         <caption>회원목록</caption>
