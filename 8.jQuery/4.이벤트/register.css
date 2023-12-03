@@ -1,92 +1,75 @@
 * {
     margin: 0;
-    padding: 0;
+    font-size: 13px;
 }
 
 body {
     background: lightgrey;
-    padding: 20px;
 }
 
-#signup {
+form {
     background: white;
     border: 1px solid black;
-    border-radius: 5px;
-    padding: 20px;
     width: 400px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
 }
 
-#signup fieldset {
+form fieldset {
     border: 1px solid lightgrey;
-    margin-bottom: 30px;
 }
 
 /* 로그인 정보, 개인정보 제목 */
-#signup legend {
-    font-size: 16px;
+form legend {
     font-weight: bold;
     padding: 5px 10px;
 }
 
 /* 개인정보 , 로그인 정보 목록 */
-#signup ul li {
+form ul li {
     line-height: 30px;
     list-style: none;
     padding: 5px 10px;
 }
 
 /* 라벨 */
-#signup label {
-    float: left;
-    font-size: 13px;
-    width: 100px;
-}
+form label {
+    float: left; /* 글자를 왼쪽으로 정렬 + display: inline-block */
+    width: 100px; /* 크기변경 가능 */
+} 
 
 /* 입력필드 */
-#signup input {
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    font-size: 13px;
+form input {
     padding: 5px;
     width: 200px;
 }
 
 /* input에서 required 속성을 가진 */
-#signup input[required] {
+form input[required] {
     border: 1px red solid;
 }
 
 /* input에서 readonly 속성을 가진 */
-#signup input[readonly] {
+form input[readonly] {
     border: none;
 }
 
-/* 메세지는 모두 숨김처리 */
-#signup .msg {
-    font-size: 13px;
+/* 메세지는 숨김처리 */
+form .msg {
     /* display: block; */
     display: none;
     color: red;
-    padding-left: 110px;
 }
 
-/* 제출 버튼 필드셋 */
-#signup fieldset:last-of-type {
+/* 제출버튼 필드셋 */
+form fieldset:last-of-type {
     border: none;
     display: flex;
     justify-content: center;
 }
 
 /* 제출버튼 */
-#signup button {
-    border: 1px solid #222;
-    border-radius: 10px;
-    font-size: 16px;
-    padding: 7px 25px;
-}
-
-/* 버튼에 마우스 올렸을 때 */
-#signup button:hover {
-    background: black;
-    color: white;
+form button {
+    width: 80px;
 }
