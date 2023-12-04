@@ -1,12 +1,15 @@
+/* 여백제거 및 글자크기 통일  */
 * {
     margin: 0;
     font-size: 13px;
 }
 
+/* 바디의 배경색 */
 body {
     background: lightgrey;
 }
 
+/* 폼의 배경, 테두리, 크기, 여백, 모서리 */
 form {
     background: white;
     border: 1px solid black;
@@ -20,24 +23,24 @@ form fieldset {
     border: 1px solid lightgrey;
 }
 
-/* 로그인 정보, 개인정보 제목 */
+/* 로그인정보와 개인정보의 제목 */
 form legend {
     font-weight: bold;
     padding: 5px 10px;
 }
 
-/* 개인정보 , 로그인 정보 목록 */
+/* 로그인정보와 개인정보의 목록 */
 form ul li {
     line-height: 30px;
     list-style: none;
     padding: 5px 10px;
 }
 
-/* 라벨 */
+/* 입력필드의 라벨 */
 form label {
     float: left; /* 글자를 왼쪽으로 정렬 + display: inline-block */
     width: 100px; /* 크기변경 가능 */
-} 
+}
 
 /* 입력필드 */
 form input {
@@ -45,24 +48,24 @@ form input {
     width: 200px;
 }
 
-/* input에서 required 속성을 가진 */
+/* required 속성을 가진 입력필드 */
 form input[required] {
     border: 1px red solid;
 }
 
-/* input에서 readonly 속성을 가진 */
+/* readonly 속성을 가진 입력필드 */
 form input[readonly] {
     border: none;
 }
 
-/* 메세지는 숨김처리 */
+/* 에러메세지는 화면에서 숨김처리 */
 form .msg {
     /* display: block; */
     display: none;
     color: red;
 }
 
-/* 제출버튼 필드셋 */
+/* 마지막 필드셋 */
 form fieldset:last-of-type {
     border: none;
     display: flex;
