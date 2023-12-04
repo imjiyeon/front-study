@@ -1,4 +1,4 @@
-/* 일반함수 */
+/* 일반함수 사용법 */
 
 function first(){
     second();

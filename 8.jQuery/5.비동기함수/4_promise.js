@@ -4,8 +4,8 @@ const result = false; //요청성공여부
 
 // promise를 생성하면 resolve, reject 함수를 인자로 사용할수있음
 // resolve: 작업이 성공적으로 끝나면 결과데이터를 전달
-// reject: 문제가 발생하면 에러데이터를 전달 
-const promise = new Promise((resolve, reject) => { 
+// reject: 문제가 발생하면 에러데이터를 전달
+const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
         if(result){ //서버에 데이터를 요청하고 정상적으로 응답이 왔으면
             resolve('성공'); //resolve함수를 호출하면서 데이터 전달
