@@ -24,6 +24,7 @@
         <li>
           <label for="pwd2">비밀번호 확인</label>
           <input id="pwd2" name="pwd2" type="password" required />
+          <!-- 두 비밀번호가 일치하는지 확인하려면 별도의 자바스크립트 코드가 필요함  -->
           <span class="msg">두 개의 비밀번호가 일치하지 않습니다.</span>
         </li>
       </ul>
@@ -44,7 +45,7 @@
     <fieldset>
       <!-- submit 버튼을 클릭하면 입력필드의 값이 유효한지 검사함 (필수값이 있는지, 이메일이면 패턴이 알맞은지 등 ) -->
       <!-- <button type="submit">제출</button> -->
-      <!-- 함수를 호출하여 비밀번호가 일치하는 확인 -->
+      <!-- 비밀번호가 일치하는 확인하는 버튼 추가 -->
       <button type="button" onclick="func();">제출</button> <!-- 버튼에 클릭이벤트를 적용하면 값 검사안함 -->
     </fieldset>
   </form>
