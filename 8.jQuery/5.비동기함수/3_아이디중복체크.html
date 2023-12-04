@@ -5,10 +5,10 @@
     <title>콜백함수를 사용하여 회원가입시 아이디 중복 체크하기</title>
     <script src="../js/jquery-3.7.1.min.js"></script>
     <script>
-        const result = false;
+        const result = true; //참이면 중복, 거짓이면 중복아님
 
         //아이디중복체크 함수
-        function func () {      
+        function func() {
             setTimeout(function () { // 서버에 아이디 중복여부를 요청
                 if (result) { //결과가 중복이면 에러메세지를 화면에 표출함
                     $("p").show();
@@ -19,6 +19,9 @@
                 }
             }, 3000);
         };
+
+        // 콜백 함수의 내용이 길어지면 코드가 복잡해지고 가독성이 떨어진다. 
+        // 이러한 문제를 해결하기 위해 promise 등을 사용한다. 
     </script>
 </head>
 

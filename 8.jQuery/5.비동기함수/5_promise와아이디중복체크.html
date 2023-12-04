@@ -8,8 +8,8 @@
         function func() {
             const promise = new Promise((resolve, reject) => {
                 setTimeout(() => {
-                    // resolve(true); // 응답으로 중복여부 받음
-                    reject(new Error("no network"));
+                    resolve(true); // 응답으로 중복여부 받음
+                    // reject(new Error("no network"));
                 }, 3000);
             });
 
