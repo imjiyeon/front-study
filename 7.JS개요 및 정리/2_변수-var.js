@@ -1,18 +1,18 @@
-/* 변수 - var를 사용하지 않는 이유 */
+/* var를 사용하지 않는 이유 */
 
-// let 키워드
+// let을 사용해서 변수 선언
 console.log(puppy); //변수를 선언하기 전에 사용할 수 없음
 let puppy = "cute"; //전역 변수
 {
-    let puppy = "so cute"; //지역변수
+  let puppy = "so cute"; //지역변수
 }
 console.log(puppy); // cute
 
-// var 키워드
+// var를 사용해서 변수 선언
 console.log(cat); //변수를 선언하기 전에 사용할 수 있음
 var cat = "cute";
 {
-    var cat = "so cute"; //블록스코프로 전역변수와 지역변수를 구분할 수 없음
+  var cat = "so cute"; //블록스코프로 전역변수와 지역변수를 구분할 수 없음
 }
 console.log(cat); // so cute
 

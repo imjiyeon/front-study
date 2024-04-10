@@ -1,12 +1,18 @@
-/* 변수 */
+/* 변수와 상수 */
 
-//const 키워드로 상수 선언
-const a = 12;
+//변수 선언
+let a = 12;
 console.log(a);
-//a = 999; //에러남. 상수는 값을 변경할 수 없음
 
-//let 키워드로 변수 선언
-let b = 12;
-console.log(b);
-b = 999;
+// 변수는 값을 변경할 수 있음
+a = 999;
+console.log(a);
+
+//상수 선언
+const COLOR_RED = "#ff0000"; //빨간색
+const COLOR_BLACK = "#000000"; //검정색
+
+//상수는 값을 변경할 수 없음
+const b = 12;
+//b = 999; //에러남.
 console.log(b);
