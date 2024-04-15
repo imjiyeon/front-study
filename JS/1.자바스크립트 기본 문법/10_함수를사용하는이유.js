@@ -5,7 +5,7 @@ let vat = 0.1; // 부가세 10%
 let tax = salePrice * vat;
 console.log(tax);
 
-let salePrice2 = 24000; // 매출
+let salePrice2 = 240000; // 매출
 let vat2 = 0.1; // 부가세 10%
 let tax2 = salePrice2 * vat2;
 console.log(tax2);
@@ -24,8 +24,7 @@ function calculateTax(salePrice) {
   let tax = salePrice * vat;
   console.log(tax);
 }
+
 calculateTax(100000);
-
-calculateTax(24000);
-
+calculateTax(240000);
 calculateTax(940000);
