@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="text" id="userid" />
+    <p>p태그1</p>
+    <p>p태그2</p>
+    <p class="para">p태그3</p>
+    <p class="para">p태그4</p>
+    <script>
+      // document 객체의 함수로 HTML 엘리먼트 찾기
+
+      // 아이디로 input 태그 찾기
+      var element = document.getElementById("userid");
+
+      // 태그이름으로 p 태그 찾기 (4)
+      var elements = document.getElementsByTagName("p");
+
+      // 클래스 이름으로 p태그 찾기 (2)
+      var elements = document.getElementsByClassName("para");
+      console.log();
+    </script>
+  </body>
+</html>
