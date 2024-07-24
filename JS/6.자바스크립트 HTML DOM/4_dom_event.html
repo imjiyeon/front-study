@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <button onclick="myFunction();">클릭</button>
+    <button id="btn">클릭</button>
+
+    <select id="sel" onchange="onChange();">
+      <option value="KO">Korea</option>
+      <option value="CN">China</option>
+      <option value="JP">Japan</option>
+    </select>
+
+    <input type="text" onfocus="onFocus()" onblur="onBlur()" />
+
+    <input
+      type="text"
+      onkeypress="myFunction3(event)"
+      onkeydown="myFunction3(event)"
+      onkeyup="myFunction3(event)"
+    />
+
+    <script>
+      // 클릭이벤트: 버튼을 클릭하면 발생
+      function myFunction() {
+        console.log("onclick 이벤트 설정");
+      }
+      function myFunction2() {
+        console.log("이벤트 리스너 사용");
+      }
+      document.getElementById("btn").addEventListener("click", myFunction2);
+
+      //체인지이벤트: <select> <input> 같은 엘리먼트에서 값이 변경되면 발생
+      function onChange() {
+        let sel = document.getElementById("sel");
+        console.log(sel.value);
+      }
+
+      //포커스이벤트: 입력 엘리먼트에서 마우스 포커스되면 발생
+      function onFocus() {
+        console.log("onFocus");
+      }
+
+      //포커스이벤트: 입력 엘리먼트에서 마우스 포커스가 빠져나가면 발생
+      function onBlur() {
+        console.log("onBlur");
+      }
+
+      //키이벤트: 입력 엘리먼트에서 마우스 포커스가 빠져나가면 발생
+      //onkeydown: 키가 눌려질때
+      //onkeypress: 키를 누르고 있을때
+      //onkeyup: 키를 눌렀다가 놓을때
+      function myFunction3(e) {
+        console.log(e.type); //이벤트 이름
+        console.log(e.target); //이벤트를 발생시킨 엘리먼트
+        console.log(e.target.value); //입력된 값이 어떻게 변하는지
+      }
+
+      //html 문서가 로드될 때 발생
+      window.addEventListener("load", function () {
+        console.log("문서가 로드되었습니다");
+      });
+    </script>
+  </body>
+</html>

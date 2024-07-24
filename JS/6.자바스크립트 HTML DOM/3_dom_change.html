@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="title"></h1>
+    <select id="sel"></select>
+    <!-- beforebegin: 해당 엘리먼트의 이전 노드 -->
+    <ul id="myUL">
+      <!-- afterbegin: 해당 엘리먼트의 첫번째 자식노드 -->
+      <li>항목1</li>
+      <li>항목2</li>
+      <li>항목3</li>
+      <li>항목4</li>
+      <!-- beforeend: 해당 엘리먼트의 마지막 자식노드 -->
+    </ul>
+    <!-- afterend: 해당 엘리먼트의 다음 노드 -->
+    <button onclick="myFunction()">항목추가</button>
+
+    <p id="demo">p태그 문장입니다</p>
+    <button onclick="myFunction2()">Remove</button>
+
+    <script>
+      //innerText: 특정 위치에 텍스트 추가
+      document.getElementById("title").innerText = "제목 입니다.";
+
+      //innerHTML: 특정 위치에 새로운 HTML 추가
+      var sel = document.getElementById("sel");
+      sel.innerHTML = '<option value="">선택하세요</option>';
+
+      // insertAdjacentHTML함수: 엘리먼트에 접근해서 자식으로 또는 옆쪽에 노드 추가
+      function myFunction() {
+        let ul = document.getElementById("myUL");
+        ul.insertAdjacentHTML("afterbegin", "<li>새로운항목</li>");
+      }
+
+      //remove함수: html 요소 삭제
+      function myFunction2() {
+        let p = document.getElementById("demo");
+        p.remove();
+      }
+    </script>
+  </body>
+</html>
