@@ -24,10 +24,13 @@
       oText1.removeAttribute("data-role");
       console.log(oText1.hasAttribute("data-role"));
 
+      oText1.setAttribute("class", "democlass");
+
       // 속성 변경
       function doSave(e) {
         var obj = e.target;
-        obj.disabled = true; //사용자가 중복해서 버튼을 또 클릭하지 못하도록 버튼을 disabled 시킴
+        //사용자가 중복해서 버튼을 또 클릭하지 못하도록 버튼을 disabled 시킴
+        obj.setAttribute("disabled", "true");
 
         // 저장을 실행하는 코드 작성
         setTimeout(function () {
