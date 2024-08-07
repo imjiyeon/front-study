@@ -25,6 +25,9 @@ const createTodo = function (storageData) {
     saveItemsFn();
   });
 
+  // storageData?.complete(옵셔널체이닝)은 if(storageData && storageData.complete) 와 같음
+  // storageData 객체가 없으면 뒤에 있는 식을 실행하지 않음
+  // storageData 객체가 없으면 complete 속성을 꺼낼때 에러남
   if (storageData?.complete) {
     newLi.classList.add("complete");
   }
@@ -65,6 +68,7 @@ const saveItemsFn = function () {
 
   console.log(saveItems);
 
+  // === 값과 타입까지 정확히 비교하는 연산자
   saveItems.length === 0
     ? localStorage.removeItem("saved-items")
     : localStorage.setItem("saved-items", JSON.stringify(saveItems));
