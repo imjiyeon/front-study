@@ -5,6 +5,60 @@
   </head>
   <body>
     <script>
+      //getCurrentPosition: 사용자의 현재 위치를 가져오는 함수
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          // position: 위치 정보를 담고 있는 객체
+          console.log("position", position);
+
+          let latitude = position.coords.latitude; //위도
+          let longitude = position.coords.longitude; //경도
+          console.log("latitude", latitude);
+          console.log("longitude", longitude);
+        },
+        (err) => {
+          console.log(err); //사용자가 접근을 거부하면 에러가 발생함
+        }
+      );
+
+      // 사용자와 관광지의 거리를 계산하기
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          //사용자의 현재위치
+          let latitude = position.coords.latitude; //위도
+          let longitude = position.coords.longitude; //경도
+
+          console.log("latitude", latitude);
+          console.log("longitude", longitude);
+
+          // 거리 계산
+          for (let i = 0; i < tourlist.length; i++) {
+            let distance = getDistance(
+              latitude,
+              longitude,
+              tourlist[i].latitude,
+              tourlist[i].longitude,
+              "K"
+            );
+            tourlist[i].distance = distance;
+          }
+
+          // 가까운 순으로 정렬
+          let newTourList = tourlist.sort(function (a, b) {
+            if (a.distance > b.distance) {
+              return 1;
+            }
+            if (a.distance < b.distance) {
+              return -1;
+            }
+            return 0;
+          });
+
+          console.log(newTourList);
+        },
+        (err) => {}
+      );
+
       // 관광지 목록
       let tourlist = [
         {
@@ -55,44 +109,6 @@
         }
         return dist;
       }
-
-      //geolocation: 브라우저에 접속한 사용자의 현재 위치를 담은 객체
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          //사용자의 현재위치
-          let latitude = position.coords.latitude; //위도
-          let longitude = position.coords.longitude; //경도
-
-          console.log("latitude", latitude);
-          console.log("longitude", longitude);
-
-          // 거리 계산
-          for (let i = 0; i < tourlist.length; i++) {
-            let distance = getDistance(
-              latitude,
-              longitude,
-              tourlist[i].latitude,
-              tourlist[i].longitude,
-              "K"
-            );
-            tourlist[i].distance = distance;
-          }
-
-          // 가까운 순으로 정렬
-          let newTourList = tourlist.sort(function (a, b) {
-            if (a.distance > b.distance) {
-              return 1;
-            }
-            if (a.distance < b.distance) {
-              return -1;
-            }
-            return 0;
-          });
-
-          console.log(newTourList);
-        },
-        (err) => {}
-      );
     </script>
   </body>
 </html>
