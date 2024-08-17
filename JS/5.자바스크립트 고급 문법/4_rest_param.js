@@ -1,25 +1,24 @@
-// 파라미터 2개를 가지고 있는 함수
-function sum1(x1, x2) {
-  var y = x1 + x2;
-  console.log(y);
+// ...파라미터: rest parameter
+// 나머지 데이터가 배열로 저장됨. 개수는 상관없음
+function func(one, two, ...rest) {
+  // one에 1, two에 2, 나머지는 rest에 배열로 저장됨
+  console.log(rest);
 }
-sum1(5, 7); //함수를 호출할 때, 인자 2개 전달
+func(1, 2, 3, 4, 5); // [ 3, 4, 5 ]
 
-// 파라미터 4개를 가지고 있는 함수
-function sum2(x1, x2, x3, x4) {
-  var y = x1 + x2 + x3 + x4;
-  console.log(y);
-}
-sum2(5, 7, 3, 9); //함수를 호출할 때, 인자 4개 전달
+// rest parameter는 반드시 마지막 위치에 있어야함
+// 잘못된 예시
+// function func2 (one, ...rest, two) {
+//    console.log(rest)
+// }
 
-// ....파라미터: 개수와 상관없이 전달
-// 파라미터가 배열로 저장됨
-function sum(...args) {
+// rest parameter를 이용하여 숫자들의 합 구하기
+function sum(...arr) {
   var total = 0;
-  for (var x of args) {
+  for (var x of arr) {
     total += x;
   }
   console.log(total);
 }
 
-sum(3, 2, 5, 7, 4, 23);
+sum(1, 2, 3, 4, 5);
