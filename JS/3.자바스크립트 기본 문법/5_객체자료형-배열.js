@@ -9,6 +9,9 @@ console.log(arr1[0]);
 console.log(arr1[1]);
 console.log(arr1[2]);
 
+//배열에 Apple가 있으면 true가 반환됨
+console.log(arr1.includes("Apple"));
+
 const arr2 = ["a", "b", 1, 2, true]; //자료형이 달라도 함께 저장 가능
 console.log(arr2); // [ 'a', 'b', 1, 2, true ]
 arr2.push(3); //push메소드로 새로운 요소 추가

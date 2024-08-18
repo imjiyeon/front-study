@@ -1,13 +1,16 @@
-// Q. 3번문제를 함수로 변경하세요.
+// Q. 두 개의 정수 n과 m를 받아서 빼기 함수를 만드는데, 일반함수와 화살표함수 2가지 형태로 만드세요
+// 예시: 정수 2개 (5, 3)
+// 결과: 2
 
-const func = (a, b) => { // 두 수를 매개변수로 전달받기
-    for(let i =0; i < b; i++){
-        let result = '';
-        for(let j=0; j<a; j++){
-            result = result + '*';
-        }
-        console.log(result);
-    }
+// 정답1
+function func1(a, b) {
+    return a - b;
 }
-func(5, 3); //5*3 크기의 직사각형
-func(4, 4); //4*4 크기의 정사각형
+console.log(func1(5, 3)); // 2
+
+// 정답2
+const func2 = (a, b) => {
+    return a - b;
+}
+console.log(func2(5, 3)); // 2
+    
