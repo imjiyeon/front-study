@@ -1,5 +1,4 @@
-// 부가세 계산하기
-
+// 함수 없이 부가세 계산하기
 let salePrice = 100000; // 매출
 let vat = 0.1; // 부가세 10%
 let tax = salePrice * vat;
@@ -14,17 +13,17 @@ let salePrice3 = 940000; // 매출
 let vat3 = 0.1; // 부가세 10%
 let tax3 = salePrice3 * vat3;
 console.log(tax3);
-
-// 법이 바뀌어서 부가세가 10%에서 12%로 인상됨
-// 그래서 vat 부분을 모두 수정해야함
+// 위 코드의 문제점: 함수 없이 부가세를 계한하면 동일한 계산 코드가 반복됨
 
 // 부가세를 계산하는 함수 만들기
+// 매출을 매개변수로 설정
 function calculateTax(salePrice) {
-  let vat = 0.12; // 이부분만 한번 변경하면 됨
+  let vat = 0.1;
   let tax = salePrice * vat;
   console.log(tax);
 }
 
+// 함수를 호출하여 부가세 계산하기
 calculateTax(100000);
 calculateTax(240000);
 calculateTax(940000);
