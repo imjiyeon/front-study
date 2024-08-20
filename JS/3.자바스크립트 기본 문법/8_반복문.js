@@ -69,3 +69,9 @@ for (let i in arr) {
   // 배열을 순회하면서 인덱스를 꺼냄
   console.log(i + ", " + arr[i]);
 }
+
+/* for-of문 */
+for (let v of arr) {
+  // 배열을 순회하면서 값을 꺼냄
+  console.log(v);
+}

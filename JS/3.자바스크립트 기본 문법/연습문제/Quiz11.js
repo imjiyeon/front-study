@@ -1,14 +1,20 @@
-// Q. 7번문제에서 사각형을 만드는 부분을 함수로 변경하세요.
+// 함수
+// 배열을 입력 받아, 모두 같은 자료형으로 이루어져 있는지 확인하는 함수를 만드세요.
 
-const func = (a, b) => {
-  // 두 수를 매개변수로 전달받기
-  for (let i = 0; i < b; i++) {
-    let result = "";
-    for (let j = 0; j < a; j++) {
-      result = result + "*";
+function func(arr) {
+  // 첫 번째 요소의 자료형을 기준으로 설정
+  let firstType = typeof arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+    if (typeof arr[i] !== firstType) {
+      return false; // 하나라도 다른 자료형이 있으면 false 반환
     }
-    console.log(result);
   }
-};
-func(5, 3); //5*3 크기의 직사각형
-func(4, 4); //4*4 크기의 정사각형
+
+  return true; // 모두 동일한 자료형이면 true 반환
+}
+
+console.log(func([1, 2, 3])); // true
+console.log(func([1, "2", 3])); // false
+console.log(func(["a", "b", "c"])); // true
+console.log(func([true, false, true])); // true
