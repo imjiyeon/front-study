@@ -1,69 +1,56 @@
-// 길이를 반환하는 속성
+//length: 문자열의 길이
 let txt = "ABCDE";
-let len = txt.length;
+console.log(txt.length); //5
 
-// 특정 문자열이 존재하는지 확인하고, index(위치)를 반환하는 함수
+//indexOf: 특정 문자열이 존재하는지 확인하고, index(위치)를 반환하는 함수
 let str = "안녕하세요 저는 둘리입니다";
-let pos1 = str.indexOf("둘리"); //9
-console.log(pos1);
-let pos2 = str.indexOf("또치"); //-1
-console.log(pos2);
+console.log(str.indexOf("둘리")); //9
+console.log(str.indexOf("또치")); //못찾으면 -1 반환
 
-//찾고자 하는 문자열이 둘 이상 발견되면, 제일 마지막에 발견된 문자열의 index(위치)를 반환하는 함수
-let str2 = "둘리 둘리 둘리";
-let pos3 = str2.lastIndexOf("둘리"); //6
-let pos4 = str2.lastIndexOf("또치"); //-1 (못찾으면 -1 반환)
-console.log(pos3);
-console.log(pos4);
+//lastIndexOf: 찾고자 하는 문자열이 둘 이상 발견되면, 제일 마지막에 발견된 문자열의 index(위치)를 반환하는 함수
+let dooli = "둘리 둘리 둘리";
+console.log(dooli.lastIndexOf("둘리")); //6
+console.log(dooli.lastIndexOf("또치")); //못찾으면 -1 반환
 
-//시작위치와 마지막위치를 입력받아, 문자열에서 해당부분을 잘라서 반환하는 함수
-let str3 = "사과, 바나나, 키위";
-let res = str3.slice(9, 11); //키위
-let res2 = str3.slice(9); //키위 (마지막위치를 생략하면 문자열 끝까지 읽음)
-console.log(res);
-console.log(res2);
+let fruit = "사과, 바나나, 키위";
 
-//substr()은 slice()와 동일한 기능
-let res3 = str3.substring(9, 11);
-console.log(res3);
+//slice(start, end): 시작위치와 마지막위치를 입력받아, 문자열에서 해당부분을 잘라서 반환하는 함수
+console.log(fruit.slice(9, 11)); //키위 (인덱스 9에서 시작해 인덱스 11직전까지 추출)
+console.log(fruit.slice(9)); //키위 (마지막위치를 생략하면 문자열 끝까지 읽음)
 
-//특정 문자열을 다른 문자열로 교체하는 함수
-let newStr = str3.replace("바나나", "딸기"); //사과, 딸기, 키위
-console.log(newStr);
+//substring(start, end)
+console.log(fruit.substring(9, 11)); //키위 (인덱스 9에서 시작해 인덱스 11직전까지 추출)
+console.log(fruit.substring(11, 9)); //start와 end가 바뀌었으면, 교환해서 처리
 
-//문자열을 모두 대문자로 변경하는 함수, 모두 소문자로 변경하는 함수
-let str4 = "Hello World";
-let str5 = str4.toUpperCase(); //HELLO WORLD
-let str6 = str4.toLowerCase(); //hello world
-console.log(str5);
-console.log(str6);
+//replace: 특정 문자열을 다른 문자열로 교체하는 함수
+console.log(fruit.replace("바나나", "딸기")); //사과, 딸기, 키위
+
+//toUpperCase: 문자열을 모두 대문자로 변경하는 함수
+//toLowerCase: 문자열을 모두 소문자로 변경하는 함수
+let hello = "Hello World";
+console.log(hello.toUpperCase()); //HELLO WORLD
+console.log(hello.toLowerCase()); //hello world
 
 //2개 이상의 문자열을 연결하는 함수
-let str7 = "Hello";
-let str8 = "World";
-let str9 = str7.concat(" ", str8);
-console.log(str9);
+let str1 = "Hello";
+let str2 = "World";
+let newStr = str1.concat(" ", str2);
+console.log(newStr);
 
 //앞, 뒤 공백을 제거하는 함수
-let text1 = "   Hello World   ";
-console.log(text1.trim()); //Hello World
+console.log("   Hello World   ".trim()); //Hello World
 
 //지정된 문자를 지정된 길이만큼 추가하는 함수
-let text2 = "5";
-console.log(text2.padStart(4, 0)); //0005 (앞에서부터 추가)
-console.log(text2.padEnd(4, 0)); //5000 (뒤에서부터 추가)
+let number = "5";
+console.log(number.padStart(4, 0)); //0005 (앞에서부터 추가)
+console.log(number.padEnd(4, 0)); //5000 (뒤에서부터 추가)
 
 //특정 인덱스에 있는 문자 하나를 반환하는 함수
-let text3 = "Hello World";
-console.log(text3.charAt(0)); //H
-
-//해당 문자를 유니코드값으로 반환하는 함수
-console.log(text3.charCodeAt(0)); //72 (A가65)
+console.log("Hello World".charAt(0)); //H
 
 //구분자를 기준으로 문자열을 쪼개는 함수
 let birthday = "1997-06-12";
-let arr = birthday.split("-"); //['1997', '06', '12']
-console.log(arr);
+console.log(birthday.split("-")); //['1997', '06', '12']
 
 //문자열이 특정 값으로 시작되는지 확인하는 함수
 let url = "http://website.com";
@@ -80,3 +67,8 @@ if (file.endsWith(".pdf")) {
 } else {
   console.log("pdf 형식의 파일이 아닙니다..");
 }
+
+// 문자열은 배열처럼 사용 가능. 인덱스 사용 가능
+let string = "Hello";
+console.log(string[0]); // "H"
+console.log(string[1]); // "e"
