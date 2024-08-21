@@ -21,11 +21,18 @@ var persons = [
   },
 ];
 
-//filter: 조건을 만족하지 않는 요소는 배열에서 제거하는 함수
-//배열의 각 요소를 확인하고, 결과가 false라면 배열에서 제거
-//조건을 정의한 함수 function()를 인자로 전달
-//person: 배열의 현재 요소
+
+// filter: 조건을 만족하는 요소들만 모아 새 배열을 반환
+// 인자: 조건을 정의한 함수
+// person: 배열의 현재 요소
+
+//점수가 80점 이상인 사람만 반환
 var pass = persons.filter(function (person) {
-  //점수가 80점 이상인 사람만 반환
   return person.point > 80;
 });
+console.log(pass);
+
+// 화살표함수로 변경하면 더 깔끔!
+var pass2 = persons.filter(person => person.point > 80);
+console.log(pass2);
+

@@ -1,41 +1,34 @@
 //toString: 객체의 정보를 문자열로 반환하는 함수
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var fruits = ["바나나", "오렌지", "사과", "망고"];
 console.log(fruits.toString()); // Banana,Orange,Apple,Mango
 
 //join: 배열 요소와 *를 연결하여 문자열을 반환하는 함수
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
 console.log(fruits.join(" * ")); // Banana * Orange * Apple * Mango
 
 //pop: 마지막 데이터를 제거하고, 반환하는 함수
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
 var x = fruits.pop(); // x = "Mango"
 console.log(x);
 
 //push: 배열에 새로운 요소를 추가
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-fruits.push("Kiwi"); // "Kiwi"를 fruits 배열에 추가
+fruits.push("키위"); // "Kiwi"를 fruits 배열에 추가
 console.log(fruits);
 
 //shift: 배열의 첫번째 요소를 제거하고, 반환
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
 var f = fruits.shift(); // Banana
 console.log(f);
 console.log(fruits);
 
 //unshift: 배열 제일 앞에 요소를 추가하고, 배열의 길이 반환
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-var len = fruits.unshift("Lemon"); // Lemon
+var len = fruits.unshift("레몬");
 console.log(len);
 console.log(fruits);
 
-//배열에서 인덱스가 0인 요소인 "Banana"를 "Kiwi"로 변경
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-fruits[0] = "Kiwi";
+//배열에서 인덱스가 0인 요소인 "레몬"을 "체리"로 변경
+fruits[0] = "체리";
 console.log(fruits);
 
 //splice: 배열의 특정 위치에 새로운 요소를 추가
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-fruits.splice(2, 0, "Lemon", "Kiwi"); //새로운 요소를 추가할 인덱스 번호, 추가하기 전에 삭제할 요소 수, 나머지: 추가할 요소
+fruits.splice(2, 0, "딸기", "메론"); //새로운 요소를 추가할 인덱스 번호, 추가하기 전에 삭제할 요소 수, 나머지: 추가할 요소
 console.log(fruits); // [Banana, Orange, Lemon, Kiwi, Apple, Mango]
 
 //concat: 배열들을 하나로 합치기
