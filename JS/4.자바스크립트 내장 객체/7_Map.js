@@ -1,21 +1,29 @@
-//Map: key-value형태로 값들을 저장하는 객체
+//Map: 키-값 쌍으로 데이터를 저장하는 객체
 //자료를 저장할때 순서가 없음
 
 let userMap = new Map();
-userMap.set("name", "홍길동"); //새로운 데이터 추가
+
+//새로운 데이터 추가
+userMap.set("name", "홍길동");
 userMap.set("email", "abc@email.com");
 userMap.set("phone", "000-0000-0000");
-userMap.size; //map의 크기
 
-userMap.get("name"); //데이터 꺼내기
+// Map의 크기 확인
+console.log(userMap.size); // 3
 
-userMap.has("name"); //특정 키의 값이 있는지 확인
+// 특정 키의 데이터 가져오기
+console.log(userMap.get("name")); // "홍길동"
 
-userMap.delete("name"); //특정 데이터 삭제
+// 특정 키가 존재하는지 확인
+console.log(userMap.has("name")); // true
 
-//map에 저장되어 있는 모든 데이터 읽기
+// 특정 데이터 삭제
+userMap.delete("name");
+
+// Map에 저장된 모든 데이터 출력
 userMap.forEach(function (item) {
   console.log(item);
 });
 
-userMap.clear(); //저장되어 있는 모든 데이터가 삭제 됨
+// 저장된 모든 데이터를 삭제
+userMap.clear();
