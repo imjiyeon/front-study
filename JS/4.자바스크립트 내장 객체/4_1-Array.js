@@ -44,3 +44,8 @@ var arr2 = ["당근", "감자", "양파"];
 var arr3 = ["호박", "배추"];
 var vegetable = arr1.concat(arr2, arr3);
 console.log(vegetable);
+
+//forEach: 배열의 각 요소에 대해 함수 실행
+vegetable.forEach(function (item, index) {
+  console.log("야채 " + index + ": " + item);
+});

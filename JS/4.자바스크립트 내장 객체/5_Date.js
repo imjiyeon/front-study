@@ -8,9 +8,20 @@ console.log(now); // 현재 시간
 var d = new Date(2024, 1, 1, 10, 10, 10, 0);
 console.log(d); // 2024년 2월 1일 10:10:10 (월은 0부터 시작하므로 1은 2월)
 
+// 시간대가 안맞음..
+console.log(d.toLocaleString()); //로컬시간대로 변경
+
 // 문자열을 사용하여 Date 객체 생성
 var d = new Date("October 13, 2024 11:11:11");
-console.log(d); // 2024년 10월 13일 11:11:11
+console.log(d.toLocaleString()); // 2024년 10월 13일 11:11:11
+
+var d = new Date("2024-10-13T11:11:11");
+console.log(d.toLocaleString());
+
+// 일과 시간 변경
+d.setDate(15);
+d.setHours(15);
+console.log(d.toLocaleString());
 
 //정적 메소드로 현재 시간(밀리초 단위) 출력
 console.log(Date.now());
