@@ -17,3 +17,41 @@ for (let i = 0; i < str.length; i++) {
 }
 
 console.log(compressed); // 출력: a3b2c1
+
+
+// 초기 상태:
+// str = "aaabbc"
+// compressed = "" (빈 문자열) 
+// count = 1
+
+// i = 0:
+// str[0] = 'a'
+// count = 2로 증가 (다음 문자도 'a'라서)
+// compressed: "" (변경 없음)
+
+// i = 1:
+// str[1] = 'a'
+// count = 3로 증가 (다음 문자도 'a'라서)
+// compressed: "" (변경 없음)
+
+// i = 2:
+// str[2] = 'a'
+// count = 1로 초기화 (다음 문자가 'b'로 바뀜)
+// compressed: "a3"
+
+// i = 3:
+// str[3] = 'b'
+// count = 2로 증가 (다음 문자도 'b'라서)
+// compressed: "a3" (변경 없음)
+
+// i = 4:
+// str[4] = 'b'
+// count = 1로 초기화 (다음 문자가 'c'로 바뀜)
+// compressed: "a3b2"
+
+// i = 5:
+// str[5] = 'c' (마지막문자)
+// compressed = "a3b2c1"
+
+// 최종 상태:
+// compressed = "a3b2c1"

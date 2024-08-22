@@ -6,7 +6,8 @@ const allowedExtensions = [".jpg", ".png", ".gif"];
 const filename = "사과.txt";
 
 // 파일의 확장자 추출
-const extension = filename.slice(filename.lastIndexOf("."));
+const index = filename.lastIndexOf("."); //2
+const extension = filename.slice(index); // .txt (2번부터 끝까지)
 
 // 확장자가 지원되지 않는 경우 메시지 출력
 if (!allowedExtensions.includes(extension)) {
