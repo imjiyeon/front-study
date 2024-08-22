@@ -39,8 +39,9 @@ console.log(Math.max(0, 150, 30, 20, -8, -200)); //150
 //random: 0과 1 사이의 랜덤한 숫자 반환
 console.log(Math.random()); // 예: 0.123456789
 
-//0에서 9 사이의 랜덤한 숫자 반환
-console.log(Math.floor(Math.random() * 10));
+//0 에서 9 사이의 랜덤한 숫자 반환
+//0 이상 1 미만의 값을 반환하기 때문에 0이 나올 수 있음
+console.log(Math.floor(Math.random() * 10)); // 예: 0.1234 * 10 => floor(1.234) => 1
 
-//1에서 10 사이의 랜덤한 숫자 반환
-console.log(Math.floor(Math.random() * 10) + 1); 
+//여기에 1을 더해주면, 1에서 10 사이의 랜덤한 숫자 반환
+console.log(Math.floor(Math.random() * 10) + 1);

@@ -5,45 +5,54 @@
   </head>
   <body>
     <script>
-      //Window 객체 - 전역객체, Global 객체 (어디서든 접근 가능)
+      //Window 객체: 브라우저 창과 관련된 다양한 기능 제공
 
       //"이것은 alert창입니다."라는 메세지창이 나타남
       alert("이것은 alert창입니다.");
 
-      //"정말 삭제하시겠습니까?"라는 메세지를 띄우고, 사용자가 확인 또는 취소를 선택할 수 있는 창이 나타남
+      //"정말 삭제하시겠습니까?"라는 대화상자가 나타나고,
+      //사용자는 확인 또는 취소를 선택할 수 있음
       if (confirm("정말 삭제하시겠습니까?")) {
-        //삭제 로직
+        //"확인"을 누르면 true가 반환됨
+        console.log("삭제가 완료되었습니다");
       }
 
-      //"비밀번호를 입력하세요."라는 메세지를 띄우고, 문자열을 입력받는 창이 나타남
+      //사용자가 문자열을 입력할 수 있는 창이 나타남
+      //"비밀번호를 입력하세요."라는 메세지와 입력칸
       var pass = prompt("비밀번호를 입력하세요.");
-      // console.log(pass);
+
       if (pass == null) {
-        //취소 버튼 누른 경우
+        console.log("사용자가 취소 버튼을 눌렀습니다");
       } else if (pass == "") {
+        console.log("사용자가 아무것도 입력하지 않고 확인 버튼을 눌렀습니다");
       } else if (pass != "") {
-        console.log(pass);
+        console.log("사용자가 값을 입력했습니다:", pass);
       }
 
-      //새로운 창으로 네이버 페이지가 나타남
-      window.open("https://naver.com");
+      //네이버 페이지 열기
+      window.open("https://naver.com"); //새탭 또는 새창 열기 (브라우저 설정에따라 다름)
+      window.open("https://naver.com", "_blank", "width=800,height=600"); //새창 열기
 
-      //타이머 함수로 1초후에 메세지가 나타남
+      // setTimeout(): 타이머 기능으로 일정 시간이 지난 후 특정함수를 한번 실행
+      // 1초가 지나면 "프로그램 실행"이라는 메세지 출력
       setTimeout(function () {
         alert("프로그램 실행");
-      }, 1000);
+      }, 1000); //1000ms -> 1s
 
-      //1초마다 함수가 실행됨
-      //5번 반복한 후에 종료됨
-      var count = 0;
+      // setInterval(): 주기적으로 특정함수를 실행
+      // 1초 간격으로 함수를 반복적으로 실행
+      // 총 5번 실행 후에 종료
+      var count = 0; //반복 횟수를 세기 위한 카운트 변수
 
       var fnc = setInterval(function () {
+        // 5번 반복
         if (count < 5) {
           console.log("프로그램 실행:" + count);
           count++;
         } else {
+          // 카운트가 끝나면 setInterval로 설정한 작업 중지
           console.log("종료");
-          clearInterval(fnc);
+          clearInterval(fnc); //없으면 계속됨..
         }
       }, 1000);
     </script>
