@@ -8,6 +8,9 @@ userMap.set("name", "홍길동");
 userMap.set("email", "abc@email.com");
 userMap.set("phone", "000-0000-0000");
 
+//데이터 수정
+userMap.set("phone", "012-3456-7899");
+
 // Map의 크기 확인
 console.log(userMap.size); // 3
 
@@ -24,6 +27,12 @@ userMap.delete("name");
 userMap.forEach(function (item) {
   console.log(item);
 });
+
+// for of 반복문으로 map 순회하기
+// 구조 분해 할당으로 map의 각 키와 출력
+for (let [key, value] of userMap) {
+  console.log(key, value);
+}
 
 // 저장된 모든 데이터를 삭제
 userMap.clear();

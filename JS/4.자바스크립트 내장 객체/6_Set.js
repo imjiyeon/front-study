@@ -28,6 +28,11 @@ mySet.forEach(function (item) {
   console.log(item);
 });
 
+// for of 반복문을 사용하여 Set 순회
+for (let value of mySet) {
+  console.log(value);
+}
+
 //저장된 모든 값을 삭제
 mySet.clear();
 console.log(mySet); //Set {}
