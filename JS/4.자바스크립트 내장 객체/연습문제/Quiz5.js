@@ -4,10 +4,12 @@
 const func = function (arr) {
   let sum = 0;
   for (let v of arr) {
-    if (typeof v === "number") {
-      sum = sum + v;
-    } else if (typeof v === "string" && !isNaN(v)) {
-      sum = sum + parseInt(v);
+    if (!isNaN(v)) {
+      if(typeof v == "number" || typeof v == "boolean"){
+        sum = sum + v; //1, true(1), 10
+      } else if (typeof v == "string") {
+        sum = sum + parseInt(v); //"5"
+      } 
     }
   }
 
