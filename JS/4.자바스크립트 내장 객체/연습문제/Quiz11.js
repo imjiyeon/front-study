@@ -14,8 +14,9 @@ const students = [
 
 // 성적에 따라 등급 추가하기
 const studentsWithGrades = students.map((student) => {
-  let grade;
 
+  //먼저 성적을 계산하여 등급을 만들고 객체에 대입
+  let grade;
   if (student.score >= 90) {
     grade = "A";
   } else if (student.score >= 70) {

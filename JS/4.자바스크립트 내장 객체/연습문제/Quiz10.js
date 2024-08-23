@@ -10,9 +10,10 @@ const products = [
   { name: "충전기", price: 30000, category: "액세서리" },
   { name: "블루투스 스피커", price: 90000, category: "전자제품" },
 ];
+console.log("원본 상품 목록:", products);
 
 //가격을 기준으로 오름차순 정렬하기
-products.sort((a, b) => a.price - b.price);
+products.sort((a, b) => a.price - b.price); // 앞 물건의 가격이 더 크면 교체
 console.log("정렬된 상품 목록:", products);
 
 // 가격과 카테고리 기준으로 필터링하기
@@ -31,7 +32,7 @@ console.log("필터링된 상품 목록:", filteredProducts);
 const formattedProducts = filteredProducts.map((product) => {
   return {
     name: product.name,
-    formattedPrice: `₩${product.price}`,
+    formattedPrice: `₩${product.price}`, //또는 "₩" + product.price
     category: product.category,
   };
 });

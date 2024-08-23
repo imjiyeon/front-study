@@ -7,11 +7,15 @@ const inventory = [
   { product: "쿠키", quantity: 20, price: 2000 },
   { product: "탄산음료", quantity: 5, price: 1000 },
 ];
+console.log("원본 제품 목록:", inventory);
 
 // 새로운 제품 "바나나킥" 추가 (수량: 50, 가격: 1000)
 inventory.push({ product: "바나나킥", quantity: 50, price: 1000 });
 console.log("새로운 제품 추가:", inventory);
 
+// 배열의 요소 값을 변경할 때는 map() 또는 forEach() 사용
+// map()은 새로운 배열을 반환하고, 
+// forEach()는 기존 배열을 수정하므로 간단한 변경은 forEach()를 사용할 것
 // 재고가 있는 제품의 이름을 변경
 inventory.forEach((item) => {
   if (item.quantity > 0) {
