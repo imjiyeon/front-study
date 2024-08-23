@@ -10,12 +10,12 @@ const visits = [
 ];
 
 // 방문 날짜 기준으로 오름차순 정렬하기
-const sortedVisits = visits.sort((a, b) => new Date(a.date) - new Date(b.date));
-console.log("정렬된 방문 기록:", sortedVisits);
+visits.sort((a, b) => new Date(a.date) - new Date(b.date));
+console.log("정렬된 방문 기록:", visits);
 
 // 방문 목적 기준으로 필터링하기
 // 방문 목적이 "회의"인 방문 기록만 포함
-const filteredVisits = sortedVisits.filter((visit) => visit.purpose === "회의");
+const filteredVisits = visits.filter((visit) => visit.purpose === "회의");
 console.log("회의 목적의 방문 기록:", filteredVisits);
 
 // 방문 기록 객체 변환하기
