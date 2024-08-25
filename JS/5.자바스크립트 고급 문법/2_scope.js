@@ -1,8 +1,8 @@
 //지역스코프(local scope):
 //함수 안에 선언된 변수는 함수 안에서만 사용 가능
 function myFunction() {
-  let lovalVar = "볼보";
-  console.log(lovalVar); //lovalVar은 함수가 끝나면 메모리에 사라짐
+  let localVar = "볼보";
+  console.log(localVar); //localVar 함수가 끝나면 메모리에 사라짐
 }
 myFunction();
 
