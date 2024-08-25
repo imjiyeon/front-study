@@ -1,5 +1,4 @@
-// ...파라미터: rest parameter
-// 나머지 데이터가 배열로 저장됨. 개수는 상관없음
+// rest 파라미터: 나머지 파라미터로, 나머지 데이터가 배열로 저장됨
 function func(one, two, ...rest) {
   // one에 1, two에 2, 나머지는 rest에 배열로 저장됨
   console.log(rest);
