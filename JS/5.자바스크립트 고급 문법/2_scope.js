@@ -11,7 +11,7 @@ myFunction();
 
 //전역스코프(global scope):
 //전역컨텍스트, 함수 밖에 선언된 변수는 어디서나 사용 가능
-var globalVar = "기아"; // 스크립트 내 모든 함수와 블록에서 접근 가능
+let globalVar = "기아"; // 스크립트 내 모든 함수와 블록에서 접근 가능
 
 function myFunction2() {
   console.log(globalVar);
