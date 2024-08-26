@@ -36,12 +36,16 @@ if (students.has(searchName)) {
 console.log();
 
 // 학년별 학생 수 계산
+// 학생의 수를 저장하는 새로운 MAP 생성
+// KEY: 학년 VALUE: 학생의 수
 const gradeCounts = new Map();
 for (let [name, info] of students) {
   const grade = info.grade;
+
+  // 기존 값이 없으면 1로 초기화, 있으면 + 1
   if (gradeCounts.has(grade)) {
     let count = gradeCounts.get(grade);
-    gradeCounts.set(grade, ++count);
+    gradeCounts.set(grade, count+1);
   } else {
     gradeCounts.set(grade, 1);
   }

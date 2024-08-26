@@ -4,10 +4,7 @@ const contacts = new Map();
 // 6명의 연락처 추가
 // key-string value-object
 contacts.set("민수", { phone: "010-1234-5678", address: "서울특별시 강남구" });
-contacts.set("지영", {
-  phone: "010-8765-4321",
-  address: "부산광역시 해운대구",
-});
+contacts.set("지영", { phone: "010-8765-4321", address: "부산광역시 해운대구"});
 contacts.set("현우", { phone: "010-2345-6789", address: "대구광역시 수성구" });
 contacts.set("수빈", { phone: "010-9876-5432", address: "인천광역시 남동구" });
 contacts.set("동민", { phone: "010-3456-7890", address: "광주광역시 서구" });
