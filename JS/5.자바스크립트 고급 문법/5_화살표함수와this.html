@@ -8,25 +8,26 @@
     <button type="button" id="btn1">버튼</button>
     <button type="button" id="btn2">버튼</button>
     <script>
-      //일반함수와 화살표함수의 차이
-
-      //이벤트 추가
+      //일반함수와 화살표함수의 this 동작 차이
+      //각 버튼에서 클릭 이벤트 처리
       document.addEventListener("DOMContentLoaded", () => {
         const btn1 = document.getElementById("btn1");
         const btn2 = document.getElementById("btn2");
 
-        //일반함수
+        //일반함수에서 this: 이벤트가 발생한 DOM 요소를 가리킴
         //일반함수는 호출한 대상을 찾아서 정보를 변경할 수 있음
         btn1.onclick = function () {
           console.log(this); //<button>
           this.textContent = "버튼이름변경";
         };
 
-        //화살표함수
+        //화살표함수에서 this: 상위 스코프의 this를 가리킴
         btn2.onclick = () => {
           console.log(this); //<window>
         };
       });
+
+      //DOM 요소에서 작업을 처리하려면 일반함수를 사용하는 것이 좋다
     </script>
   </body>
 </html>
