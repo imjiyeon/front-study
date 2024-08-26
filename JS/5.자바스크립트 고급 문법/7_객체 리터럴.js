@@ -6,7 +6,11 @@ var score = {
   score: 95,
 };
 
-// 객체의 키를 동적으로 추가하기
-score["grade"] = "A"; // score.grade = A 와 같음
+console.log(score);
 
-console.log("");
+// 객체의 키를 동적으로 추가하기
+var property = "grade";
+
+score[property] = "A"; // score.grade = A 와 같음
+
+console.log(score);

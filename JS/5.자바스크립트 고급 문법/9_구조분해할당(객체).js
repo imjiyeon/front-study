@@ -1,5 +1,4 @@
 // 객체를 분해해서 필요한 데이터만 추출하기
-
 let person = {
   firstName: "John",
   lastName: "Doe",
@@ -9,24 +8,28 @@ let person = {
   country: "USA",
 };
 
-//객체에서 해당키만 추출해서 새로운 객체 생성
-//객체는 분해시 {} 중괄호 사용
+//필요한 키만 추출해서 새로운 변수에 저장
+//객체는 분해할 때는 {} 중괄호를 사용
 let { firstName, lastName } = person;
-console.log(firstName);
-console.log(lastName);
+console.log(firstName); //John
+console.log(lastName); //Doe
 
-// 객체에 없는 키 사용하면 분해가 제대로 안됨
+// 객체에 없는 키를 사용하면 undefined가 반환됨
 // let { firstName, aa } = person;
 // console.log(aa); //aa는 undefined
 
-// 이름을 바꿔서 대입하고 싶으면 이런식으로 작성
+// 변수명을 바꿔서 추출하고 싶을 때는 이렇게 작성
 let { firstName: fName, lastName: lName } = person;
-console.log(fName);
-console.log(lName);
+console.log(fName); // John
+console.log(lName); // Doe
 
-//전달받은 object에서 필요한 데이터만 추출
-function displayFullName({ firstName, lastName }) {
-  console.log(`${firstName} ${lastName}`); //John Doe
+// 기본값을 설정하여 객체에 없는 키를 처리
+let { address = "주소없음" } = person;
+console.log(address); // 주소없음
+
+// 함수에서 전달받은 객체에서 필요한 데이터만 추출
+function displayFullName({ age, email }) {
+  console.log(`${age}, ${email}`); //37, john@gmail.com
 }
 
-displayFullName(person); //함수 호출 시 Object를 파라미터 값으로 전달
+displayFullName(person); //함수 호출 시 Object를 파라미터로 전달
