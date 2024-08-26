@@ -1,26 +1,44 @@
-//구조분해할당 (배열)
+// 구조분해할당 (객체)
 
-//23.배열을 분해하여 모든 요소를 변수에 저장하세요.
-let colors = ["red", "green", "blue"];
-let [color1, color2, color3] = colors;
+// 23. 다음 객체에서 브랜드(brand)와 가격(price) 속성을 추출하여 변수에 저장하세요.
+let product = {
+  brand: "Apple",
+  price: 990000,
+  model: "iPhone 13",
+};
+console.log("객체: " + JSON.stringify(product));
 
-console.log(color1); // "red"
-console.log(color2); // "green"
-console.log(color3); // "blue"
+let { brand, price } = product;
 
-//24.배열을 분해하여 첫번째와 네번째 요소만를 변수에 저장하세요.
-let fruits = ["사과", "바나나", "오렌지", "키위"];
-let [fruit1, , , fruit4] = fruits;
+console.log("브랜드: " + brand); // "Apple"
+console.log("가격: " + price); // 990000
 
-console.log(fruit1); // "사과"
-console.log(fruit4); // "키위"
+// 24. 다음 객체에서 제목(title)과 출시연도(year) 속성을 추출하여
+// 각각 'movieTitle'과 'releaseYear'라는 이름의 변수에 저장하세요.
+let movie = {
+  title: "인셉션",
+  director: "크리스토퍼 놀란",
+  year: 2010,
+};
+console.log("객체: " + JSON.stringify(movie));
 
-//25.함수에서 배열을 입력받고, 배열의 첫 번째와 세 번째 요소를 출력하세요.
-function printElements([first, , third]) {
-  console.log(`${first}와 ${third}`);
+let { title: movieTitle, year: releaseYear } = movie;
+
+console.log("제목: " + movieTitle); // "인셉션"
+console.log("출시연도: " + releaseYear); // 2010
+
+// 25. 함수에서 객체를 매개변수로 받아, 'brand'와 'model' 속성을 출력하세요.
+function printCar({ brand, model }) {
+  console.log(`자동차 브랜드: ${brand}, 모델명: ${model}`);
 }
 
-let elements = ["사과", "바나나", "오렌지", "키위"];
+let car = {
+  brand: "Tesla",
+  model: "Model S",
+  color: "Red",
+};
+console.log("객체: " + JSON.stringify(car));
 
-printElements(elements);
-// "사과와 오렌지" 출력
+printCar(car);
+// "Tesla" 출력
+// "Model S" 출력
