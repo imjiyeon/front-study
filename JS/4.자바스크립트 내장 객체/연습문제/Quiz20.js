@@ -2,6 +2,7 @@
 const students = new Map();
 
 // 6명의 학생 정보 추가
+// key-string value-object
 students.set("김민준", { grade: "2학년", major: "컴퓨터공학" });
 students.set("이서윤", { grade: "3학년", major: "경영학" });
 students.set("박지호", { grade: "1학년", major: "물리학" });
