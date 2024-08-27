@@ -6,6 +6,7 @@
 // 전달되는 학생의 수가 가변적이므로 나머지 파라미터를 사용한다
 function calculateAverageScore(subject, ...students) {
   // 해당 과목의 점수가 있는 학생만 필터링
+  // 과목명은 객체의 키로 동적으로 접근
   let filterStudents = students.filter(function (student) {
     return typeof student[subject] != "undefined";
   });
