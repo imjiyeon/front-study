@@ -6,9 +6,12 @@
   <body>
     <script type="module">
       // 13_log.js 먼저 만들기
-      // log.js 파일에서 export로 지정된 함수 중 log 함수만 불러오기
-      import { log } from "./log.js";
-      log("log로 메시지 출력");
+      // import: log.js 파일에 있는 함수들 가져오기
+      import { log, error } from "./log.js";
+
+      // 가져온 함수 사용하기
+      log("모듈로 메시지 출력하기");
+      error("모듈로 메시지 출력하기");
     </script>
   </body>
 </html>
