@@ -4,8 +4,10 @@
 // 예: 새우깡의 최종가격: 1500 * 0.9 = 1350원
 
 function calculateAveragePrice(...products) {
+  // 상품들의 최종 가격의 합계 계산
   let sum = products.reduce((total, product) => {
     let finalPrice = 0;
+    // 할인률이 있으면 할인 적용, 없으면 원래 가격 적용
     if (typeof product.discount == "undefined") {
       finalPrice = product.price;
     } else {
@@ -16,6 +18,7 @@ function calculateAveragePrice(...products) {
 
   let count = products.length;
 
+  // 평균 가격 계산
   return (sum / count).toFixed(2);
 }
 
@@ -34,14 +37,7 @@ const product5 = { name: "오잉", price: 1800 };
 showProducts(product1, product2, product3, product4, product5);
 
 const avgFinalPrice1 = calculateAveragePrice(product1, product2, product3);
-
-const avgFinalPrice2 = calculateAveragePrice(
-  product1,
-  product2,
-  product3,
-  product4,
-  product5
-);
+const avgFinalPrice2 = calculateAveragePrice(product1, product2, product3, product4, product5);
 
 console.log(`새우깡, 홈런볼, 포카칩의 평균 가격은 ${avgFinalPrice1}원 입니다.`);
 console.log(`전체 평균 가격은 ${avgFinalPrice2}원 입니다.`);
