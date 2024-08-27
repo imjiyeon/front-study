@@ -2,19 +2,31 @@
 
 // 문자열에 World에 대응되는 문자열을 찾는 패턴 정의
 let str = "Hello World! world!";
-const re = /World/;
 
-// test: 매치되는 문자열이 있으면 true 반환
-console.log(re.test(str));
+//정규표현식 객체 생성 방법
+const regex = /World/;
+
+const regex2 = new RegExp("World");
+
+// test: 정규표현식 객체의 함수로, 매치되는 문자열이 있으면 true 반환
+console.log(regex.test(str));
+
 // search: 매치되는 문자열이 발견되면 인덱스 번호 반환
-console.log(str.search(re)); // 6
+console.log(str.search(regex)); // 6
 
 // match: 주어진 문자열에서 패턴과 일치하는 부분을 찾아 배열로 반환
+// 인자: 정규표현식 객체
 // g 플래그: 전역 검색 의미
 str = "Is this all there is";
+
 let patt = /[hat]/g; //[hat] 패턴은 'h', 'a', 't' 중 하나를 포함하는 문자를 찾음
 let result = str.match(patt); // 패턴과 일치하는 모든 부분을 찾아 배열로 반환
 console.log(result); // ["h", "t", "h", "a", "t"]
+
+//i플래그: 대소문자 상관없이 검색
+patt = /[is]/gi;
+result = str.match(patt);
+console.log(result);
 
 //[0-9] \d
 str = "123abc4523kkk"; // 검색 대상
