@@ -8,6 +8,7 @@ let product = {
 };
 console.log("객체: " + JSON.stringify(product));
 
+// 객체를 분해하여 필요한 속성을 변수에 저장 (객체는 {} 사용)
 let { brand, price } = product;
 
 console.log("브랜드: " + brand); // "Apple"

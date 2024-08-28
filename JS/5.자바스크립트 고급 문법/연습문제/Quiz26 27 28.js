@@ -2,6 +2,8 @@
 
 //26.배열을 분해하여 모든 요소를 변수에 저장하세요.
 let colors = ["red", "green", "blue"];
+
+// 배열을 분해하여 필요한 요소를 변수에 저장 (객체는 [] 사용)
 let [color1, color2, color3] = colors;
 
 console.log(color1); // "red"
