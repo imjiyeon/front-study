@@ -11,34 +11,34 @@ http: fetch("http://localhost:8080/board/read?no=1") //서버로 GET 요청
   .then((json) => console.log(json)); //JSON 데이터 출력
 
 // POST - 새로운 게시물 생성
-// fetch("http://localhost:8080/board/register", {
-//   method: "POST", //POST 요청
-//   body: JSON.stringify({
-//     title: "가입인사",
-//     content: "안녕하세요~",
-//     writer: "user",
-//   }), //전송할 데이터
-//   headers: {
-//     "content-type": "application/json; charset=UTF-8", //헤더 설정
-//   },
-// })
-//   .then((response) => response.text()) //응답이 단순한 텍스트일 때
-//   .then((json) => console.log(json));
+fetch("http://localhost:8080/board/register", {
+  method: "POST", //POST 요청
+  body: JSON.stringify({
+    title: "가입인사",
+    content: "안녕하세요~",
+    writer: "user",
+  }), //전송할 데이터
+  headers: {
+    "content-type": "application/json; charset=UTF-8", //헤더 설정
+  },
+})
+  .then((response) => response.text()) //응답이 단순한 텍스트일 때
+  .then((json) => console.log(json));
 
 // PUT - 1번 게시물 수정
-// fetch("http://localhost:8080/board/modify", {
-//   method: "PUT",
-//   body: JSON.stringify({
-//     no: 4,
-//     title: "가입인사",
-//     content: "반갑습니다~", //내용변경
-//     writer: "user",
-//   }),
-//   headers: {
-//     "Content-type": "application/json; charset=UTF-8",
-//   },
-// })
-// .then((response) => console.log(response.status)); //상태코드 확인
+fetch("http://localhost:8080/board/modify", {
+  method: "PUT",
+  body: JSON.stringify({
+    no: 4,
+    title: "가입인사",
+    content: "반갑습니다~", //내용변경
+    writer: "user",
+  }),
+  headers: {
+    "Content-type": "application/json; charset=UTF-8",
+  },
+})
+.then((response) => console.log(response.status)); //상태코드 확인
 
 // DELETE - 1번 게시물 삭제
 // fetch("http://localhost:8080/board/remove?no=4", {
