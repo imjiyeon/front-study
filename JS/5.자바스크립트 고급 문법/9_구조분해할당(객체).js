@@ -27,9 +27,16 @@ console.log(lName); // Doe
 let { address = "주소없음" } = person;
 console.log(address); // 주소없음
 
+//사람의 나이와 이메일만 함수에 입력하기
+function func1(ag, em){
+  console.log(ag + "," + em);
+}
+
+func1(person.age, person.email);
+
 // 함수에서 전달받은 객체에서 필요한 데이터만 추출
-function displayFullName({ age, email }) {
+function func2({ age, email }) {
   console.log(`${age}, ${email}`); //37, john@gmail.com
 }
 
-displayFullName(person); //함수 호출 시 Object를 파라미터로 전달
+func2(person); //함수 호출 시 Object를 파라미터로 전달
