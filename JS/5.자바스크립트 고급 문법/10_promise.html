@@ -68,9 +68,18 @@
       // then() 함수는 서버 응답이 완료된 후에 실행된다
       // 따라서 Promise를 사용하면 서버로 부터 받은 데이터가 정상적으로 출력할 수 있다
       // res는 resolve함수로 전달받은 응답데이터이다
+
+      console.log(1);
+      console.log(2);
+      console.log(3);
+
       getDataPromise().then((res) => {
         console.log(res);
       });
+
+      console.log(4);
+      console.log(5);
+      
     </script>
   </body>
 </html>
