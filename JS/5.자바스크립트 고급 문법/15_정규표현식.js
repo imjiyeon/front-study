@@ -8,42 +8,42 @@ const regex = /World/;
 
 const regex2 = new RegExp("World");
 
-// test: 정규표현식 객체의 함수로, 매치되는 문자열이 있으면 true 반환
-console.log(regex.test(str));
+// // test: 정규표현식 객체의 함수로, 매치되는 문자열이 있으면 true 반환
+// console.log(regex.test(str));
 
-// search: 매치되는 문자열이 발견되면 인덱스 번호 반환
-console.log(str.search(regex)); // 6
+// // search: 매치되는 문자열이 발견되면 인덱스 번호 반환
+// console.log(str.search(regex)); // 6
 
-// match: 주어진 문자열에서 패턴과 일치하는 부분을 찾아 배열로 반환
-// 인자: 정규표현식 객체
-// g 플래그: 전역 검색 의미
-str = "Is this all there is";
+// // match: 주어진 문자열에서 패턴과 일치하는 부분을 찾아 배열로 반환
+// // 인자: 정규표현식 객체
+// // g 플래그: 전역 검색 의미
+// str = "Is this all there is";
 
-let patt = /[hat]/g; //[hat] 패턴은 'h', 'a', 't' 중 하나를 포함하는 문자를 찾음
-let result = str.match(patt); // 패턴과 일치하는 모든 부분을 찾아 배열로 반환
-console.log(result); // ["h", "t", "h", "a", "t"]
+// let patt = /[hat]/g; //[hat] 패턴은 'h', 'a', 't' 중 하나를 포함하는 문자를 찾음
+// let result = str.match(patt); // 패턴과 일치하는 모든 부분을 찾아 배열로 반환
+// console.log(result); // ["h", "t", "h", "a", "t"]
 
-//i플래그: 대소문자 상관없이 검색
-patt = /[is]/gi;
-result = str.match(patt);
-console.log(result);
+// //i플래그: 대소문자 상관없이 검색
+// patt = /[is]/gi;
+// result = str.match(patt);
+// console.log(result);
 
-//[0-9] \d
-str = "123abc4523kkk"; // 검색 대상
-patt = /[0-9]/g; // 0~9까지의 숫자 중에서 일치하는 숫자를 찾음
-result = str.match(patt); // str에서 patt 패턴과 일치하는 부분을 찾아 배열로 반환
-console.log(result);
+// //[0-9] \d
+// str = "123abc4523kkk"; // 검색 대상
+// patt = /[0-9]/g; // 0~9까지의 숫자 중에서 일치하는 숫자를 찾음
+// result = str.match(patt); // str에서 patt 패턴과 일치하는 부분을 찾아 배열로 반환
+// console.log(result);
 
-//\d: 숫자를 의미
-str = "Give 100";
-patt = /\d/g;
-result = str.match(patt);
-console.log(result);
+// //\d: 숫자를 의미
+// str = "Give 100";
+// patt = /\d/g;
+// result = str.match(patt);
+// console.log(result);
 
-//n+ 최소한 1개 이상
-str = "Hellooo";
-patt = /o+/g; // o문자가 하나이상 연속으로 있는 부분을 의미
-console.log(str.match(patt));
+// //n+ 최소한 1개 이상
+// str = "Hellooo";
+// patt = /o+/g; // o문자가 하나이상 연속으로 있는 부분을 의미
+// console.log(str.match(patt));
 
 //n* 0 혹은 n개
 str = "Hellooo World";
@@ -69,7 +69,7 @@ console.log(patt.test(tel));
 
 //이메일 주소
 // ^: 문자열의 시작
-// ([a-z]+\d*)+: 소문자 알파벳으로 시작하며, 숫자가 0개 이상. 이부분이 한번이상 반복
+// ([a-z]+\d*)+: 알파벳으로 시작하며, 숫자가 0개 이상. 이부분이 한번이상 반복
 // [a-z]+: 하나 이상의 소문자 알파벳으로 시작
 // \d*: 숫자가 0개 이상
 // (\.?\w+)+: 점(.)으로 시작, 그 뒤에 하나 이상의 문자가 올수있음
@@ -79,5 +79,5 @@ console.log(patt.test(tel));
 // \w+: 하나 이상의 문자(알파벳, 숫자, 밑줄)
 // (\.\w{2,3})+: 점(.)으로 시작, 그 뒤에 두 개 또는 세 개의 문자(알파벳)
 // $: 문자열의 끝
-let regexp_email = /^([a-z]+\d*)+(\.?\w+)+@\w+(\.\w{2,3})+$/;
+let regexp_email = /^([a-zA-Z]+\d*)+(\.?\w+)+@\w+(\.\w{2,3})+$/;
 console.log(regexp_email.test("jeremy2021.go@gmail.com"));
