@@ -1,0 +1,19 @@
+#container { /* 테두리 설정 */
+    width: 520px;
+    border: 1px solid black;
+    padding: 20px 40px;
+    margin: 0 auto;
+}
+ul { /* 목록표기 없애기 */
+    list-style-type: none;
+}
+li { /* 항목 세로 길이 설정 */
+    line-height: 30px;
+}
+
+ /* inline-block을 사용하여 라벨의 크기 설정 */
+.fixed-label {
+    display: inline-block;
+    width: 50px;
+}
+

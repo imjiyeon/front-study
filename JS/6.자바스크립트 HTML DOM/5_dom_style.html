@@ -89,6 +89,8 @@
         var text = document.getElementById("text1");
         if (text.value == "") {
           text.className = "border-red";
+          //클래스 제거
+          // text.classList.remove('border-red');
           return alert("필수값들을 입력하세요.");
         }
 
