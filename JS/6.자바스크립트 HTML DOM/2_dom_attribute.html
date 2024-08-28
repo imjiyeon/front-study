@@ -7,37 +7,43 @@
     <input type="text" id="text1" value="ABC" data-role="name" />
     <br />
     <button onclick="doSave(event);">저장</button>
+
     <script>
-      // 아이디로 엘리먼트 찾기
-      var oText1 = document.getElementById("text1");
-      // 사용자가 입력한 값 꺼내오기
-      var textValue = oText1.value;
-      console.log(textValue);
-      // 같음
-      console.log(document.getElementById("text1").getAttribute("value"));
+      
+      // 아이디로 input 찾기
+      var input = document.getElementById("text1");
+
+      // 사용자가 입력한 값 가져오기
+      console.log(input.value);
+
+      // 위와 동일하게 value 속성 값 가져오기
+      console.log(input.getAttribute("value"));
 
       // 특정 속성이 있는지 확인
-      console.log(oText1.hasAttribute("value"));
-      console.log(oText1.hasAttribute("data-role"));
+      console.log(input.hasAttribute("value"));
+      console.log(input.hasAttribute("data-role"));
 
       // 특정 속성 삭제
-      oText1.removeAttribute("data-role");
-      console.log(oText1.hasAttribute("data-role"));
+      input.removeAttribute("data-role");
+      console.log(input.hasAttribute("data-role"));
 
-      oText1.setAttribute("class", "democlass");
+      // 클래스 속성 추가
+      input.setAttribute("class", "democlass");
 
-      // 속성 변경
+      // 속성 변경 (버튼 비활성화)
       function doSave(e) {
-        var obj = e.target;
-        //사용자가 중복해서 버튼을 또 클릭하지 못하도록 버튼을 disabled 시킴
-        obj.setAttribute("disabled", "true");
+        var button = e.target;
+        //사용자가 중복해서 버튼을 클릭하지 못하도록 버튼을 비활성화
+        button.setAttribute("disabled", "true");
 
-        // 저장을 실행하는 코드 작성
+        // 타이머 함수를 사용하여 2초 후 버튼을 다시 활성화
         setTimeout(function () {
-          // 2초 후 버튼을 다시 enabled
-          obj.disabled = false;
+          button.disabled = false;
         }, 2000);
       }
+
+      /* 버튼을 클릭한 후, 개발자도구의 element탭에서 <button> 어떻게 변경되는지 확인할 것 */
+
     </script>
   </body>
 </html>

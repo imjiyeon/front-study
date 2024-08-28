@@ -26,8 +26,8 @@
       document.getElementById("title").innerText = "제목 입니다.";
 
       //innerHTML: 특정 위치에 새로운 HTML 추가
-      var sel = document.getElementById("sel");
-      sel.innerHTML = '<option value="">선택하세요</option>';
+      var select = document.getElementById("sel");
+      select.innerHTML = '<option value="">선택하세요</option>';
 
       // insertAdjacentHTML함수: 엘리먼트에 접근해서 자식으로 또는 옆쪽에 노드 추가
       function myFunction() {
@@ -40,6 +40,7 @@
         let p = document.getElementById("demo");
         p.remove();
       }
+
     </script>
   </body>
 </html>

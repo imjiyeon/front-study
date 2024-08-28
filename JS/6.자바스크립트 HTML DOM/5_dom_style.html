@@ -35,8 +35,8 @@
         value="Y"
         onclick="showEmail();"
       />
-      동의</label
-    >
+      동의
+    </label>
     <label>
       <input
         type="radio"
@@ -45,8 +45,8 @@
         onclick="hideEmail();"
         checked
       />
-      거부</label
-    >
+      거부
+    </label>
     <div id="divEmail" style="display: none">
       이메일 <input type="text" id="email" />
     </div>
@@ -69,40 +69,40 @@
     <br />
 
     <script>
-      //태그의 스타일 속성 변경하기
+      //CSS 스타일 변경하기
 
-      //입력필드에 값이 입력되면 테두리 색 변경
+      //입력필드에 값이 입력되면 테두리 색을 그린으로 변경
       function changeBorder() {
-        var text1 = document.getElementById("text1");
-        if (text1.value != "") {
-          text1.className = "border-green";
+        var text = document.getElementById("text1");
+        if (text.value != "") {
+          text.className = "border-green";
         }
       }
 
-      //이메일수신에서 동의를 선택하면 이메일 필드 보여주기
+      //이메일수신에서 동의를 선택하면 이메일 입력 필드 보여주기
       function showEmail() {
         document.getElementById("divEmail").style.display = "";
       }
 
-      //이메일수신에서 거부를 선택하면 이메일 필드 숨기기
+      //이메일수신에서 거부를 선택하면 이메일 입력 필드 숨기기
       function hideEmail() {
         document.getElementById("divEmail").style.display = "none";
       }
 
-      //save버튼을 클릭하면, 입력필드에 값이 있는지 검사
-      //없으면 입력필드의 테두리를 빨강으로 변경
+      //save 버튼 클릭 시 입력필드에 값이 있는지 검사
+      //값이 없으면 입력필드의 테두리를 빨강으로 변경하고 경고메세지 표시
       function doSave() {
-        var text1 = document.getElementById("text1");
-        if (text1.value == "") {
-          text1.className = "border-red";
+        var text = document.getElementById("text1");
+        if (text.value == "") {
+          text.className = "border-red";
           return alert("필수값들을 입력하세요.");
         }
 
         console.log("doSave 실행합니다.");
       }
 
-      //한국을 선택하면 지역 셀렉트 박스 보여주기
-      //한국이 아니면 지역 숨기기
+      //SELECT에서 한국을 선택하면 지역 선택 박스 보여주기
+      //한국이 아닌 다른 나라를 선택하면 지역 선택 박스 숨기기
       function doChange(obj) {
         if (obj.value == "KO") {
           document.getElementById("select2").style.display = "";

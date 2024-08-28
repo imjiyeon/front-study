@@ -6,20 +6,28 @@
     <p>p태그2</p>
     <p class="para">p태그3</p>
     <p class="para">p태그4</p>
+
     <script>
-      // document 객체의 함수로 HTML 엘리먼트 찾기
+      // document 객체를 사용하여 HTML 요소 찾기
 
       // 아이디로 input 태그 찾기
-      var element = document.getElementById("userid");
+      var userid = document.getElementById("userid"); //<input type="text" id="userid">
+      console.log(userid);
 
-      // 태그이름으로 p 태그 찾기 (4)
-      var elements = document.getElementsByTagName("p");
+      // 태그 이름 으로 p 태그 찾기 (4개)
+      var p = document.getElementsByTagName("p"); //HTMLCollection(4) [p, p, p.para, p.para]
+      console.log(p);
 
-      // 클래스 이름으로 p태그 찾기 (2)
-      var elements = document.getElementsByClassName("para");
-      console.log();
+      // 클래스 이름으로 p태그 찾기 (2개)
+      var para = document.getElementsByClassName("para"); //HTMLCollection(2) [p.para, p.para]
+      console.log(para);
 
-      var elements = document.querySelectorAll("p.para");
+      // 선택자로 클래스가 'para'인 p 태그 찾기 (2개)
+      // p.para: 복합 선택자로 <p> 태그 중에서 클래스가 para인 요소 찾는다
+      var pPara = document.querySelectorAll("p.para"); //NodeList(2) [p.para, p.para]
+      console.log(pPara);
+
     </script>
+
   </body>
 </html>
