@@ -5,12 +5,12 @@
 //첫번째인자: 서버의 주소(URL)
 //두번째인자: 전송할 데이터와 HTTP 메소드 등을 포함하는 객체
 
-// //GET - 1번 게시물 조회
-// http: fetch("http://localhost:8080/board/read?no=4") //서버로 GET 요청
-//   .then((response) => response.json()) //응답 데이터를 JSON으로 변환
-//   .then((json) => console.log(json)); //JSON 데이터 출력
+//GET - 1번 게시물 조회
+http: fetch("http://localhost:8080/board/read?no=1") //서버로 GET 요청
+  .then((response) => response.json()) //응답 데이터를 JSON으로 변환
+  .then((json) => console.log(json)); //JSON 데이터 출력
 
-// // POST - 새로운 게시물 생성
+// POST - 새로운 게시물 생성
 // fetch("http://localhost:8080/board/register", {
 //   method: "POST", //POST 요청
 //   body: JSON.stringify({
@@ -41,10 +41,10 @@
 // .then((response) => console.log(response.status)); //상태코드 확인
 
 // DELETE - 1번 게시물 삭제
-fetch("http://localhost:8080/board/remove?no=4", {
-  method: "DELETE",
-})
-.then((response) => console.log(response.status));
+// fetch("http://localhost:8080/board/remove?no=4", {
+//   method: "DELETE",
+// })
+// .then((response) => console.log(response.status));
 
 //fetch함수는 자체적으로 promise객체를 생성하여 반환한다
 //그래서 fetch 함수 뒤에 then 또는 catch함수를 이어서 사용할 수 있다
