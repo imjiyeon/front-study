@@ -38,7 +38,7 @@
 
         // 타이머 함수를 사용하여 2초 후 버튼을 다시 활성화
         setTimeout(function () {
-          button.disabled = false;
+          button.removeAttribute("disabled");
         }, 2000);
       }
 
