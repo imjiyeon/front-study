@@ -11,7 +11,9 @@ li { /* 항목 세로 길이 설정 */
     line-height: 30px;
 }
 
- /* inline-block을 사용하여 라벨의 크기 설정 */
+ /* 라벨의 크기 설정 */
+ /* <label>은 인라인요소라서 크기 변경할 수 없음
+   display: inline-block으로 바꾸면 인라인 블록 요소가 되어 블록요소처럼 크기를 변경할 수 있음 */
 .fixed-label {
     display: inline-block;
     width: 50px;
