@@ -1,0 +1,35 @@
+#container { /* 테두리 설정 */
+  width: 520px;
+  border: 1px solid black;
+  padding: 20px 40px;
+  margin: 0 auto;
+}
+
+ul { /* 목록표기 없애기 */
+  list-style-type: none;
+  padding: 0;
+}
+
+li { /* 항목 세로 길이 설정 */
+  line-height: 30px;
+  margin-bottom: 15px;
+}
+
+.fixed-label { /* 라벨 크기 설정 */
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+/* ul을 flex 컨테이너로 만들고 자식 요소들을 가로로 정렬 */
+/* wrap은 요소들의 전체 길이가 부모의 가로를 넘어가면 줄바꿈 */
+ul.interest-list { /* 관심분야 항목 가로 나열 */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul.interest-list li {
+  margin-right: 20px; /* 항목 간 간격 설정 */
+}
+
