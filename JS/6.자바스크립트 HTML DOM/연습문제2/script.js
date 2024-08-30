@@ -73,9 +73,8 @@ function addItemToCart(name, quantity, price) {
         existingPrice.textContent = newPrice;
     } else {
         // 새로운 항목 추가
-        // var listItem = document.createElement("li");
-        // listItem.setAttribute("data-name", name);
- 
+        // 완전한 엘리먼트 형태의 문자열 만들기
+        // 중간중간 콘솔창에서 확인할 것
         var newItem = `<li data-name = "${name}"> ${name} - <span class="itemQuantity">
         ${quantity}</span>개 <span class="itemPrice">${(quantity * price).toFixed(2)}</span>원 <button onclick="removeItem(this)">제거</button>
         </li>`;
