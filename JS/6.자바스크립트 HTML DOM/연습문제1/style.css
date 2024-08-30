@@ -2,17 +2,21 @@
     width: 520px;
     border: 1px solid black;
     padding: 20px 40px;
-    margin: 0 auto;
+    margin: 0 auto; 
 }
+/* 두번째 값은 왼쪽과 오른쪽 마진을 의미. 
+auto로 설정하면 해당 요소를 브라우저 가운데 배치하도록 마진을 자동으로 계산 */
+
 ul { /* 목록표기 없애기 */
     list-style-type: none;
 }
+
 li { /* 항목 세로 길이 설정 */
     line-height: 30px;
 }
 
- /* 라벨의 크기 설정 */
- /* <label>은 인라인요소라서 크기 변경할 수 없음
+/* 라벨의 크기 설정 */
+/* <label>은 인라인요소라서 크기 변경할 수 없음
    display: inline-block으로 바꾸면 인라인 블록 요소가 되어 블록요소처럼 크기를 변경할 수 있음 */
 .fixed-label {
     display: inline-block;
