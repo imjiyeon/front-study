@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    msg:
+    <div id="msg"></div>
+    person:
+    <div>
+        <span id="name"></span>
+        <span id="age"></span>
+    </div>
+
+    <script>   
+    const msg = document.getElementById("msg");
+    const name = document.getElementById("name");
+    const age = document.getElementById("age");
+
+    if (typeof Storage !== "undefined") {
+        //스토리지에 저장된 데이터를 키로 꺼내기
+        let message = localStorage.getItem("message");
+        msg.textContent = message;
+
+        //꺼낸 데이터를 객체로 변환하기
+        let person = localStorage.getItem("person");
+        let personObj = JSON.parse(person);
+        name.textContent = personObj.name;
+        age.textContent = personObj.age;
+    }
+    </script>
+</body>
+</html>
+
+<!--
+개발자 도구 열기 > Application 탭 > Local Storage 
+1.스토리지에 데이터가 나타나는지 확인
+(로컬스토리지는 도메인이 같으면 데이터를 공유할 수 있음)
+2.url 주소 저장해서 메모장에 붙여 넣기
+3.브라우저 껏다가 다시 열기
+4.데이터가 여전히 있는지 확인 
+(로컬스토리지는 브라우저를 종료해도 유지됨)
+5.데이터 선택 후 delete
+6.다시 브라우저 껏다가 다시 열기
+7.데이터가 없는 것을 확인
+-->

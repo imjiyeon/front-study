@@ -1,0 +1,7 @@
+로컬스토리지에 있는 read.html와 register.html 복사
+
+register.html 수정
+> localStorage를 sessionStorage로 변경
+
+read.html 수정
+> localStorage를 sessionStorage로 변경

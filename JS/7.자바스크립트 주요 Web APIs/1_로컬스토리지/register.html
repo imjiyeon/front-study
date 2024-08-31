@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=in, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    텍스트를 입력하세요!
+    <br>
+    <input type="text" id="msg">
+    <input type="button" onclick="onClick1()" value="간단한 값 추가">
+    <br>
+
+    이름과 나이를 입력하세요!
+    <br>
+    <input type="text" id="name" placeholder="이름">
+    <input type="text" id="age" placeholder="나이">
+    <input type="button" onclick="onClick2()" value="객체 추가">
+
+    <br>
+    <a href="./read.html">스토리지 조회</a>
+
+    <script>
+    function onClick1(){
+        // 입력 필드에서 값을 가져오기
+        const msg = document.getElementById("msg");
+        const msgValue = msg.value;
+
+        // 스토리지를 사용할 수 있는지 확인하고 데이터 저장
+        if (typeof Storage !== "undefined") {
+            localStorage.setItem("message", msgValue); 
+            alert("스토리지에 msg가 저장되었습니다.");
+        }
+    }
+
+    function onClick2(){
+        // 입력 필드에서 값을 가져오기
+        const name = document.getElementById("name");
+        const nameValue = name.value;
+        const age = document.getElementById("age");
+        const ageValue = age.value;
+        const pesron = {name: nameValue, age: ageValue};
+
+        if (typeof Storage !== "undefined") {
+            //객체를 문자열로 변환 후 저장
+            localStorage.setItem("person", JSON.stringify(pesron)); 
+            alert("스토리지에 pesron가 저장되었습니다.");
+        }
+    }
+    </script>
+</body>
+</html>
