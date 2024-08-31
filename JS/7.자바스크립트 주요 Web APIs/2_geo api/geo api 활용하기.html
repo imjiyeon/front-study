@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+    // 장소 목록
+    // 피피티를 참고하여 각 장소의 위치를 찾아 입력하세요
+    let tourlist = [
+        {
+          name: "인천광역시청",
+          latitude: 37.4560259,
+          longitude: 126.7051847
+        },
+        {
+          name: "제주특별자치도청",
+          latitude: 33.4892057,
+          longitude: 126.4987344
+        },
+        {
+          name: "부산광역시청",
+          latitude: 35.1793668,
+          longitude: 129.0748493
+        },
+        {
+          name: "서울특별시청",
+          latitude: 37.5665242,
+          longitude: 126.9783409
+        }
+    ];
+
+    // 이부분은 복사해서 사용하세요!
+    // 사용자와 특정 장소 간의 거리를 계산하는 함수
+    function getDistance(lat1, lon1, lat2, lon2) {
+        var radlat1 = (Math.PI * lat1) / 180;
+        var radlat2 = (Math.PI * lat2) / 180;
+        var radlon1 = (Math.PI * lon1) / 180;
+        var radlon2 = (Math.PI * lon2) / 180;
+        var theta = lon1 - lon2;
+        var radtheta = (Math.PI * theta) / 180;
+        var dist =
+          Math.sin(radlat1) * Math.sin(radlat2) +
+          Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+        dist = Math.acos(dist);
+        dist = (dist * 180) / Math.PI;
+        dist = dist * 60 * 1.1515 * 1.609344;
+        return dist; //km단위
+    }
+
+    // 사용자와 장소 목록의 간의 거리를 모두 계산하기
+    navigator.geolocation.getCurrentPosition(
+        (position) => {
+          //사용자의 현재위치
+          let latitude = position.coords.latitude; //위도
+          let longitude = position.coords.longitude; //경도
+
+          console.log("latitude", latitude);
+          console.log("longitude", longitude);
+
+          // 각 장소와 사용자의 거리 계산
+          for (let i = 0; i < tourlist.length; i++) {
+            let distance = getDistance(
+              latitude,
+              longitude,
+              tourlist[i].latitude,
+              tourlist[i].longitude
+            );
+            tourlist[i].distance = distance;
+          }
+
+          // 가까운 순으로 정렬
+          // 앞 요소의 거리가 더 크면 위치를 변경 -> 오름차순 정렬
+          tourlist.sort((a, b) => {
+            return a.distance > b.distance ? 1 : -1;
+          });
+
+          console.log(tourlist);
+
+        },
+        (err) => {}
+    );
+
+    </script>
+    
+</body>
+</html>

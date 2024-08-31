@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    // getCurrentPosition: 사용자의 현재 위치를 가져오는 함수
+    // 첫 번째 매개변수는 위치를 성공적으로 가져왔을 때 호출되는 함수
+    // 두 번째 매개변수는 위치를 가져오는 데 실패했을 때 호출되는 함수
+    navigator.geolocation.getCurrentPosition(
+        (position) => {
+          console.log("position", position);
+
+          //위치 정보에서 위도와 경도 꺼내기
+          let latitude = position.coords.latitude;
+          let longitude = position.coords.longitude;
+          console.log("latitude", latitude);
+          console.log("longitude", longitude);
+        },
+        (err) => {
+            //사용자가 위치 정보 접근을 거부하면 에러가 발생함
+            console.log(err); 
+        }
+    );
+    </script>
+</body>
+</html>
