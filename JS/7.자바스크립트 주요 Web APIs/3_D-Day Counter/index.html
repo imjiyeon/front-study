@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- <script src="./script.js"></script> -->
+    <!-- 
+        defer는 html 문서가 완전히 만들어진 후에 스크립트를 실행하도록 하는 키워드이다 
+        html 문서가 완전히 로드되기 전에 스크립트를 실행하면,
+        DOM 요소에 접근할 수 없는 문제가 발생할 수 있다
+    -->
+    <script src="./script.js" defer></script>
+</head>
+<body>
+
+    <h1>D-DAY Counter</h1>  
+
+    <div>
+      <!-- <input>, <button>은 인라인 요소로 한줄에 배치됨 -->
+      <!-- size는 필드에 입력할 수 있는 글자의 수 -->
+      <input id="year-input" size="5" /> 년
+      <input id="month-input" size="5" /> 월
+      <input id="date-input" size="5" /> 일
+    </div>
+    <br>
+
+    <div>
+      <!-- onclick="" > count() > start() -->
+      <button onclick="start()">시작</button>
+      <button onclick="stop()">중지</button>
+      <button onclick="reset()">초기화</button>
+    </div>
+    <br>
+
+    <div id="dday-div">
+        <!-- <div>는 블록 요소로 한줄을 다 차지하며 수직으로 배치됨 -->
+        <div>
+            남은 시간: 
+        </div>
+        <div>
+          <span id="day">0</span> 일
+        </div>
+        <div>
+          <span id="hour">0</span> 시간
+        </div>
+        <div>
+          <span id="min">0</span> 분
+        </div>
+        <div>
+          <span id="sec">0</span> 초
+        </div>
+    </div>
+
+  </body>
+</html>
