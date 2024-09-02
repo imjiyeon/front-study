@@ -20,30 +20,29 @@
         const newElement = document.createElement('span');
         newElement.textContent = '새로운 span 태그';
 
-        // <p> 태그에 새로 생성한 <span> 추가
-        // 자식으로 추가
+        // <p> 태그에 새로 생성한 <span>을 자식으로 추가
         const p = document.getElementById('text');
         p.appendChild(newElement);
 
         // <span> 태그에 'highlight' 클래스 추가
-        p.classList.add('highlight');
+        newElement.classList.add('highlight');
 
-        // 토글 버튼을 클릭하면 <p> 태그에 'highlight' 클래스 토글
+        // 토글 버튼을 클릭하면 <span> 태그에 'highlight' 클래스 토글
         // 'highlight' 클래스가 존재하면 제거, 없으면 추가
         document.getElementById('toggle-btn').addEventListener('click', () => {
-            p.classList.toggle('highlight');
+            newElement.classList.toggle('highlight');
         });
 
-        // p 태그에 'highlight' 클래스가 포함되어 있는지 확인
-        if (p.classList.contains('highlight')) {
+        // span 태그에 'highlight' 클래스가 포함되어 있는지 확인
+        if (newElement.classList.contains('highlight')) {
             console.log('텍스트가 강조되었습니다');
         } else {
             console.log('텍스트가 강조되지 않았습니다');
         }
 
-        // 삭제 버튼을 클릭하면 p 태그 삭제
+        // 삭제 버튼을 클릭하면 span 태그 삭제
         document.getElementById('remove-btn').addEventListener('click', () => {
-            p.remove();
+            newElement.remove();
         });
         
     </script>
