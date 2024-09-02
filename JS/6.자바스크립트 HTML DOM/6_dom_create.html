@@ -16,19 +16,19 @@
     <button id="remove-btn">Remove Text</button>
 
     <script>
-        // 새로운 <span> 요소 생성
+        // 새로운 <span> 태그 생성
         const newElement = document.createElement('span');
         newElement.textContent = '새로운 span 태그';
 
-        // <p> 요소에 새로 생성한 <span> 추가
-        // 자식 엘리먼트로 추가
+        // <p> 태그에 새로 생성한 <span> 추가
+        // 자식으로 추가
         const p = document.getElementById('text');
         p.appendChild(newElement);
 
-        // <p> 요소에 'highlight' 클래스 추가
+        // <span> 태그에 'highlight' 클래스 추가
         p.classList.add('highlight');
 
-        // 토글 버튼을 클릭하면 <p> 요소에 'highlight' 클래스 토글
+        // 토글 버튼을 클릭하면 <p> 태그에 'highlight' 클래스 토글
         // 'highlight' 클래스가 존재하면 제거, 없으면 추가
         document.getElementById('toggle-btn').addEventListener('click', () => {
             p.classList.toggle('highlight');
