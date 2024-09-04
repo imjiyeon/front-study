@@ -104,16 +104,25 @@ function deleteAll () {
 // todolist 만들고 스토리지에 저장하는 함수
 function saveItemsFn () {
 
-  const todoList = document.querySelector("#todo-list");
+  // ul 태그 밑에 있는 li 찾기
+  // querySelector X querySelectorAll O
+  // querySelector는 단건만 반환함
+  const todoList = document.querySelectorAll("#todo-list > li");
 
   const saveItems = [];
 
   // todo 내용과 완료여부로 객체를 생성하고 배열에 추가
-  // 미완료/완료 구분
-  for (let i = 0; i < todoList.children.length; i++) {
+  // 각 항목이 완료/미완료인지 구분
+  for(let todo of todoList){
+
+    // 각 li 안에서 입력필드와 체크박스 찾기
+    // querySelector는 document 뿐만이 아니라 element에서도 사용 가능
+    let text = todo.querySelector('input[type="text"]');
+
+    // li에 complete 클래스가 포함되어 있는지 확인해서 완료여부 설정
     const todoObj = {
-      contents: todoList.children[i].querySelector('input[type="text"]').value,
-      complete: todoList.children[i].classList.contains("complete"),
+      contents:text.value, //내용
+      complete:todo.classList.contains("complete"), //완료여부
     };
     saveItems.push(todoObj);
   }
