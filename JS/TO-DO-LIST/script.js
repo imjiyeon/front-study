@@ -15,6 +15,8 @@ function createTodo (storageData) {
   const newLi = document.createElement("li");
 
   //내용
+  //내용은 나중에서 수정해야되서 span 쓰면 안됨
+  //입력필드로 만들고 조회모드/수정모드로 구분해야함
   const newInput = document.createElement("input");
   newInput.type = "text";
   newInput.value = todoContents;
