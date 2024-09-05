@@ -1,17 +1,27 @@
 
 // 리스트에 할일을 추가하는 함수
-function addTodo () {
+function addTodo (storageData) {
 
   const todoInput = document.querySelector("#todo-input");
   let todoContents = null; //할일 내용
   let todoComplete = null;
 
-  // 공백을 제거한 후에 값이 있는지 확인
-  if (todoInput.value.trim() !== "") {
-    todoContents = todoInput.value; //할일 내용
+  // 화면을 로드할 때 호출됬으면 스토리지에서 꺼낸 데이터 사용
+  if (storageData) {
+    todoContents = storageData.contents;
+    todoComplete = storageData.complete;
+    
+    // 추가버튼을 직접 클릭했으면 사용자가 입력한 내용을 사용
   } else {
-    alert("입력값이 없습니다");
-    return;
+
+    // 공백을 제거한 후에 값이 있는지 확인
+    if (todoInput.value.trim() !== "") {
+      todoContents = todoInput.value; //할일 내용
+    } else {
+      alert("입력값이 없습니다");
+      return;
+    }
+    
   }
 
   //새로운 li 태그 생성
@@ -41,8 +51,8 @@ function addTodo () {
     newLi.classList.toggle("complete");
 
     // 할일 개수와 리스트 상태 업데이트
-    // countTodo();
-    // saveItemsFn();
+    countTodo();
+    saveItemsFn();
   })
 
   // 스토리지에서 가져온 데이터라면, 체크상태 유지
@@ -56,8 +66,8 @@ function addTodo () {
     newLi.remove();
     
     // 할일 개수와 리스트 상태 업데이트
-    // countTodo();
-    // saveItemsFn();
+    countTodo();
+    saveItemsFn();
   });
 
   // 수정버튼 클릭시 할 일 수정모드로 전환
@@ -73,7 +83,7 @@ function addTodo () {
       editBtn.textContent = "수정";
 
       // 리스트 상태 업데이트
-      // saveItemsFn();
+      saveItemsFn();
     }
   });
 
@@ -89,8 +99,8 @@ function addTodo () {
   todoInput.value = "";
 
   // 할일 개수와 리스트 상태 업데이트
-  // countTodo();
-  // saveItemsFn();
+  countTodo();
+  saveItemsFn();
 };
 
 // 리스트를 모두 삭제하는 함수
@@ -103,8 +113,8 @@ function deleteAll () {
   }
 
   // 할일 개수와 리스트 상태 업데이트
-  // countTodo();
-  // saveItemsFn();
+  countTodo();
+  saveItemsFn();
 };
 
 // 할일의 총 개수와 완료된 개수를 표시하는 함수
@@ -127,4 +137,51 @@ function countTodo(){
 
   const completeTodo = document.getElementById("complete-todo");
   completeTodo.textContent = checkBoxCount;
+}
+
+// 스토리지에 할일 리스트를 저장하는 함수
+function saveItemsFn () {
+
+  // ul 태그 안에 모든 li 태그 찾기 (querySelectorAll를 사용할 것)
+  const todoList = document.querySelectorAll("#todo-list > li");
+
+  // 할일 리스트
+  const saveItems = [];
+
+  // 각 li 태그에서 할일 내용과 완료 여부를 추출
+  for(let todo of todoList){
+
+    // querySelector는 document 뿐만이 아니라 element에서도 사용 가능
+    // 각 li 요소에 있는 텍스트필드(할일내용) 찾기
+    let text = todo.querySelector('input[type="text"]');
+
+    // 완료여부는 li에 'complete' 클래스가 포함되어 있는지 확인
+    const todoObj = {
+      contents:text.value, //할일 내용
+      complete:todo.classList.contains("complete"), //완료 여부
+    };
+
+    saveItems.push(todoObj); //배열에 할일 객체 추가
+  }
+
+  // console.log(saveItems);
+
+  // 할일이 한개도 없으면 스토리지에서 삭제, 있으면 저장
+  if(saveItems.length == 0){
+    localStorage.removeItem("saved-items")
+  } else {
+    localStorage.setItem("saved-items", JSON.stringify(saveItems));
+  }
+
+};
+
+// 처음 화면이 로드 될 때, 스토리지에 저장된 할일 목록 가져오기
+const savedItems = localStorage.getItem("saved-items")
+const savedTodoList = JSON.parse(savedItems);
+
+// 저장된 할일 목록이 있으면, 화면에 표시하기
+if (savedTodoList) {
+  for (let todo of savedTodoList) {
+    createTodo(todo);
+  }
 }
