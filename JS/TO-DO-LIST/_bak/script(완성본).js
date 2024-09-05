@@ -182,6 +182,6 @@ const savedTodoList = JSON.parse(savedItems);
 // 저장된 할일 목록이 있으면, 화면에 표시하기
 if (savedTodoList) {
   for (let todo of savedTodoList) {
-    createTodo(todo);
+    addTodo(todo);
   }
 }
