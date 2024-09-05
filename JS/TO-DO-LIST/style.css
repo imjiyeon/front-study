@@ -1,34 +1,47 @@
+
+/* todolist를 중앙에 배치하는 2가지 방법 */
+
+/* (1)
+바디를 flex 컨테이너로 설정 하고
+가로축으로 자식인 container-child를 중앙에 정렬
+*/
 body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column; /* 세로 방향으로 자식들을 정렬*/
+  align-items: center; /* 교차축(가로)으로 자식들을 중앙에 정렬 */
 }
+
+/* (2)
+또는 container-child에 좌우 여백을 주어 중앙 정렬
+auto는 브라우저에서 중앙에 배치되도록 좌우 여백을 동일하게 줌
+*/
+/* #container-child {
+  width: 500px;
+  margin: 0 auto;
+} */
 
 h1 {
   font-size: 2rem;
   margin-bottom: 20px;
 }
 
+/* 
+todo-div를 flex 컨테이너로 설정하고 입력필드에 flex-grow: 1을 적용하여,
+입력 필드가 남은 공간을 동적으로 차지하도록 설정.
+다른 요소들은 고정된 크기를 유지.
+*/
 #todo-div {
   display: flex;
-  align-items: center;
-  margin-bottom: 20px;
 }
 
 #todo-input {
-  width: 200px;
+  width: 200px; /* 기본 너비 */
   height: 40px;
   border: 1px solid #ccc;
   border-radius: 5px;
   outline: none;
   padding: 0 10px;
-
-  /* 
-  li가 flex 컨테이너로 설정되었음  
-  span에 flex-grow: 1 적용하면
-  다른 요소들은 고정된 크기를 가지고 span은 남은 공간을 차지함
-  */
-  flex-grow: 1;
+  flex-grow: 1; /* 입력 필드가 남은 공간을 차지함 */
 }
 
 #add-btn {
