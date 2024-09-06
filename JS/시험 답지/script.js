@@ -1,4 +1,4 @@
-// 도서를 등록하는 함수
+// 새로운 도서를 등록하는 함수
 function registerBook(){
 
   // 카테고리, 도서명, 가격 입력 값 가져오기
@@ -39,8 +39,8 @@ function registerBook(){
   // 새로운 도서 번호 계산 (기존 행의 개수 + 1)
   const newBookNum = document.createElement("td");
 
-  const rows = document.querySelectorAll("#book-list-tbody > tr")
-  newBookNum.textContent = rows.length + 1;
+  const lastNumber = parseInt(bookList[bookList.length - 1].no) + 1;
+  newBookNum.textContent = lastNumber;
 
   // 카테고리 셀 생성 
   const newCategory = document.createElement("td");
@@ -126,15 +126,14 @@ function sortBookList(){
   // 도서 목록 가져오기
   let bookList = getBookList();
 
-  // 도서목록을 가격을 기준으로 오름차순 정렬
-  // 정렬하기 전에 테이블에서 꺼낸 값을 형변환 해야함 string -> number
-  // '원' 안떼어도 됨 '1000원'은 숫자로 시작하기 때문에 숫자부분만 변환됨
   if(sortType == "ascending"){
+
+    // 반환값이 양수면 교체, 음수나 0이면 그대로!
+    // book1 : {... bookprice: '1000원'}
     bookList.sort((book1, book2)=>{
-      // console.log(typeof book1.bookprice);
-      return parseInt(book1.bookprice) - parseInt(book2.bookprice);
+      return book1.bookprice - book2.bookprice; //숫자
     });
-    // 도서목록을 가격을 기준으로 내림차순 정렬
+
   } else if(sortType == "descending"){
     bookList.sort((book1, book2)=>{
       return parseInt(book2.bookprice) - parseInt(book1.bookprice);
