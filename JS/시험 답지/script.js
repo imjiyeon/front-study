@@ -126,24 +126,23 @@ function sortBookList(){
   // 도서 목록 가져오기
   let bookList = getBookList();
 
+  
   // 도서목록을 가격을 기준으로 오름차순 정렬
-  // 정렬하기 전에 테이블에서 꺼낸 값을 형변환 해야함 string -> number
-  // '원' 안떼어도 됨 '1000원'은 숫자로 시작하기 때문에 숫자부분만 변환됨
-
   if(sortType == "ascending"){
 
-    // 반환값이 양수면 교체, 음수나 0이면 그대로!
-    // book1 : {... bookprice: '1000원'}
+    // 꺼낸 값을 형변환 해야함 string -> number
+    // '원' 안떼어도 됨 '1000원'은 숫자로 시작하기 때문에 숫자부분만 변환됨
+    // '1000원' -> 1000
     bookList.sort((book1, book2)=>{
-      return book1.bookprice - book2.bookprice; //숫자
+      return parseInt(book1.bookprice) - parseInt(book2.bookprice);
     });
 
+    // 내림차순 큰값 -> 작은거 
   } else if(sortType == "descending"){
     bookList.sort((book1, book2)=>{
       return parseInt(book2.bookprice) - parseInt(book1.bookprice);
     });
   }
-
   showBookList(bookList);
 }
 
@@ -207,14 +206,11 @@ function searchBook(){
 
   let bookList = getBookList();
 
-  let newList = [];
-
-  // indexOf함수: 문자열이 있는 위치 반환. 없으면 -1 반환
-  bookList.forEach((book)=>{
-    if(book.bookname.indexOf(search)!=-1){
-      newList.push(book);
-    }
+  // 특정한 조건을 만족하는 요소만 추출
+  // false를 반환하는 요소는 제거하고 새로운 배열을 반환
+  let filterList = bookList.filter((book)=>{
+    return book.bookname.indexOf(search)!=-1; //boolean
   });
 
-  showBookList(newList);
+  showBookList(filterList);
 }
