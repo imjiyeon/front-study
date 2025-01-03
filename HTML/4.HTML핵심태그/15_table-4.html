@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<!-- 셀안에서 텍스트 정렬 -->
+
+<head>
+    <title>table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px 20px;
+        }
+
+        /* 정렬 스타일 */
+        .align-left {
+            text-align: left;
+        }
+
+        .align-center {
+            text-align: center;
+        }
+
+        .align-right {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>텍스트 정렬</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th class="align-left">좌측 정렬</th>
+                <th class="align-center">중앙 정렬</th>
+                <th class="align-right">우측 정렬</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="align-left">Apple</td>
+                <td class="align-center">Banana</td>
+                <td class="align-right">Cherry</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
