@@ -3,9 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>display-flex: flex-grow</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        div {
+            display: flex;
+            background-color: gainsboro;
+            height: 300px;
+            margin-top: 20px;
+        }
+
+        /* flex-grow: 너비 비율로 남은 공간을 나누는 속성 */
+        /* 기본값은 0으로, 0이면 남은 공간을 가지지 않는다 
+        숫자가 클수록 많은 공간을 차지한다
+        */
+        .child1{
+            flex-grow: 1;
+        }
+
+        .child2{
+            flex-grow: 2;
+        }
+
+        p {
+            border: solid 1px;
+            width: 500px;
+            height: 100px;
+            background-color: gold;
+            font-size: 3em;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    
+    <h3>flex-grow</h3>
+
+    <div>
+        <p class="child1">A</p>
+        <p class="child2">B</p>
+        <p class="child3">C</p>
+    </div>
+
 </body>
 </html>
