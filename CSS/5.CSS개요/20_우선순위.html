@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- important 플래그 > 인라인 style > ID 선택자 > Class 선택자 > 태그 선택자 -->
+<!-- 하나씩 주석 처리해보기 -->
+<head>
+    <style>
+        /* important 플래그가 우선 적용됨 */
+        /* important - 9999점 */
+        div {
+            color: red !important;
+        }
+        /* 태그 선택자 - 1점 */
+        div {
+            color: blue;
+        }
+        /* ID 선택자 - 100점 */
+        #color_yellow {
+            color: yellow;
+        }
+        /* Class 선택자 - 10점 */
+        .color_green {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>여러방법으로 스타일 작성하고 우선순위 확인하기</h3>
+
+    <!-- 태그에 직접 스타일 작성 -->
+    <!-- 인라인 style - 1000점 -->
+    <div id="color_yellow" class="color_green" style="color: orange;">  
+        Hello world!
+    </div>
+</body>
+
+</html>
