@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>display-flex: justify-content</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        /* 모든 div를 flex 컨테이너로 지정 */
+        div {
+            display: flex;
+            flex-wrap: wrap; /* 줄바꿈 */
+            background-color: gainsboro;
+            height: 300px; /* 높이 설정 */
+            margin-top: 20px;
+        }
+
+        /* justify-content: 컨테이너의 주축을 기준으로 아이템을 정렬 */
+        /* 아이템을 끝에 정렬 */
+        .parent2 {
+            justify-content: flex-end;
+        }
+
+        /* 아이템을 가운데 정렬 */
+        .parent3 {
+            justify-content: center;
+        }
+
+        p {
+            border: solid 1px;
+            width: 500px;
+            height: 100px;
+            background-color: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>flex로 자식요소들 정렬하기</h1>
+
+    <div class="parent1">
+        <p>A</p>
+        <p>B</p>
+        <p>C</p>
+        <p>D</p>
+        <p>E</p>
+    </div>
+
+    <div class="parent2">
+        <p>A</p>
+        <p>B</p>
+        <p>C</p>
+        <p>D</p>
+        <p>E</p>
+    </div>
+
+    <div class="parent3">
+        <p>A</p>
+        <p>B</p>
+        <p>C</p>
+        <p>D</p>
+        <p>E</p>
+    </div>
+</body>
+
+</html>
