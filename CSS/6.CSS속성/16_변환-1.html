@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform-translate</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+        .parent{
+            background-color: gainsboro;
+            margin-bottom: 50px;
+        }
+        .child{
+            background-color: skyblue;
+        }
+        /* transform 속성: 요소의 원근거리, 크기, 회전을 지정하는 속성 */
+        /* translate 함수: 요소를 이동하는 변환함수 */
+
+        /* X축 40px, Y축 40px 이동 */
+        #child1{
+            transform: translate(40px,40px);
+        }
+        /* X축(오른쪽) 40px 이동 */
+        #child2{
+            transform: translateX(40px);
+        }
+        /* Y축(아래쪽) 40px 이동 */
+        #child3{
+            transform: translateY(40px);
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child" id="child1"></div>
+    </div>
+
+    <div class="parent">
+        <div class="child" id="child2"></div>
+    </div>
+
+    <div class="parent">
+        <div class="child" id="child3"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform-perspective</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+        .parent{
+            background-color: gainsboro;
+            margin-bottom: 50px;
+        }
+        .child{
+            background-color: skyblue;
+        }
+
+        /* perspective 함수: 3D 공간에서 원근감을 설정하여
+        요소가 멀어지거나 가까워지는 효과를 구현할 수 있다 */
+
+        /* 500px 떨어진 위치에서 원근감이 설정 */
+        /* 3D회전 - X축 기준으로 회전 */
+        #child1{
+            transform: perspective(500px) rotateX(45deg);
+        }
+        /* 3D회전 - Y축 기준으로 회전 */
+        #child2{
+            transform: perspective(500px) rotateY(45deg);
+        }
+        #child3{
+            transform: perspective(500px) rotateX(45deg) rotateY(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child" id="child1"></div>
+    </div>
+
+    <div class="parent">
+        <div class="child" id="child2"></div>
+    </div>
+
+    <div class="parent">
+        <div class="child" id="child3"></div>
+    </div>
+</body>
+</html>

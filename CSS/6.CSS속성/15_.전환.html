@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            transition: all 1s ease-in-out; /* 속성, 지속 시간, 진행 함수 */
+        }
+        /* 
+        ease: 천천-빨라짐-느려짐 
+        linear: 일정한 속도 
+        ease-in: 천천-빨라짐
+        ease-out: 빨리-느려짐
+        ease-in-out: 천천-빨라짐-천천
+        */
+
+        div:hover {
+            width: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <!-- 사용자가 div에 마우스를 올리면 너비와 색상이 변경된다
+    이때 변경이 천천히 진행되는데, 0.5초동안 진행되며 ease-in-out 효과가 적용된다
+    ease-in-out: 애니매이션의 시작과 끝이 느리게 진행되는 것 -->
+
+</body>
+</html>
