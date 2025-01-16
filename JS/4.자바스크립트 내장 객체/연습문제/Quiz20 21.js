@@ -4,11 +4,10 @@
 let num = Math.floor(Math.random() * 6) + 1;
 console.log("주사위 결과:", num);
 
-// 주사위를 10번 던지고, 각 결과를 배열에 저장하세요
-
+// 주사위를 3번 던지고, 각 결과를 배열에 저장하세요
 const arr = [];
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 3; i++) {
   let num = Math.floor(Math.random() * 6) + 1;
   arr.push(num);
 }
-console.log("10번 던진 결과:", arr);
+console.log("3번 던진 결과:", arr);
