@@ -76,3 +76,7 @@ console.log(string[1]); // "e"
 for (let str of string) {
   console.log(str);
 }
+
+// repeat: 개수만큼 문자열을 반복하는 함수
+console.log("a".repeat(5));
+console.log("abc".repeat(3));
