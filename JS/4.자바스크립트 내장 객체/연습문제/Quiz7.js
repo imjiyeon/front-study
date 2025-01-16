@@ -1,33 +1,52 @@
-// 20보다 큰 숫자를 필터링하고, 각 요소에 2를 곱합니다.
+/*배열문제*/
 
-//버전1
-var arr = [10, 15, 20, 25, 30];
-console.log("배열: ", arr);
+//학생 목록 배열
+const students = [
+  { name: "김철수", score: 85, gradeLevel: "1학년" },
+  { name: "이영희", score: 92, gradeLevel: "2학년" },
+  { name: "박지훈", score: 76, gradeLevel: "3학년" },
+  { name: "최유리", score: 88, gradeLevel: "1학년" },
+  { name: "정민호", score: 54, gradeLevel: "1학년" },
+  { name: "한서연", score: 63, gradeLevel: "2학년" },
+  { name: "장동건", score: 71, gradeLevel: "3학년" },
+  { name: "오지호", score: 80, gradeLevel: "3학년" },
+];
 
-// 20보다 큰 숫자만 필터링하여 새로운 배열 생성
-var newarr1 = arr.filter(function (num) {
-    return num > 20;
-  });
-console.log("필터링된 배열: ", newarr1);
+// 성적에 따라 등급 추가하기
+const studentsWithGrades = students.map((student) => {
 
-// 필터링된 배열의 각 요소에 2를 곱하여 새로운 배열 생성
-var newarr2 = newarr1.map(function (num) {
-    return num * 2;
-  });
-console.log("계산된 배열: ", newarr2);
+  //먼저 성적을 계산하여 등급을 만들고 객체에 대입
+  let grade;
+  if (student.score >= 90) {
+    grade = "A";
+  } else if (student.score >= 70) {
+    grade = "B";
+  } else {
+    grade = "C";
+  }
 
-//버전2
-var arr = [10, 15, 20, 25, 30];
+  // 등급 속성을 추가하여 새로운 객체를 반환
+  return {
+    name: student.name,
+    score: student.score,
+    gradeLevel: student.gradeLevel,
+    grade: grade,
+  };
+});
+console.log("등급이 추가된 학생 목록:", studentsWithGrades);
 
-// 필터링과 맵핑을 연속적인 체인으로 처리
-// filter함수가 배열을 반환하기 때문에, 바로 map() 호출 가능
-var newarr = arr
-  .filter(function (num) {
-    return num > 20;
-  })
-  .map(function (num) {
-    return num * 2;
-  });
-  
-console.log();
-console.log("최종 결과: ", newarr); // [50, 60]
+//성적을 기준으로 내림차순 정렬하기
+const sortedStudents = studentsWithGrades.sort((a, b) => b.score - a.score);
+console.log("정렬된 학생 목록:", sortedStudents);
+
+//1학년 중 등급이 "B"인 학생들의 점수 총합 구하기
+const filteredByGrade = sortedStudents.filter(
+  (student) => student.grade === "B" && student.gradeLevel == "1학년"
+);
+console.log("필터링된 학생 목록:", filteredByGrade);
+
+var sum = filteredByGrade.reduce(function (total, student) {
+  return total + student.score;
+}, 0);
+
+console.log("1학년 중 등급이 'B'인 학생들의 점수 총합:", sum);

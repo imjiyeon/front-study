@@ -1,3 +1,13 @@
+// filter: 조건을 만족하는 요소들만 모아 새 배열을 반환
+// 인자: 조건을 정의하는 함수
+// num: 배열의 각 요소
+
+var arr = [1,2,3,4,5,6,7,8,9,10];
+var filteredArr = arr.filter((num) => num > 5);
+
+console.log("5보다 큰 숫자: ", filteredArr); // [6, 7, 8, 9, 10]
+
+//점수가 80점 이상인 사람 찾기
 var persons = [
   {
     name: "유재석",
@@ -21,11 +31,6 @@ var persons = [
   },
 ];
 
-// filter: 조건을 만족하는 요소들만 모아 새 배열을 반환
-// 인자: 조건을 정의하는 함수
-// person: 배열의 각 요소
-
-//점수가 80점 이상인 사람들만 반환
 var pass = persons.filter(function (person) {
   return person.point > 80;
 });

@@ -1,6 +1,6 @@
-/*배열문제*/
+/* 상품을 관리하는 프로그램 만들기 */ 
 
-//상품 목록 배열
+//상품 목록 배열 생성
 const products = [
   { name: "스마트폰", price: 799000, category: "전자제품" },
   { name: "노트북", price: 1200000, category: "전자제품" },
@@ -16,9 +16,9 @@ console.log("원본 상품 목록:", products);
 products.sort((a, b) => a.price - b.price); // 앞 물건의 가격이 더 크면 교체
 console.log("정렬된 상품 목록:", products);
 
-// 가격과 카테고리 기준으로 필터링하기
-// 가격이 50,000 원 이상 500,000 원 이하인 상품만 포함
-// 카테고리가 "전자제품"인 상품만 포함
+// 가격이 50000원 이상 500000원 이하이고, 카테고리가 “전자제품”인 상품 찾기
+// 기준: 가격과 카테고리
+// 조건: 가격이 50,000 원 이상 500,000 원 이하 / 카테고리가 "전자제품"
 const filteredProducts = products.filter(
   (product) =>
     product.price >= 50000 &&
