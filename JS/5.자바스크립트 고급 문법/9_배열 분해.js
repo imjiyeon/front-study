@@ -24,3 +24,14 @@ let [n1, , n3, n4] = arr3;
 console.log(n1); //100
 console.log(n3); //200
 console.log(n4); //400
+
+// 분해 기능을 활용하여 함수의 리턴값 받기
+function getScores () {
+    return [70, 80, 90];
+}
+
+let [s1, s2, s3] = getScores();
+
+console.log(s1);
+console.log(s2);
+console.log(s3);

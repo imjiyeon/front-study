@@ -1,11 +1,11 @@
 // 객체를 분해해서 필요한 데이터만 추출하기
 let person = {
-  firstName: "John",
-  lastName: "Doe",
+  firstName: "길동",
+  lastName: "홍",
   age: 37,
-  email: "john@gmail.com",
-  city: "New York",
-  country: "USA",
+  email: "hong@gmail.com",
+  city: "인천",
+  country: "한국",
 };
 
 //필요한 키만 추출해서 새로운 변수에 저장
