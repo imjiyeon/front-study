@@ -1,4 +1,4 @@
-//*실제서버 연결해보기 (192.168.0.67)
+// 실제서버와 연결 (192.168.0.67)
 
 //fetch: 서버와 데이터를 주고받기 위한 API 호출 함수
 //fetch함수의 인자:
@@ -6,7 +6,7 @@
 //두번째인자: 전송할 데이터와 HTTP 메소드 등을 포함하는 객체
 
 //GET - 1번 게시물 조회
-http: fetch("http://localhost:8080/board/read?no=1") //서버로 GET 요청
+fetch("http://localhost:8080/board/read?no=1") //서버로 GET 요청
   .then((response) => response.json()) //응답 데이터를 JSON으로 변환
   .then((json) => console.log(json)); //JSON 데이터 출력
 
