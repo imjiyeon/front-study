@@ -5,55 +5,63 @@
   </head>
   <body>
     <script>
-      //Promise를 함께 사용하여 API 호출하기
-      function getDataPromise() {
-        // Promise 객체 생성
-        const promise = new Promise((resolve, reject) => {
-          //GET 요청
-          const xhr = new XMLHttpRequest();
-          xhr.open("GET", "https://jsonplaceholder.typicode.com/posts/1");
-          xhr.send();
 
-          //응답이 완료되었을 때 처리
-          xhr.onload = () => {
-            if (xhr.status === 200) {
-              const res = JSON.parse(xhr.response);
-              resolve(res); //응답 데이터를 Promise의 resolve함수로 전달
-            } else {
-              console.error(xhr.status, xhr.statusText);
-              reject(xhr.status); //오류 상태를 Promise의 reject험수로 전달
-            }
-          };
+      // 상황별 Promise 상태 확인
+
+      // 1.
+      // // 함수 만들고 Promise 리턴
+      // const test = function () {
+      //   return new Promise((resolve, reject)=>{
+      //     resolve(100);
+      //   });
+      // }
+
+      // // Promise객체가 리턴되고 정상적인 값이 담겨져 있음
+      // console.log(test()); // Promise (state: fulfilled)
+
+      // 2.
+      // const test = function () {
+      //   return new Promise((resolve, reject)=>{
+      //     // 타이머 함수를 추가
+      //     setTimeout(()=>{
+      //       resolve(100);
+      //     }, 2000)
+      //   });
+      // }
+
+      // // 콘솔에 출력이 되는 시점에 2초가 안됬기 때문에 Promise는 pending 상태
+      // console.log(test()); // Promise (state: pending)
+
+      // pending 상태로는 정상적인 응답을 가져올 수 없기 때문에
+      // then을 사용해야함
+      const test = function () {
+        return new Promise((resolve, reject)=>{
+          setTimeout(()=>{
+            resolve(100);
+          }, 2000)
         });
-
-        //생성한 Promise 객체 반환
-        return promise;
       }
 
-      // then() 함수는 서버 응답이 완료된 후에 실행된다
-      // 따라서 Promise를 사용하면 서버로 부터 받은 데이터가 정상적으로 출력할 수 있다
-      // res는 resolve함수로 전달받은 응답데이터이다
-
-      console.log(1);
-      console.log(2);
-      console.log(3);
-
-      getDataPromise().then((res) => {
+      // promise 반환받고 then 쓰기
+      // 콜백함수 쓰고 매개변수 받기
+      // 2초가 지나서 pending -> fulfilled로 상태가 변경되면 
+      // then이 실행되고 res에 응답이 전달됨
+      test().then((res)=>{
         console.log(res);
       });
 
-      console.log(4);
-      console.log(5);
-      
+      // // 3.
+      // const test = function () {
+      //   return new Promise((resolve, reject)=>{
+      //     setTimeout(()=>{
+      //       // reject는 실패했을 때 사용
+      //       reject('error');
+      //     }, 2000)
+      //   });
+      // }
+
+      // console.log(test()); // error
+
     </script>
   </body>
 </html>
-
-<!-- 
-미니 퀴즈.
-1번 작업: 작업을 처리하는데 1초 소요됨
-2번 작업: 작업을 처리하는데 2초 소요됨
-3번 작업: 작업을 처리하는데 5초 소요됨
-3개의 작업을 "동기식"으로 처리했을 때 걸리는 시간은? 8초
-3개의 작업을 "비동기식"으로 처리했을 때 걸리는 시간은? 5초 
--->

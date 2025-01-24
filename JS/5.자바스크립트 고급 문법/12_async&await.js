@@ -7,7 +7,12 @@ async function func1() {
   // await를 쓰면 호출이 완료될때까지 기다렸다가 결과를 받기 때문에
   // .then()을 사용할 필요가 없이, 작업 결과를 처리할 수 있다
   const response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+
   // 응답받은 데이터를 json형식으로 파싱
+  // 결과를 보면 promise가 penfing 상태임
+  // const resJson = response.json(); 
+
+  // 파싱 하기전에 await를 붙여야 함
   const resJson = await response.json(); //json 데이터를 객체로 변환
   console.log(resJson); //변환한 데이터 출력
 }
