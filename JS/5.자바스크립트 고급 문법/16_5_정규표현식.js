@@ -1,22 +1,5 @@
-// 정규표현식: 문자열에 포함된 특정 문자 조합을 찾기 위해 사용되는 패턴
-
 // 원본 문자열
-let str = "Hello World! world!";
-
-//정규표현식 객체 생성하는 두가지 방법 
-const regex = /World/;
-const regex2 = new RegExp("World");
-
-// test: 정규표현식 객체의 함수로, 매치되는 문자열이 있으면 true 반환
-// 'World'이라는 문자열이 있는지 확인
-console.log(regex.test(str)); // true
-
-// search: 매치되는 문자열이 발견되면 인덱스 번호 반환
-// 'World'이라는 문자열의 위치 확인
-console.log(str.search(regex)); // 6
-
-// 원본 문자열 수정
-str = "Is this all there is";
+let str = "Is this all there is";
 
 // match: 주어진 문자열에서 패턴과 일치하는 부분을 찾아 배열로 반환
 // 인자: 정규표현식 객체
