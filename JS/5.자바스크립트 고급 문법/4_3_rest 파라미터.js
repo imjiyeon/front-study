@@ -1,5 +1,7 @@
-// 여러 학생을 인자로 받아서, 특정 과목의 평균점수을 반환하는 함수를 작성하세요.
-// 학생이 해당 과목 점수를 가지고 있지 않으면 계산하지 않고, 해당 학생은 건너뜁니다.
+// rest 파라미터 활용
+
+// 특정과목의 이름과 학생들을 인자로 받아서, 특정 과목의 평균점수을 구하는 함수를 정의한다.
+// 만약 특정 과목의 점수를 없으면 계산하지 않고, 건너뛴다.
 // 예: 맹구와 유리의 수학과목의 평균점수: (80)/1 = 80
 
 // 매개변수: 과목과 학생들
@@ -7,6 +9,8 @@
 function calculateAverageScore(subject, ...students) {
   // 해당 과목의 점수가 있는 학생만 필터링
   // 과목명은 객체의 키로 동적으로 접근
+
+  // 배열의 filter 함수를 사용하여 특정 과목의 점수만 추출
   let filterStudents = students.filter(function (student) {
     return typeof student[subject] != "undefined";
   });
