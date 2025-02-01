@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>display-flex: order</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        div {
+            display: flex;
+            background-color: gainsboro;
+            height: 300px;
+            margin-top: 20px;
+        }
+
+        /* order: 아이템의 수선를 지정. 숫자가 클수록 뒤로감
+        기본값은 0이므로
+        c = -1
+        abe = 0
+        d = 2
+        */
+        .child3{
+            order: -1
+        }
+
+        .child4{
+            order: 2
+        }
+
+        p {
+            border: solid 1px;
+            width: 500px;
+            height: 100px;
+            background-color: gold;
+            font-size: 3em;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>order</h3>
+
+    <div class="parent1">
+        <p class="child1">A</p>
+        <p class="child2">B</p>
+        <p class="child3">C</p>
+        <p class="child4">D</p>
+        <p class="child5">E</p>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Todo 앱을 본격적으로 만들기 전에 간단하게 만들어보기 -->
+
+    <h1>ToDo</h1>
+    <input id="todo-input" type="text" onkeydown="func(event)">
+    <ul id="todo-list">
+        <li>운동가기</li>
+        <li>약먹기</li>
+    </ul>
+
+    <script>
+
+        // 목록 가져오기
+        const list = document.querySelector('#todo-list');
+
+        // 입력필드 가져오기
+        const input = document.querySelector('#todo-input');
+
+        const func = function (event) {
+            console.log(event.keyCode);
+            // 엔터를 누르면 필드에 있는 내용이 출력됨
+            if(event.keyCode === 13){
+                // 사용자가 입력한 내용 출력
+                console.log(event.target.value);
+    
+                // 새로운 항목 생성
+                const newLi = document.createElement('li');
+                newLi.textContent = event.target.value;
+                console.log(newLi);
+
+                // 목록에 새로운 항목 추가
+                list.appendChild(newLi);
+
+                // 입력필드 초기화
+                input.value = '';
+            }
+        }
+    </script>
+</body>
+</html>

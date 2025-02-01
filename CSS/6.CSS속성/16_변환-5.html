@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform-skew</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+        .parent{
+            background-color: gainsboro;
+            margin-bottom: 50px;
+        }
+        .child{
+            background-color: skyblue;
+        }
+
+        /* skew 함수: 지정된 각도만큼 기울어지는 함수 */
+
+        /* 500px 떨어진 위치에서 원근감이 설정 */
+        /* X축 기준으로 45도 기울어짐 */
+        #child1{
+            transform: skewX(45deg);
+        }
+        /* X축 기준으로 -45도 기울어짐 */
+        #child2{
+            transform: skewX(-45deg);
+        }
+        /* Y축 기준으로 45도 기울어짐 */
+        #child3{
+            transform: skewY(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child" id="child1"></div>
+    </div>
+
+    <div class="parent">
+        <div class="child" id="child2"></div>
+    </div>
+
+    <div class="parent">
+        <div class="child" id="child3"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform-scale</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+        .parent{
+            background-color: gainsboro;
+            margin-bottom: 50px;
+        }
+        .child{
+            background-color: skyblue;
+        }
+        /* scale 함수: 크기 비율을 변경하는 함수 */
+
+        /* 크기를 1.5배 확대 */
+        #child1{
+            transform: scale(1.5);
+        }
+        /* 크기를 0.7배 축소 */
+        #child2{
+            transform: scale(0.7);
+        }
+        /* X축 방향으로만 2배 확대. Y축 방향은 변화 없음 */
+        #child3{
+            transform: scaleX(2);
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child" id="child1"></div>
+    </div>
+
+    <div class="parent">
+        <div class="child" id="child2"></div>
+    </div>
+
+    <div class="parent">
+        <div class="child" id="child3"></div>
+    </div>
+</body>
+</html>

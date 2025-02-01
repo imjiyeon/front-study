@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Promise를 함께 사용하여 API 호출하기
+      function getDataPromise() {
+        // Promise 객체 생성
+        const promise = new Promise((resolve, reject) => {
+          //GET 요청
+          const xhr = new XMLHttpRequest();
+          xhr.open("GET", "https://jsonplaceholder.typicode.com/posts/1");
+          xhr.send();
+
+          //응답이 완료되었을 때 처리
+          xhr.onload = () => {
+            if (xhr.status === 200) {
+              const res = JSON.parse(xhr.response);
+              resolve(res); //응답 데이터를 Promise의 resolve함수로 전달
+            } else {
+              console.error(xhr.status, xhr.statusText);
+              reject(xhr.status); //오류 상태를 Promise의 reject험수로 전달
+            }
+          };
+        });
+
+        //생성한 Promise 객체 반환
+        return promise;
+      }
+
+      // then() 함수는 서버 응답이 완료된 후에 실행된다
+      // 따라서 Promise를 사용하면 서버로 부터 받은 데이터가 정상적으로 출력할 수 있다
+      // res는 resolve함수로 전달받은 응답데이터이다
+
+      console.log(1);
+      console.log(2);
+      console.log(3);
+
+      getDataPromise().then((res) => {
+        console.log(res);
+      });
+
+      console.log(4);
+      console.log(5);
+      
+    </script>
+  </body>
+</html>
+
+<!-- 
+미니 퀴즈.
+1번 작업: 작업을 처리하는데 1초 소요됨
+2번 작업: 작업을 처리하는데 2초 소요됨
+3번 작업: 작업을 처리하는데 5초 소요됨
+3개의 작업을 "동기식"으로 처리했을 때 걸리는 시간은? 8초
+3개의 작업을 "비동기식"으로 처리했을 때 걸리는 시간은? 5초 
+-->

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+      // 1.
+      // // 함수 만들고 Promise 리턴
+      // const test = function () {
+      //   return new Promise();
+      // }
+
+      // 2.
+      // // 콜백함수 넣어주고 resolver와 reject 받아오기
+      // // 요청이 성공했다는 의미인 fufilled가 담겨져서 돌아간다
+      // const test = function () {
+      //   return new Promise((resolve, reject)=>{
+      //     resolve('success'); // 응답결과
+      //   });
+      // }
+
+      // 3.
+      // resolve 실행되는거 2초간 대기 (그동안은 pending 상태)
+      const test = function () {
+        return new Promise((resolve, reject)=>{
+          setTimeout(()=>{
+            resolve(100);
+          }, 2000)
+        });
+      }
+
+      // promise를 받고 then함수를 호출하면
+      // promise가 fufilled 상태가 될때까지 기다림
+      // fufilled가 되면 then이 실행됨
+      // test().then();
+
+      // then 안에 콜백함수를 작성하면 응답을 받아올 수 있음
+      test().then((res)=>{
+        console.log(res);
+      });
+     
+    </script>
+  </body>
+</html>

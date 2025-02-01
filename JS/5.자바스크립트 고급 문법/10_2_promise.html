@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+      // 상황별 Promise 상태 확인
+
+      // 1.
+      // // 함수 만들고 Promise 리턴
+      // const test = function () {
+      //   return new Promise((resolve, reject)=>{
+      //     resolve(100);
+      //   });
+      // }
+
+      // // Promise객체가 리턴되고 정상적인 값이 담겨져 있음
+      // console.log(test()); // Promise (state: fulfilled)
+
+      // 2.
+      // const test = function () {
+      //   return new Promise((resolve, reject)=>{
+      //     // 타이머 함수를 추가
+      //     setTimeout(()=>{
+      //       resolve(100);
+      //     }, 2000)
+      //   });
+      // }
+
+      // // 콘솔에 출력이 되는 시점에 2초가 안됬기 때문에 Promise는 pending 상태
+      // console.log(test()); // Promise (state: pending)
+
+      // pending 상태로는 정상적인 응답을 가져올 수 없기 때문에
+      // then을 사용해야함
+      const test = function () {
+        return new Promise((resolve, reject)=>{
+          setTimeout(()=>{
+            resolve(100);
+          }, 2000)
+        });
+      }
+
+      // promise 반환받고 then 쓰기
+      // 콜백함수 쓰고 매개변수 받기
+      // 2초가 지나서 pending -> fulfilled로 상태가 변경되면 
+      // then이 실행되고 res에 응답이 전달됨
+      test().then((res)=>{
+        console.log(res);
+      });
+
+      // // 3.
+      // const test = function () {
+      //   return new Promise((resolve, reject)=>{
+      //     setTimeout(()=>{
+      //       // reject는 실패했을 때 사용
+      //       reject('error');
+      //     }, 2000)
+      //   });
+      // }
+
+      // console.log(test()); // error
+
+    </script>
+  </body>
+</html>

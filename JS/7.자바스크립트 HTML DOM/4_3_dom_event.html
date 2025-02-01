@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+
+  <!-- 키 이벤트 -->
+
+  <body>
+    <input
+      type="text"
+      oninput="fucn(event)"
+      onkeydown="fucn(event)"
+      onkeyup="fucn(event)"
+    />
+
+    <script>
+      //oninput: 입력 내용이 변경될 때마다
+      //onkeydown: 키를 눌렀을 때
+      //onkeyup: 키를 눌렀다가 뗄 때
+      function fucn(e) {
+        console.log(e.type); //이벤트 종류 (oninput, onkeydown, onkeyup)
+        console.log(e.target); //이벤트를 발생한 엘리먼트
+        console.log(e.target.value); //입력필드의 현재 값
+      }
+    </script>
+  </body>
+</html>

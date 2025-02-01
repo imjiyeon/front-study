@@ -1,8 +1,13 @@
-//이메일의 도메인을 확인하세요.
+// 문자열에서 특정 문자가 몇 번 나오는지 세어 보세요
 
-const email = "user@naver.com";
+const str = "aaabbc"; // 주어진 문자열
+const target = "a";   // 세고 싶은 문자
+let count = 0;        // 반복 횟수
 
-// 이메일 주소에서 "@" 뒤에 오는 도메인을 추출
-const emailDomain = email.split("@")[1];
+for (let char of str) {
+  if (char === target) {
+    count++;
+  }
+}
 
-console.log(emailDomain);
+console.log(`${target}의 개수: ${count}`); // 결과: a의 개수: 3

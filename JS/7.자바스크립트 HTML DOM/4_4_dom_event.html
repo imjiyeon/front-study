@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+
+  <!-- 클릭 이벤트 -->
+
+  <body>
+    <button onclick="myFunction();">클릭</button>
+    <button id="btn">클릭</button>
+    <!-- 함수가 호출될 때 select 요소를 전달 -->
+    <select id="sel" onchange="onChange(this);">
+      <option value="KO">Korea</option>
+      <option value="CN">China</option>
+      <option value="JP">Japan</option>
+    </select>
+    <input type="text" onfocus="onFocus()" onblur="onBlur()" />
+
+    <script>
+      // 클릭이벤트: 버튼을 클릭하면 발생
+      function myFunction() {
+        console.log("onclick 이벤트 설정");
+      }
+      
+      function myFunction2() {
+        console.log("이벤트 리스너 사용");
+      }
+      // 이벤트 리스너를 사용하여 클릭이벤트 처리
+      document.getElementById("btn").addEventListener("click", myFunction2);
+
+      //체인지이벤트: <select> 에서 옵션이 변경되면 발생
+      //선택된 값을 출력
+      function onChange(obj) {
+        //this: 이벤트가 발생한 요소
+        console.log(obj.value);
+      }
+
+      //포커스이벤트: 입력 필드에 마우스 포커스가 가면 발생
+      function onFocus() {
+        console.log("onFocus");
+      }
+
+      //포커스이벤트: 입력 필드에 마우스 포커스가 빠져나가면 발생
+      function onBlur() {
+        console.log("onBlur");
+      }
+
+    </script>
+  </body>
+</html>

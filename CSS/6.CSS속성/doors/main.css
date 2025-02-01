@@ -1,0 +1,173 @@
+body {
+    background-image: url("./images/bg.jpg");
+    background-size: cover;
+    /* 기본값이 repeat */
+    background-repeat: no-repeat;
+}
+.container {
+    padding: 50px 0;
+}
+.doors {
+    /* div를 컨테이너로 설정. 기본값은 수평 정렬 */
+    display: flex;
+    /* 아이템들의 너비가 부모보다 커지면 줄바꿈 */
+    flex-wrap: wrap;
+    /* 주축을 기준으로 가운데 정렬 */
+    justify-content: center;
+    max-width: 660px;
+    /* background-color: orange; */
+    /* 여백을 auto로 하면 부모를 기준으로 좌우가 가운데 정렬됨 */
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+/* 아이템들은 기본적으로 줄바꿈이 되지 않고 (flex-wrap: nowrap) 
+    감소 비율이 1이여서 한줄에 모든 요소가 표시됨
+*/
+.door {
+    width: 80px;
+    height: 84px;
+    margin: 4px;
+    background-color: #555;
+    /* 테두리 */
+    border: 3px solid #fff;
+    /* 기울기 (반시계방향으로 14도) */
+    transform: skewX(-14deg);
+    /* 모서리 */
+    border-radius: 10px;
+    /* 내부여백과 테두리를 포함하여 너비를 계산 - 총 가로/세로 너비를 80*84로 유지 */
+    box-sizing: border-box;
+    /* 전환효과 - 애니매이션 지속 시간 */
+    transition: transform .3s, background-color .6s;
+    /* 자식 컨텐츠가 부모보다 크기가 클 때, 넘치는 부분 잘라내기 */
+    overflow: hidden;
+}
+/* 태그에 마우스를 올리면 배경색과 크기가 달라짐 */
+/* z-index: 어떤 요소가 다른 요소 위에 쌓이는지 결정하는 속성  
+   양수 - 다른요소보다 위로 올라감
+   음수 - 다른요소보다 아래로 내려감
+   0 - 기본값 
+*/
+.door:hover {
+    background-color: orange;
+    transform: skewX(-14deg) scale(1.3);
+    /* 다른 요소보다 위에 쌓임 */
+    z-index: 1;
+}
+
+.door .image {
+    /* 빈공간이 남으니까 이미지 크기 키우기 */
+    width: 130%;
+    height: 100%;
+    /* 배경 이미지의 크기를 태그의 너비에 맞추기 */
+    background-size: cover;
+    /* 기울기 시계방향으로 14도. 원래대로 돌리기 */
+    /* 왼쪽으로 11px 이동 */
+    transform: translateX(-11px) skewX(14deg);
+    /* 배경 이미지 위치를 가운데로 수정 */
+    background-position: center;
+}
+
+/* 부모의 자식들 중에서 .door 클래스인 첫번째 자식 */
+.door:nth-child(1) .image {
+    background-image: url("./images/img1.jpg");
+}
+.door:nth-child(2) .image {
+    background-image: url("./images/img2.jpg");
+}
+.door:nth-child(3) .image {
+    background-image: url("./images/img3.jpg");
+}
+.door:nth-child(4) .image {
+    background-image: url("./images/img4.jpg");
+}
+.door:nth-child(5) .image {
+    background-image: url("./images/img5.jpg");
+}
+.door:nth-child(6) .image {
+    background-image: url("./images/img6.jpg");
+}
+.door:nth-child(7) .image {
+    background-image: url("./images/img7.jpg");
+}
+.door:nth-child(8) .image {
+    background-image: url("./images/img8.jpg");
+}
+.door:nth-child(9) .image {
+    background-image: url("./images/img9.jpg");
+}
+.door:nth-child(10) .image {
+    background-image: url("./images/img10.jpg");
+}
+.door:nth-child(11) .image {
+    background-image: url("./images/img11.jpg");
+}
+.door:nth-child(12) .image {
+    background-image: url("./images/img12.jpg");
+}
+.door:nth-child(13) .image {
+    background-image: url("./images/img13.jpg");
+}
+.door:nth-child(14) .image {
+    background-image: url("./images/img14.jpg");
+}
+.door:nth-child(15) .image {
+    background-image: url("./images/img15.jpg");
+}
+.door:nth-child(16) .image {
+    background-image: url("./images/img16.jpg");
+}
+.door:nth-child(17) .image {
+    background-image: url("./images/img17.jpg");
+}
+.door:nth-child(18) .image {
+    background-image: url("./images/img18.jpg");
+}
+.door:nth-child(19) .image {
+    background-image: url("./images/img19.jpg");
+}
+.door:nth-child(20) .image {
+    background-image: url("./images/img20.jpg");
+}
+.door:nth-child(21) .image {
+    background-image: url("./images/img21.jpg");
+}
+.door:nth-child(22) .image {
+    background-image: url("./images/img22.jpg");
+}
+.door:nth-child(23) .image {
+    background-image: url("./images/img23.jpg");
+}
+.door:nth-child(24) .image {
+    background-image: url("./images/img24.jpg");
+}
+.door:nth-child(25) .image {
+    background-image: url("./images/img25.jpg");
+}
+.door:nth-child(26) .image {
+    background-image: url("./images/img26.jpg");
+}
+.door:nth-child(27) .image {
+    background-image: url("./images/img27.jpg");
+}
+.door:nth-child(28) .image {
+    background-image: url("./images/img28.jpg");
+}
+.door:nth-child(29) .image {
+    background-image: url("./images/img29.jpg");
+}
+.door:nth-child(30) .image {
+    background-image: url("./images/img30.jpg");
+}
+.door:nth-child(31) .image {
+    background-image: url("./images/img31.jpg");
+}
+.door:nth-child(32) .image {
+    background-image: url("./images/img32.jpg");
+}
+
+h1.title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}

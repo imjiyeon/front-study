@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>display-flex: align-content, align-items</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        div {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: gainsboro;
+            height: 300px;
+            margin-top: 20px;
+        }
+
+        /* align-content: 컨테이너의 교차축을 기준으로 아이템을 정렬 */
+        /* 아이템이 여러줄일 때 사용 */
+        .parent1 {
+            align-content: flex-start;
+        }
+
+        .parent2 {
+            align-content: center;
+        }
+
+        .parent3 {
+            align-content: flex-end;
+        }
+
+        /* align-items: align-content와 비슷하지만, 한줄에서 정렬방법을 지정함 */
+        .parent4 {
+            align-items: flex-start;
+        }
+
+        .parent5 {
+            align-items: center;
+        }
+
+        .parent6 {
+            align-items: flex-end;
+        }
+
+        p {
+            border: solid 1px;
+            width: 500px;
+            height: 100px;
+            background-color: gold;
+            font-size: 3em;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>align-content</h3>
+
+    <div class="parent1">
+        <p>A</p>
+        <p>B</p>
+        <p>C</p>
+        <p>D</p>
+        <p>E</p>
+    </div>
+
+    <div class="parent2">
+        <p>A</p>
+        <p>B</p>
+        <p>C</p>
+        <p>D</p>
+        <p>E</p>
+    </div>
+
+    <div class="parent3">
+        <p>A</p>
+        <p>B</p>
+        <p>C</p>
+        <p>D</p>
+        <p>E</p>
+    </div>
+
+    <h3>align-items</h3>
+
+    <div class="parent4">
+        <p>A</p>
+        <p>B</p>
+        <p>C</p>
+        <p>D</p>
+        <p>E</p>
+    </div>
+
+    <div class="parent5">
+        <p>A</p>
+        <p>B</p>
+        <p>C</p>
+        <p>D</p>
+        <p>E</p>
+    </div>
+
+    <div class="parent6">
+        <p>A</p>
+        <p>B</p>
+        <p>C</p>
+        <p>D</p>
+        <p>E</p>
+    </div>
+
+</body>
+
+</html>

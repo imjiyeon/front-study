@@ -1,3 +1,13 @@
+//map: 배열의 각 요소를 변환하여 새 배열 생성
+//배열의 모든 숫자에 2 곱하기
+
+var arr = [1,2,3,4,5];
+var newArr = arr.map(function (num) {
+  return num * 2;
+});
+console.log("모든 숫자에 2 곱하기: ", newArr); // [2, 4, 6, 8, 10]
+
+//성과 이름을 연결하여 fullName 속성 추가
 var userList = [
   {
     firstName: "재석",
@@ -21,9 +31,6 @@ var userList = [
   },
 ];
 
-//map: 배열의 각 요소를 변환하여 새 배열 생성
-//각 요소(user)를 새로운 객체로 변환
-//성과 이름을 연결하여 fullName 속성 추가
 var newList = userList.map(function (user) {
   return {
     fullName: user.lastName + user.firstName,

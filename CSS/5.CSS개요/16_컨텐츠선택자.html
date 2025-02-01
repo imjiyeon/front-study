@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* class="box"를 포함한 요소에 컨텐츠 추가 */
+        /* 컨텐츠 선택자는 content 속성과 같이 사용해야함! */
+
+        /* '앞'이라는 내용을 컨텐츠 앞쪽에 추가 */
+        .box::before {
+            content: '앞!';
+        }
+        /* '앞'이라는 내용을 컨텐츠 뒤쪽에 추가 */
+        .box::after {
+            content: '뒤!';
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        Content!
+    </div>
+</body>
+</html>

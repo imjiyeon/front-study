@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* class="orange" 속성을 포함한 요소의 
+        가장 오른쪽에 있는 형제 요소를 선택 */
+        /* .orange + li {
+            color: red;
+        } */
+        /* class="orange" 속성을 포함한 요소의 
+        모든 다음 형제 요소를 선택 */
+        .orange ~ li {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>사과</li>
+            <li>딸기</li>
+            <li class="orange">오렌지</li>
+            <li>망고</li> <!-- 빨간색 적용 -->
+            <li>사과</li> <!-- 빨간색 적용 -->
+        </ul>
+        <div>당근</div>
+        <p>토마토</p>
+        <span class="orange">오렌지</span>
+    </div>
+    <span class="orange">오렌지</span>
+</body>
+</html>

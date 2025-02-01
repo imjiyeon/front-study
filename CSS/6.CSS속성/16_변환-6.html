@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>perspective</title>
+    <style>
+        .parent{
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+            margin-bottom: 20px;
+        }
+        .child{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+
+        /* 원근감은 perspective 속성 또는 perspective 함수를 사용 */
+
+        /* 함수는 자식에 설정. 관찰자와 요소의 거리를 500px로 설정 
+        부모 내부에 모든 자식에 일괄 적용
+        */
+        #child1{
+            transform: perspective(500px) rotateY(45deg);   
+        }
+
+        /* 속성은 부모에 설정. 관찰자와 부모의 거리를 500px로 설정 
+        특정 자식에만 적용
+        */
+        #parent2{
+            perspective: 500px;   
+        }
+        #child2{
+            transform: rotateY(45deg);   
+        }
+    </style>
+</head>
+<body>
+    <div class="parent" id="parent1">
+        <div class="child" id="child1"></div>
+    </div>
+    <div class="parent" id="parent2">
+        <div class="child" id="child2"></div>
+    </div>
+</body>
+</html>

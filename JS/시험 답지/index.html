@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./style.css">
+    <!-- html이 완전히 생성되기 전에, 자바스크립트에서 html 요소를 사용하면 에러가 발생함.
+     그래서 defer 키워드를 사용하여 html이 생성이 완료된 후에 스크립트가 실행되도록 설정함.
+     -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div id="flex-container">
+        <div id="book-list-div" class="container">
+            <h1>도서 목록</h1>
+            <p>아래는 도서 목록 입니다.</p>
+            <hr />
+
+            <div id="search-div">
+                <!--  -->
+                <select id="sort-select" onchange="sortBookList()">
+                    <option value="">정렬방식을 선택하세요</option>
+                    <option value="ascending">가격 오름차순</option>
+                    <option value="descending">가격 내림차순</option>
+                </select>
+
+                <input type="text" id="search-input" placeholder="도서명으로 검색하세요">
+                <!-- onclick 이벤트 설정 -->
+                <button id="search-btn" onclick="searchBook()">검색</button>
+
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>도서번호</th>
+                        <th>카테고리</th>
+                        <th>도서명</th>
+                        <th>가격</th>
+                        <th>삭제</th>
+                    </tr>
+                </thead>
+                <tbody id="book-list-tbody">
+                    <!-- 데이터를 추가할 부분 -->
+                     <tr>
+                        <td>1</td>
+                        <td>소설</td>
+                        <td>사랑의 기억</td>
+                        <td>15000원</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>시/에세이</td>
+                        <td>사랑에 대한 단상</td>
+                        <td>12000원</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>인문</td>
+                        <td>역사의 그림자</td>
+                        <td>20000원</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>요리</td>
+                        <td>식탁의 비밀</td>
+                        <td>18000원</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>자기계발</td>
+                        <td>성공을 위한 자기관리</td>
+                        <td>22000원</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="book-register-div" class="container">
+            <h1>도서 등록</h1>
+            <p>새로운 도서 등록을 위해 아래의 정보를 입력해주세요.</p>
+            <hr />
+
+            <form action="#">
+                <ul>
+                    <li>
+                        <label for="category">카테고리</label>
+                        <select id="category">
+                            <option value="">카테고리를 선택하세요</option>
+                            <option value="소설">소설</option>
+                            <option value="시/에세이">시/에세이</option>
+                            <option value="인문">인문</option>
+                            <option value="요리">요리</option>
+                            <option value="자기계발">자기계발</option>
+                            <option value="역사/문화">역사/문화</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="bookname">도서명</label>
+                        <input type="text" id="bookname" name="bookname" placeholder="도서명을 입력하세요">
+                    </li>
+                    <li>
+                        <label for="bookprice">가격(원)</label>
+                        <input type="number" id="bookprice" name="bookprice" placeholder="가격을 입력하세요">
+                    </li>
+                    <li>
+                        <button type="button" onclick="registerBook()">도서등록</button>
+                        <button type="reset">초기화</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

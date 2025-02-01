@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* width,height,background-color는 상속 안됨 */
+        .parent{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+        .child{
+            width: 100px;
+            /* height: 100px; */
+            height: inherit; /* 강제 상속 */
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 1. html 내부에 직접 작성 -->
+    <!-- js를 작성할 수 있는 위치는 head와 body -->
+    <script>
+      console.log("hi~");
+    </script>
+    <!-- 2. 와부에 있는 파일과 연결 -->
+    <!-- <script src="./1_자바스크립트.js"></script> -->
+  </head>
+  <body>
+    <script>
+      console.log("hello");
+    </script>
+  </body>
+</html>
+
+<!-- html 코드가 실행되기 전에 먼저 실행되어야 하는 코드는 head 태그에 넣고,
+그렇지 않으면 body 태그의 하단에 넣는다
+body 태그의 하단에 넣으면 화면이 먼저 생성된 후에 자바스크립트 코드가 실행되기 때문에
+사용자가 화면을 더 빨리 볼 수 있다
+-->

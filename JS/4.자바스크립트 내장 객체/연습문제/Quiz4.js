@@ -1,13 +1,6 @@
-// 문자열의 모든 자리수를 더해서 합을 구하세요.
+// 배열에서 길이가 5보다 긴 문자열만 찾으세요.
 
-let str = "0112233";
-let sum = 0;
+var arr = ["apple", "banana", "grape", "kiwi", "watermelon"];
+var filteredArr = arr.filter((fruit) => fruit.length > 5);
 
-// s: "0" "1" "1" "2" "2" "3" "3"
-for (let s of str) {
-  console.log(s, typeof s); //"0" string 
-  let num = parseInt(s); //"0" -> 0
-  sum = sum + num;
-}
-
-console.log(sum); //합계
+console.log("길이가 5보다 긴 문자열: ", filteredArr); // ["banana", "watermelon"]

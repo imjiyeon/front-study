@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform-rotate</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+        .parent{
+            background-color: gainsboro;
+            margin-bottom: 50px;
+        }
+        .child{
+            background-color: skyblue;
+        }
+        /* rotate 함수: 지정된 각도만큼 회전시키는 함수 
+        단위: deg(도)
+        */
+
+        /* 2D회전 - 45도 시계방향으로 회전 */
+        #child1{
+            transform: rotate(45deg);
+        }
+        /* 3D회전 - X축 기준으로 회전 */
+        #child2{
+            transform: rotateX(45deg);
+        }
+        /* 3D회전 - Y축 기준으로 회전 */
+        #child3{
+            transform: rotateY(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child" id="child1"></div>
+    </div>
+
+    <div class="parent">
+        <div class="child" id="child2"></div>
+    </div>
+
+    <div class="parent">
+        <div class="child" id="child3"></div>
+    </div>
+</body>
+</html>

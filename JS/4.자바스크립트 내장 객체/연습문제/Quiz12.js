@@ -1,41 +1,54 @@
-/*배열문제*/
+/* Set */
 
-// 제품 목록 배열 생성
-const inventory = [
-  { product: "감자칩", quantity: 10, price: 1500 },
-  { product: "아이스크림", quantity: 0, price: 3000 },
-  { product: "쿠키", quantity: 20, price: 2000 },
-  { product: "탄산음료", quantity: 5, price: 1000 },
-];
-console.log("원본 제품 목록:", inventory);
+// 책 목록 Set 생성
+const readBooks = new Set();
+// 책 추가
+readBooks.add("해리포터");
+readBooks.add("반지의 제왕");
+readBooks.add("어린왕자");
+readBooks.add("데미안");
+readBooks.add("1984");
+readBooks.add("위대한 개츠비");
 
-// 새로운 제품 "바나나킥" 추가 (수량: 50, 가격: 1000)
-inventory.push({ product: "바나나킥", quantity: 50, price: 1000 });
-console.log("새로운 제품 추가:", inventory);
+// 모든 책 목록 출력
+console.log("현재 읽은 책 목록:");
+for (let book of readBooks) {
+  console.log(book);
+}
+console.log();
 
-// 배열의 요소 값을 변경할 때는 map() 또는 forEach() 사용
-// map()은 새로운 배열을 반환하고, 
-// forEach()는 기존 배열을 수정하므로 간단한 변경은 forEach()를 사용할 것
-// 재고가 있는 제품의 이름을 변경
-inventory.forEach((item) => {
-  if (item.quantity > 0) {
-    item.product = `(재고있음) ${item.product}`;
+// 제목이 7글자 이상인 책 삭제
+for (let book of readBooks) {
+  if (book.length >= 7) {
+    readBooks.delete(book);
+    console.log(`${book}을(를) 책 목록에서 삭제했습니다.`);
   }
-});
+}
+console.log();
 
-console.log("재고가 있는 제품의 이름 변경:", inventory);
+// 두 명의 사용자가 읽은 책 목록 비교 (공통된 책 찾기)
+const friendReadBooks = new Set([
+  "어린왕자",
+  "1984",
+  "노인과 바다",
+  "그리스인 조르바",
+]);
 
-// 재고가 10개가 넘는 제품은 가격을 10% 할인
-inventory.forEach((item) => {
-  if (item.quantity > 10) {
-    item.price = item.price * 0.9; // 가격의 10% 할인
+console.log("친구가 읽은 책 목록:");
+for (let book of friendReadBooks) {
+  console.log(book);
+}
+console.log();
+
+const commonBooks = new Set();
+
+for (let book of readBooks) {
+  if (friendReadBooks.has(book)) {
+    commonBooks.add(book);
   }
-});
-console.log("재고가 10개가 넘는 제품의 가격 할인:", inventory);
+}
 
-// 모든 제품의 총 재고 가치 계산
-const totalValue = inventory.reduce((total, item) => {
-  return total + item.quantity * item.price;
-}, 0);
-
-console.log("전체 재고의 총 가치:", totalValue);
+console.log("두 명의 사용자가 공통으로 읽은 책:");
+for (let book of commonBooks) {
+  console.log(book);
+}
