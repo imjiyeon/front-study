@@ -1,0 +1,134 @@
+
+/* todolist를 중앙에 배치하는 2가지 방법 */
+
+/* (1)
+바디를 flex 컨테이너로 설정 하고
+가로축으로 자식인 container-child를 중앙에 정렬
+*/
+body {
+  display: flex;
+  flex-direction: column; /* 세로 방향으로 자식들을 정렬*/
+  align-items: center; /* 교차축(가로)으로 자식들을 중앙에 정렬 */
+}
+
+/* (2)
+또는 container-child에 좌우 여백을 주어 중앙 정렬
+auto는 브라우저에서 중앙에 배치되도록 좌우 여백을 동일하게 줌
+*/
+/* #container-child {
+  width: 500px;
+  margin: 0 auto;
+} */
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* 
+todo-div를 flex 컨테이너로 설정하고 입력필드에 flex-grow: 1을 적용하여,
+입력 필드가 남은 공간을 동적으로 차지하도록 설정.
+다른 요소들은 고정된 크기를 유지.
+*/
+#todo-div {
+  display: flex;
+}
+
+#todo-input {
+  width: 200px; /* 기본 너비 */
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  padding: 0 10px;
+  flex-grow: 1; /* 입력 필드가 남은 공간을 차지함 */
+}
+
+#add-btn {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  background-color: #d3d3d3;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#add-btn:hover {
+  background-color: #b0b0b0;
+}
+
+/* To-do List Section */
+#todo-list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: 5px 0;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.complete {
+  color: rgb(155, 155, 155);
+  text-decoration: line-through;
+}
+
+li input[type="checkbox"] {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+li input[type="text"] {
+  width: 200px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+li button {
+  width: 50px;
+  height: 30px;
+  margin-left: 10px;
+  background-color: #d3d3d3;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+li button:hover {
+  background-color: #b0b0b0;
+}
+
+#todo-count {
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+#delete-all-btn {
+  width: 100px;
+  height: 30px;
+  margin-left: 10px;
+  background-color: #d3d3d3;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#delete-all-btn:hover {
+  background-color: #b0b0b0;
+}
