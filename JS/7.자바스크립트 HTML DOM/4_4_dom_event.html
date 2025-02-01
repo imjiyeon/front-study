@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+
+  <!-- 클릭 이벤트 -->
+
+  <body>
+    <input type="text" onfocus="onFocus()" onblur="onBlur()" />
+
+    <input
+      type="text"
+      oninput="func(event)"
+      onkeydown="func(event)"
+      onkeyup="func(event)"
+    />
+
+    <script>
+
+      //포커스이벤트: 입력 필드에 마우스 포커스가 가면 발생
+      function onFocus() {
+        console.log("onFocus");
+      }
+
+      //포커스이벤트: 입력 필드에 마우스 포커스가 빠져나가면 발생
+      function onBlur() {
+        console.log("onBlur");
+      }
+
+      //키 입력 이벤트
+
+      //oninput: 입력 내용이 변경될 때마다
+      //onkeydown: 키를 눌렀을 때
+      //onkeyup: 키를 눌렀다가 뗄 때
+      function func(e) {
+        console.log(e.type); //이벤트 종류 (oninput, onkeydown, onkeyup)
+        console.log(e.target); //이벤트를 발생한 엘리먼트
+        console.log(e.target.value); //입력필드의 현재 값
+      }
+
+      //html 문서가 로드될 때 발생
+      window.addEventListener("load", function () {
+        console.log("문서가 로드되었습니다");
+      });
+
+    </script>
+  </body>
+</html>

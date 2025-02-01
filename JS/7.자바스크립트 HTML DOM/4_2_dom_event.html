@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+
+  <!-- 간단한 키이벤트 -->
+
+  <body>
+    <!-- <input type="text" onkeydown="console.log('key pressed')"> -->
+    <input id="input" type="text" onkeydown="func()">
+
+  </body>
+
+  <script>
+    const func = () => {
+      const inputvalue = document.querySelector('#input').value;
+      console.log(inputvalue);
+      console.log(window.event);
+      console.log(window.event.keyCode);
+    }
+  </script>
+
+</html>
