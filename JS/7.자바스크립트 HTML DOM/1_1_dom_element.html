@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>안녕하세요</title>
+</head>
+<body>
+    <div id="box">하이</div>
+</body>
+</html>
+
+<!-- 
+크롬의 콘솔에서 바로 확인
+
+console.dir(document)
+console.dir(document.childNodes)
+요소를 누르면 Element 탭으로 이동함
+
+console.dir(document.childNodes[1].childNodes[2].childNodes[1])
+div 태그가 출력됨
+
+console.dir(document.childNodes[1].childNodes[2].childNodes[2])
+2번 인덱스의 텍스트 노드는 하이가 아니고, div 태그 앞뒤에 있는 줄바꿈 문자
+console.dir(document.childNodes[1].childNodes[2].childNodes[2].textContent)
+줄바꿈 문자가 출력됨
+
+console.dir(document.childNodes[1].childNodes[2].childNodes[1].childNodes[0].textContent)
+하이는 div 노드 안에 있는 텍스트 노드
+
+속성(attribute) 노드는 attributes 속성을 통해 접근해야함.childNodes에 안나옴
+console.dir(document.childNodes[1].childNodes[2].childNodes[1].attributes)
+-->
