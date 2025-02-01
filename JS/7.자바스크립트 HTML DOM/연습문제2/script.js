@@ -1,111 +1,66 @@
-//상품의 수량은 타입체크 또는 정규표현식으로 확인
-function validateQuantity(field) {
-    var regex = /^[0-9]*$/; // 숫자만 허용
-    if (regex.test(field.value) == false) {
-        field.style.borderColor = "red";
-    } else {
-        field.style.borderColor = "";
-    }
+//위에서 부터 입력필드를 하나씩 검사하고, 경고메세지는 하나만 표시
+function validate(f){
+  // 아이디 정규식        
+  var regId = /^[0-9a-z]{4,8}$/;         
+
+  // 아이디 체크
+  if(!regId.exec(f.id.value)){
+      alert("아이디는 4~8자 소문자 or 숫자");
+      f.id.focus();
+      return;
+  }
+
+  // 비밀번호 체크
+  if(f.pw.value != f.checkpw.value){
+      alert("비밀번호가 맞지 않습니다..");
+      return;
+  }
+
+  // 이름 체크
+  if(f.name.value == ""){
+    alert("이름을 입력하세요..");
+    f.name.focus();
+    return;
+  }
+
+  // 테이블에 회원을 추가
+  addDataToTable();
+  alert("새로운 회원이 추가되었습니다!");
 }
 
-function validatePrice(field) {
-    var regex = /^[0-9]*$/;
-    if (!regex.test(field.value)) {
-        field.style.borderColor = "red";
-    } else {
-        field.style.borderColor = "";
-    }
-}
+// 테이블에 새로운 회원 추가
+function addDataToTable() {
+    // 폼 데이터를 가져옴
+    const id = document.getElementById('id').value;
+    const name = document.getElementById('name').value;
+    // name이 "gender"인 입력필드 중에서, 사용자가 선택한 요소 찾기
+    // 필드선택자 + 속성선택자 + 상태선택자
+    const gender = document.querySelector('input[name="gender"]:checked');
+    
+    // 테이블의 tbody 가져오기
+    const tableBody = document.getElementById('info-table').querySelector('tbody');
 
-//"장바구니 추가" 버튼을 누르면 폼이 유효한지 검사하고
-//유효하면 장바구니에 추가하고, 유효하지 않을 경우 경고 메시지를 표시
-function validateAndAddItem() {
-    var itemName = document.getElementById("itemName");
-    var itemQuantity = document.getElementById("itemQuantity");
-    var itemPrice = document.getElementById("itemPrice");
-    var isValid = true;
-    var errorMessage = "";
+    // 새로운 행(tr) 요소 생성
+    let newRow = document.createElement("tr");
 
-    // 상품 이름이 비어 있는지 확인
-    if (itemName.value.trim() === "") {
-        isValid = false;
-        errorMessage += "상품 이름을 입력해주세요.\n";
-    }
+    // 각 데이터에 대한 셀(td) 생성
+    let idCell = document.createElement("td");
+    idCell.textContent = id;
 
-    // 수량이 비어 있거나 유효하지 않은지 확인
-    if (itemQuantity.value.trim() === "" || isNaN(itemQuantity.value) || parseInt(itemQuantity.value) <= 0) {
-        isValid = false;
-        errorMessage += "유효한 수량을 입력해주세요.\n";
-    }
+    let nameCell = document.createElement("td");
+    nameCell.textContent = name;
 
-    // 가격이 비어 있거나 유효하지 않은지 확인
-    if (itemPrice.value.trim() === "" || isNaN(itemPrice.value) || parseFloat(itemPrice.value) <= 0) {
-        isValid = false;
-        errorMessage += "유효한 가격을 입력해주세요.\n";
-    }
+    let genderCell = document.createElement("td");
+    genderCell.textContent = gender ? gender.value : '';
 
-    // 유효성 체크에 실패했으면 함수 종료
-    if (!isValid) {
-        alert(errorMessage);
-        return; 
-    }
+    // 생성된 td 요소들을 tr 요소에 추가
+    newRow.appendChild(idCell);
+    newRow.appendChild(nameCell);
+    newRow.appendChild(genderCell);
 
-    // 상품의 이름, 수량, 가격을 전달하여 장바구니에 추가
-    addItemToCart(itemName.value.trim(), parseInt(itemQuantity.value), parseFloat(itemPrice.value));
-}
+    // 테이블의 tbody에 새로운 행을 추가
+    tableBody.appendChild(newRow);
 
-// 상품의 이름, 수량, 가격
-function addItemToCart(name, quantity, price) {
-    // ul 가져오기
-    var cartList = document.getElementById("cartList");
-    // 속성 선택자를 사용하여 상품이 있는지 확인 li[data-name="바나나"] 
-    var existingItem = document.querySelector(`li[data-name="${name}"]`);
-
-    if (existingItem) {
-        // 이미 장바구니에 있는 경우 수량과 가격을 업데이트
-        var existingQuantity = existingItem.querySelector(".itemQuantity");
-        var existingPrice = existingItem.querySelector(".itemPrice");
-
-        var newQuantity = parseInt(existingQuantity.textContent) + quantity;
-        var newPrice = (parseFloat(existingPrice.textContent) + (quantity * price)).toFixed(2);
-
-        existingQuantity.textContent = newQuantity;
-        existingPrice.textContent = newPrice;
-    } else {
-        // 새로운 항목 추가
-        // 완전한 엘리먼트 형태의 문자열 만들기
-        // 중간중간 콘솔창에서 확인할 것
-        var newItem = `<li data-name = "${name}"> ${name} - <span class="itemQuantity">
-        ${quantity}</span>개 <span class="itemPrice">${(quantity * price).toFixed(2)}</span>원 <button onclick="removeItem(this)">제거</button>
-        </li>`;
-
-        cartList.insertAdjacentHTML("beforeend", newItem);
-    }
-
-    updateTotal();
-}
-
-function removeItem(button) {
-    var listItem = button.parentElement;
-    listItem.remove();
-    updateTotal();
-}
-
-function updateTotal() {
-    var cartList = document.getElementById("cartList");
-    var totalQuantity = 0;
-    var totalPrice = 0.0;
-
-    // 전체 수량 계산
-    cartList.querySelectorAll(".itemQuantity").forEach(function(quantitySpan) {
-        totalQuantity += parseInt(quantitySpan.textContent);
-    });
-
-    // 전체 가격 계산
-    cartList.querySelectorAll(".itemPrice").forEach(function(priceSpan) {
-        totalPrice += parseFloat(priceSpan.textContent);
-    });
-
-    document.getElementById("totalQuantity").textContent = totalQuantity;
-    document.getElementById("totalPrice").textContent = totalPrice.toFixed(2);
+    // 폼을 리셋하여 다음 입력을 준비
+    document.getElementById('signup-form').reset();
 }

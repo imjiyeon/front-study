@@ -2,93 +2,42 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>회원가입</title>
+    <title>장바구니</title>
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js" defer></script>
 </head>
 <body>
-    <div id="flex-container">
-        <div id="signup-form" class="container">
-            <h1>회원가입</h1>
-            <p>회원가입을 위해 아래의 정보를 입력해주세요.</p>
-            <hr />
+    <div id="container">
+        <h1>온라인 쇼핑 장바구니</h1>
 
-            <form>
-                <h4>회원기본정보</h4>
-                <ul>
-                    <li>
-                        <label class="fixed-label" for="id">아이디</label>
-                        <input type="text" id="id" name="id" placeholder="4-8자 소문자 숫자"/>
-                    </li>
-                    <li>
-                        <label class="fixed-label" for="pw">비밀번호</label>
-                        <input type="password" id="pw" name="pw" />
-                    </li>
-                    <li>
-                        <label class="fixed-label" for="checkpw">비밀번호 확인</label>
-                        <input type="password" id="checkpw" name="checkpw" />
-                    </li>
-                    <li>
-                        <label class="fixed-label" for="name">이름</label>
-                        <input type="text" id="name" name="name" />
-                    </li>
-                </ul>
+        <form id="itemForm">
+            <label for="itemName">상품 이름:</label>
+            <input type="text" id="itemName">
+            <br><br>
 
-                <h4>개인정보</h4>
-                <ul>
-                    <li>
-                        <label class="fixed-label" for="sn1">주민등록번호</label>
-                        <input type="text" id="sn1" name="sn1" />
-                        -
-                        <input type="text" id="sn2" name="sn2" />
-                        <input type="button" value="확인" onclick="checkGender()" />
-                    </li>
-                    <li>
-                        <label class="fixed-label">성별</label>
-                        <label><input type="radio" id="male" name="gender" value="m" /> 남</label>
-                        <label><input type="radio" id="female" name="gender" value="f" /> 여</label>
-                    </li>
-                </ul>
+            <label for="itemQuantity">수량:</label>
+            <input type="text" id="itemQuantity" oninput="validateQuantity(this)">
+            <br><br>
 
-                <h4>관심분야</h4>
-                <ul class="interest-list">
-                    <li><label><input type="checkbox" name="interest" value="여행" /> 여행</label></li>
-                    <li><label><input type="checkbox" name="interest" value="영화" /> 영화</label></li>
-                    <li><label><input type="checkbox" name="interest" value="독서" /> 독서</label></li>
-                    <li><label><input type="checkbox" name="interest" value="음악" /> 음악</label></li>
-                    <li><label><input type="checkbox" name="interest" value="관심없음" /> 관심없음</label></li>
-                </ul>
+            <label for="itemPrice">가격(개당):</label>
+            <input type="text" id="itemPrice" oninput="validatePrice(this)">
+            <br><br>
+            
+            <!-- submit 버튼 대신 일반버튼으로 생성해야함 
+            submit 버튼을 누르면 폼을 제출하면서 화면이 새로고침되어
+            장바구니를 기록할 수 없음 
+            -->
+            <input type="submit" value="submit버튼">
+            <input type="button" onclick="validateAndAddItem()" value="장바구니에 추가">
+        </form>
 
-                <div>
-                    <!-- this는 input을 가리키고, this.form은 input이 속해 있는 form.
-                    버튼 클릭 시 form을 전달하면, 바로 안에 있는 요소들을 사용할수 있음
-                    -->
-                    <input type="button" value="회원가입" onclick="validate(this.form);" />
-                    <input type="reset" value="다시 쓰기" />
-                </div>
-            </form>
-        </div>
+        <h2>장바구니</h2>
+        <ul id="cartList">
+             <!-- 상품이 추가될 부분 -->
+        </ul>
+        <p>총 수량: <span id="totalQuantity">0</span></p>
+        <p>총 가격: <span id="totalPrice">0</span>원</p>
 
-        <!-- 새로 추가된 div -->
-        <div id="info-table" class="container">
-            <h1>회원정보 목록</h1>
-            <p>아래는 회원표입니다.</p>
-            <hr />
-                    
-            <table border="1" style="width: 100%; border-collapse: collapse;">
-                <thead>
-                    <tr>
-                        <th>아이디</th>
-                        <th>이름</th>
-                        <th>성별</th>
-                        <th>관심분야</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- 동적으로 데이터가 추가될 부분 -->
-                </tbody>
-            </table>
-        </div>
     </div>
 </body>
 </html>
