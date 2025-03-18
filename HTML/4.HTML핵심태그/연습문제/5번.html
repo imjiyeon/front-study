@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>도서 관리 시스템</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        th {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>도서 관리 시스템</h2>
+    <!-- 5행 4열 -->
+    <table>
+        <!-- 1번째 행은 제목 -->
+        <tr>
+            <th>도서명</th>
+            <th>저자</th>
+            <th>출판사</th>
+            <th>출판연도</th>
+        </tr>
+        <!-- 2~4번째 행은 도서 목록 -->
+        <tr>
+            <td>책 제목 1</td>
+            <td>저자 1</td>
+            <td>출판사 1</td>
+            <td>2022</td>
+        </tr>
+        <tr>
+            <td>책 제목 2</td>
+            <td>저자 2</td>
+            <td>출판사 2</td>
+            <td>2020</td>
+        </tr>
+        <tr>
+            <td>책 제목 3</td>
+            <td>저자 3</td>
+            <td>출판사 3</td>
+            <td>2023</td>
+        </tr>
+        <!-- 마지막 행은 총 권수 -->
+        <!-- 2~4열 병합 -->
+        <tr>
+            <th>총 권수</th>
+            <td colspan="3">3권 (합계)</td>
+        </tr>
+    </table>
+
+</body>
+</html>

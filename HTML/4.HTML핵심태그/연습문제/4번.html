@@ -1,40 +1,57 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>수습 국원 모집</title>
-  <style>
-    table, td, th {
-      border:1px solid #ccc;
-    }
-
-    td, th {
-      padding:10px 20px;
-      width: 100px;
-    }
-
-  </style>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-  <h1>수습 국원 지원 양식</h1>
-  <table>
-    <tr>
-      <th rowspan="3">개인정보</th>
-      <th>이름</th>
-      <td></td>
-    </tr>
-    <tr>
-      <th>학과/학번</th>
-      <td></td>
-    </tr>
-    <tr>
-      <th>연락처</th>
-      <td></td>
-    </tr>
-    <tr>
-      <th>지원 분야</th>
-      <td colspan="2"></td>
-    </tr>
-  </table>
+
+    <h2>학생 성적표</h2>
+
+    <table>
+        <tr>
+            <th>학생명</th>
+            <th>국어</th>
+            <th>수학</th>
+            <th>영어</th>
+        </tr>
+        <tr>
+            <td>김철수</td>
+            <td>85</td>
+            <td>90</td>
+            <td>88</td>
+        </tr>
+        <tr>
+            <td>이영희</td>
+            <td>78</td>
+            <td>82</td>
+            <td>85</td>
+        </tr>
+        <tr>
+            <td>박민수</td>
+            <td>92</td>
+            <td>95</td>
+            <td>89</td>
+        </tr>
+        <tr>
+            <th>총점 및 평균</th>
+            <td>255 <small>(평균: 85)</small></td>
+            <td>267 <small>(평균: 89)</small></td>
+            <td>262 <small>(평균: 87)</small></td>
+        </tr>
+    </table>
+
 </body>
 </html>
