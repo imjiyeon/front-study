@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style>
+        * {
+            margin: 5px;
+        }
+        header {
+            border: 1px solid gray;
+        }
+        main {
+            display: flex;
+            border: 1px solid gray;
+        }
+        footer {
+            border: 1px solid gray;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h3>영화 리뷰 페이지</h3>
+        <nav>
+            <ul>
+                <li><a href="index.html">홈</a></li>
+                <li><a href="movies.html">영화 목록</a></li>
+                <li><a href="contact.html">문의하기</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h3>영화 정보</h3>
+            <table border="1">
+                <tr>
+                    <th>제목</th>
+                    <th>감독</th>
+                    <th>개봉 연도</th>
+                    <th>평점</th>
+                </tr>
+                <tr>
+                    <td>인셉션</td>
+                    <td>크리스토퍼 놀란</td>
+                    <td>2010</td>
+                    <td>9.0</td>
+                </tr>
+            </table>
+        </section>
+    
+        <section>
+            <h3>주요 출연진</h3>
+            <ul>
+                <li>레오나르도 디카프리오</li>
+                <li>조셉 고든 레빗</li>
+                <li>톰 하디</li>
+            </ul>
+        </section>
+    </main>
+    
+    <footer>
+        <button onclick="alert('리뷰가 제출되었습니다!')">리뷰 작성</button>
+        <p>© 2025 영화 리뷰 사이트. 모든 권리 보유.</p>
+    </footer>
+
+</body>
+</html>
