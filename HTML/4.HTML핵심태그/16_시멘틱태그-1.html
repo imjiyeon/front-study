@@ -4,7 +4,7 @@
 <head>
     <title>div태그만 사용한 문서구조</title>
     <style>
-        body div {
+        div {
             border: 1px solid;
             padding: 10px;
         }
@@ -13,17 +13,19 @@
         }
     </style>
 </head>
-
 <body>
-
-    <div class="header">헤더</div>
-    <div class="nav">네비게이션</div>
-    <div class="main">메인
+    <!-- 영역을 구분하기 위해 div 사용 -->
+    <div>헤더</div>
+    <div>네비게이션</div>
+    <div>메인
         <div class="section1">컨텐츠1</div>
         <div class="section2">컨텐츠2</div>
     </div>
-    <div class="footer">푸터</div>
+    <div>푸터</div>
 
 </body>
-
 </html>
+
+<!-- 
+시맨틱 태그 없이 div만 사용하면 의미를 해석하기 어렵다.
+-->
