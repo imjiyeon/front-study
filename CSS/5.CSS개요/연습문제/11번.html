@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style>
+
+        h2, #td_register {
+            text-align: center;
+        }
+
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            border: 2px solid black;
+        }
+
+        th, td {
+            border: 1px solid gray;
+            padding: 10px;
+            text-align: left;
+        }
+
+        /* 입력 필드 */
+        #name {
+            color: green;
+        }
+
+        #email {
+            color: blue;
+        }
+
+        #password {
+            color: red;
+        }
+
+        /* 포커스 시 배경색 강조 */
+        input:focus {
+            background-color: orange;
+        }
+
+        /* 성별 선택 시 강조 */
+        input[type="radio"]:checked + label {
+            font-weight: bold;
+            color: purple;
+        }
+
+        /* 버튼 클릭 시 배경색 변경 */
+        button:active {
+            background-color: darkblue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>회원가입</h2>
+    <form>   
+        <table>
+            <tr>
+                <th>이름</th>
+                <td><input type="text" id="name" placeholder="이름 입력"></td>
+            </tr>
+            <tr>
+                <th>이메일</th>
+                <td><input type="email" id="email" placeholder="이메일 입력"></td>
+            </tr>
+            <tr>
+                <th>비밀번호</th>
+                <td><input type="password" id="password" placeholder="비밀번호 입력"></td>
+            </tr>
+            <tr>
+                <th>성별</th>
+                <td>
+                    <input type="radio" id="male" name="gender">
+                    <label for="male">남성</label>
+                    <input type="radio" id="female" name="gender">
+                    <label for="female">여성</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" id="td_register">
+                    <button type="submit">가입하기</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

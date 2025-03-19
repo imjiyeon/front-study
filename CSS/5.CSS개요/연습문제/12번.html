@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style>
+        /* 특정 입력 필드의 텍스트 색상 지정 */
+        .event-name {
+            color: orange;
+        }
+        .organizer {
+            color: purple;
+        }
+        .event-date {
+            color: green;
+        }
+
+        /* 입력 필드 클릭 시 배경색 변경 */
+        input:focus, select:focus {
+            background-color: lightyellow;
+            outline: none;
+        }
+
+        /* 이벤트 유형 선택 시 텍스트 색상 변경 */
+        select {
+            color: blue;
+        }
+
+        /* 체크박스 선택 시 라벨 강조 */
+        input[type="checkbox"]:checked + span {
+            font-weight: bold;
+            color: darkred;
+        }
+
+        /* 버튼 클릭 시 배경색 변경 */
+        button:active {
+            background-color: lightgray;
+        }
+
+        /* 폼 스타일 */
+        .container {
+            width: 350px;
+            padding: 20px;
+            border: 1px solid black;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>이벤트 등록</h2>
+        <form>
+            <div class="form-group">
+                <span class="event-name">이벤트명</span><br>
+                <input type="text" name="event-name">
+            </div>
+            <div class="form-group">
+                <span class="organizer">주최자명</span><br>
+                <input type="text" name="organizer">
+            </div>
+            <div class="form-group">
+                <span class="event-date">이벤트 날짜</span><br>
+                <input type="date" name="event-date">
+            </div>
+            <div class="form-group">
+                <span>이벤트 유형</span><br>
+                <select name="event-type">
+                    <option value="online">온라인</option>
+                    <option value="offline">오프라인</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <span>참여 가능 연령대</span><br>
+                <input type="checkbox" id="age10" name="age-group">
+                <span>10대</span>
+                <input type="checkbox" id="age20" name="age-group">
+                <span>20대</span>
+                <input type="checkbox" id="age30" name="age-group">
+                <span>30대</span>
+                <input type="checkbox" id="age40" name="age-group">
+                <span>40대 이상</span>
+            </div>
+            <button type="submit">등록하기</button>
+        </form>
+    </div>
+
+</body>
+</html>
