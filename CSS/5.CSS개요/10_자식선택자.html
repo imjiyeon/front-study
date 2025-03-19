@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* 선택자 사이에 >기호가 들어감. 태그선택자 > 클래스선택자 */
-        /* ul 태그의 자식이면서 class="orange" 속성은 가진 태그를 찾아서 스타일 적용 */
-        ul>.orange {
+        /* 자식선택자: `>` 기호 사용 */
+        /* 태그선택자 > 클래스선택자 */
+        /* ul 태그의 자식이면서 class="orange"를 가진 태그 선택 */
+        ul > .orange {
             color: red;
         }
     </style>
@@ -18,7 +19,7 @@
     <ul>
         <li>사과</li>
         <li>딸기</li>
-        <li id="orange" class="orange">오렌지</li> <!-- 빨간색 글자로 출력 -->
+        <li class="orange">오렌지</li> <!-- 빨간색 글자로 출력 -->
     </ul>
     <div>당근</div>
     <p>토마토</p>

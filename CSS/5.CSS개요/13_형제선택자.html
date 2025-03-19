@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        /* class="orange" 속성을 포함한 요소의 
-        가장 오른쪽에 있는 형제 요소를 선택 */
-        /* .orange + li {
-            color: red;
-        } */
-        /* class="orange" 속성을 포함한 요소의 
-        모든 다음 형제 요소를 선택 */
-        .orange ~ li {
+        /* +: 바로 다음 형제 1개만 선택 */
+        /* class="orange"를 가진 요소 바로 뒤에 있는 li를 선택 */
+        /* 망고는 빨간색으로 변경됨. 하지만 사과는 변경안됨 */
+        .orange + li {
             color: red;
         }
+        /* ~: 뒤에 나오는 모든 형제를 선택 */
+        /* class="orange"을 가진 요소의 뒤에 있는 모든 li를 선택 */
+        /* 망고와 사과 모두 빨간색으로 변경됨 */
+        /* .orange ~ li {
+            color: red;
+        } */
     </style>
 </head>
 <body>
@@ -23,13 +25,13 @@
             <li>사과</li>
             <li>딸기</li>
             <li class="orange">오렌지</li>
-            <li>망고</li> <!-- 빨간색 적용 -->
-            <li>사과</li> <!-- 빨간색 적용 -->
+            <li>망고</li>
+            <li>사과</li>
         </ul>
         <div>당근</div>
         <p>토마토</p>
-        <span class="orange">오렌지</span>
+        <span>오렌지</span>
     </div>
-    <span class="orange">오렌지</span>
+    <span>오렌지</span>
 </body>
 </html>
