@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>온수 공급 중단 안내</title>
+    <style>
+
+        /* 박스 모서리 둥글게 */
+        div {
+            border: 3px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            width: 60%;
+            margin: auto;     
+        }
+
+        /* 제목 가운데 정렬 */
+        h2 {
+            text-align: center;
+        }
+
+        /* 테이블 스타일 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        /* 셀 스타일 */
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* tr의 부모는 thead tbody tfoot 중 하나 */
+        /* table 안에 tbody가 없으면 자동으로 생성되므로 tr의 부모는 tbody */
+
+        /* 같은 부모(tbody)를 가지고 있는 tr 중에서 첫번째 요소 선택 */
+        /* 첫 번째 행 (제목) */
+        tbody tr:first-child {
+            background-color: lightgray;
+        }
+
+        /* tbody 태그 선택자 생략 가능 */
+        /* 마지막 행 (추가안내) */
+        tr:last-child {
+            color: gray;
+        }
+
+        /* 버튼 스타일 */
+        .button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: lightgray;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+        /* 버튼 클릭 시 색상 변경 */
+        .button:active {
+            background-color: darkgray;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h2>아파트 온수 공급 중단 안내</h2>
+        
+        <table>
+            <tr>
+                <th>구분</th>
+                <th>내용</th>
+            </tr>
+            <tr>
+                <td>날짜</td>
+                <td>10월 5일 (목)</td>
+            </tr>
+            <tr>
+                <td>시간</td>
+                <td>오전 9시 ~ 오후 6시</td>
+            </tr>
+            <tr>
+                <td>사유</td>
+                <td>온수 배관 보수 공사</td>
+            </tr>
+            <tr>
+                <td>추가 안내</td>
+                <td>해당 시간 동안 온수 사용이 불가능합니다.</td>
+            </tr>
+        </table>
+
+        <button class="button">확인</button>
+    </div>
+
+</body>
+</html>

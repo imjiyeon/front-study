@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숙박 예약 폼</title>
+    <style>
+        /* 박스 */
+        div {
+            background-color: #f5f5dc; /* 연한 베이지색 */
+            width: 50%;
+            margin: auto;
+            padding: 10px 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        /* 라벨 스타일 */
+        label {
+            font-weight: bold;
+        }
+
+        /* 입력 필드 스타일 */
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px auto;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+
+        /* 포커스 시 입력 필드 스타일 */
+        input:focus,
+        select:focus,
+        textarea:focus {
+            background-color: lightgray;
+        }
+
+        /* 버튼 스타일 */
+        .submit-button {
+            background-color: green;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        /* 버튼 마우스 오버 시 색상 변경 */
+        .submit-button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h3>숙박 예약</h3>
+        <form onsubmit="return submitForm()">
+            <label for="name">이름:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="checkin">체크인 날짜:</label>
+            <input type="date" id="checkin" name="checkin" required>
+
+            <label for="checkout">체크아웃 날짜:</label>
+            <input type="date" id="checkout" name="checkout" required>
+
+            <label for="room-type">객실 유형:</label>
+            <select id="room-type" name="room-type">
+                <option value="single">싱글룸</option>
+                <option value="double">더블룸</option>
+                <option value="suite">스위트룸</option>
+            </select>
+
+            <label for="requests">요청 사항:</label>
+            <textarea id="requests" name="requests" rows="4" placeholder="요청 사항을 입력하세요."></textarea>
+
+            <button type="submit" class="submit-button">예약하기</button>
+        </form>
+    </div>
+
+    <script>
+        function submitForm() {
+            alert("예약이 완료되었습니다!");
+            return false; // 실제 서버 전송 방지
+        }
+    </script>
+
+</body>
+</html>

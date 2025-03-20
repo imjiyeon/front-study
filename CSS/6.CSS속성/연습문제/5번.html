@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>할인 이벤트 배너</title>
+    <style>
+        /* 전체 배경 - 이미지 적용 */
+        div {
+            background-image: url('../images/쇼핑몰.png'); /* 할인 이벤트 이미지 */
+            background-size: cover; /* 배경을 요소 크기에 맞춤 */
+            padding: 20px;
+            width: 60%;
+            margin: auto;
+            text-align: center;
+            border-radius: 10px;
+            color: white; /* 배경과 대비되는 글자색 */
+        }
+
+        /* 제목 배경 */
+        .title {
+            background-color: orange;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        /* 설명 배경 */
+        .p1 {
+            background-color: gray;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        /* 할인 가격 강조 */
+        .p2 {
+            background-color: red;
+            color: white;
+            padding: 5px;
+            font-weight: bold;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .price {
+            text-decoration: line-through;
+        }
+
+        /* 버튼 스타일 */
+        button {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            /* 테두리 제거 */
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        /* 버튼 클릭 시 색상 변경 */
+        button:active {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h2 class="title">특가 할인 이벤트!</h2>
+        <p class="p1">이 제품을 지금 구매하면 30% 할인된 가격에 구매할 수 있습니다!</p>
+        <p class="p2">기존 가격: <span class="price">50,000원</span> → 할인 가격: 35,000원</p> <br>
+        <button class="buy-button">구매하기</button>
+    </div>
+
+</body>
+</html>

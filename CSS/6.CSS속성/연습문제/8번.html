@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고정 메뉴바</title>
+    <style>
+        /* 상단 고정 네비게이션 바 */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        /* 메뉴 항목 스타일 */
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            font-size: 18px;
+        }
+
+        /* 마우스를 올리면 배경색 변경 */
+        nav a:hover {
+            background-color: gray;
+            border-radius: 5px;
+        }
+
+        /* 본문 내용과 메뉴바 간격 확보 */
+        .content {
+            margin-top: 60px;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="https://www.naver.com" target="_blank">네이버</a>
+        <a href="https://www.google.com" target="_blank">구글</a>
+        <a href="https://www.daum.net" target="_blank">다음</a>
+    </nav>
+
+    <div class="content">
+        <h1>고정 메뉴바</h1>
+        <p>이 페이지에는 상단에 고정된 메뉴바가 있습니다.</p>
+        <p>네이버, 구글, 다음으로 이동하는 버튼을 클릭해보세요.</p>
+    </div>
+
+</body>
+</html>
