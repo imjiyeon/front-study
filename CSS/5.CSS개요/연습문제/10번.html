@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
     <style>
+        /* disabled 속성을 가지고 있는 요소를 선택 */
         [disabled] {
             color: blue;
         }
+        /* type이 password인 요소를 선택 */
         [type="password"] {
             color: red;
         }
@@ -12,8 +14,9 @@
 </head>
 <body>
     <form action="#">
-
+        <!-- fieldset: 관련된 입력 필드 묶기 -->
         <fieldset>
+            <!-- legend: 필드셋 제목 -->
             <legend>주소입력</legend>
             <input type="text" value="인천시 남동구 구월동" disabled>
             <input type="text" placeholder="나머지 주소입력">

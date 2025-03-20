@@ -2,48 +2,51 @@
 <html lang="ko">
 <head>
     <style>
-
-        h2, #td_register {
+        /* 제목 가운데 정렬 */
+        h2 {
             text-align: center;
         }
-
+        /* 테이블을 화면 가운데 정렬 */
+        /* margin을 auto로 설정하면 화면 크기에 따라 좌우 여백을 동일하게 조정됨 */
         table {
             width: 50%;
             border-collapse: collapse;
             margin: 20px auto;
             border: 2px solid black;
         }
-
         th, td {
             border: 1px solid gray;
             padding: 10px;
             text-align: left;
         }
-
         /* 입력 필드 */
         #name {
             color: green;
         }
-
         #email {
             color: blue;
         }
-
         #password {
             color: red;
         }
-
         /* 포커스 시 배경색 강조 */
         input:focus {
             background-color: orange;
         }
-
         /* 성별 선택 시 강조 */
         input[type="radio"]:checked + label {
             font-weight: bold;
             color: purple;
         }
-
+        /* 셀 안에서 버튼을 가운데 정렬시키기 */
+        /* 정렬 안됨. 버튼 안에 있는 텍스트가 정렬됨 */
+        /* button {
+            text-align: center;
+        } */
+        /* 셀을 선택한 후에 정렬시키기 */
+        #td_register {
+            text-align: center;
+        }
         /* 버튼 클릭 시 배경색 변경 */
         button:active {
             background-color: darkblue;
@@ -52,38 +55,34 @@
     </style>
 </head>
 <body>
-
     <h2>회원가입</h2>
-    <form>   
-        <table>
-            <tr>
-                <th>이름</th>
-                <td><input type="text" id="name" placeholder="이름 입력"></td>
-            </tr>
-            <tr>
-                <th>이메일</th>
-                <td><input type="email" id="email" placeholder="이메일 입력"></td>
-            </tr>
-            <tr>
-                <th>비밀번호</th>
-                <td><input type="password" id="password" placeholder="비밀번호 입력"></td>
-            </tr>
-            <tr>
-                <th>성별</th>
-                <td>
-                    <input type="radio" id="male" name="gender">
-                    <label for="male">남성</label>
-                    <input type="radio" id="female" name="gender">
-                    <label for="female">여성</label>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" id="td_register">
-                    <button type="submit">가입하기</button>
-                </td>
-            </tr>
-        </table>
-    </form>
-
+    <table>
+        <tr>
+            <th>이름</th>
+            <td><input type="text" id="name" placeholder="이름 입력"></td>
+        </tr>
+        <tr>
+            <th>이메일</th>
+            <td><input type="email" id="email" placeholder="이메일 입력"></td>
+        </tr>
+        <tr>
+            <th>비밀번호</th>
+            <td><input type="password" id="password" placeholder="비밀번호 입력"></td>
+        </tr>
+        <tr>
+            <th>성별</th>
+            <td>
+                <input type="radio" id="male" name="gender">
+                <label for="male">남성</label>
+                <input type="radio" id="female" name="gender">
+                <label for="female">여성</label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" id="td_register">
+                <button>가입하기</button>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
