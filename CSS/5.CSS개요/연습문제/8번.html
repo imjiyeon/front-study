@@ -15,13 +15,13 @@
             text-align: center;
         }
         /* 첫 번째 행의 배경색 변경 */
-        tr:first-child {
+        table tr:first-child {
             font-weight: bold;
-            background-color: lightgray;
+            background-color: gray;
         }
         /* 짝수 번째 행의 배경색 변경 */
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
+        table tr:nth-child(odd) {
+            background-color: lightgray;
         }
     </style>
 </head>
@@ -30,14 +30,11 @@
     <!-- 6행 3열 -->
     <table>
         <!-- thead tbody는 없으면 자동으로 생성됨 -->
-        <thead>
             <tr>
                 <th>이름</th>
                 <th>과목</th>
                 <th>점수</th>
             </tr>
-        </thead>
-        <tbody>
             <tr>
                 <td>홍길동</td>
                 <td>수학</td>
@@ -63,7 +60,6 @@
                 <td>사회</td>
                 <td>81</td>
             </tr>
-        </tbody>
     </table>
 </body>
 </html>
