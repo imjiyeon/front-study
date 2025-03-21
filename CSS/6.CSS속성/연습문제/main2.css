@@ -1,0 +1,17 @@
+div {
+  width: 600px;
+  margin: 20px;
+}
+
+/* 블록요소를 인라인 요소로 변경 */
+h1 {
+  display: inline-block;
+  background-color: #0404aa;
+  color: #fff;
+}
+
+/* 글자 굵게 */
+span {
+  font-weight: bold;
+  color: red;
+}
