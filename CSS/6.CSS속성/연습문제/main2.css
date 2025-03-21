@@ -1,17 +1,14 @@
-div {
-  width: 600px;
-  margin: 20px;
-}
-
-/* 블록요소를 인라인 요소로 변경 */
+/* h태그는 블록요소 */
+/* h태그를 block에서 inline-block으로 변경 */
+/* 너비가 컨텐츠 크기만큼 늘어남 */
 h1 {
+  background-color: darkblue;
+  color: white;
   display: inline-block;
-  background-color: #0404aa;
-  color: #fff;
 }
 
-/* 글자 굵게 */
+/* 글자색은 빨강, 볼드체 */
 span {
-  font-weight: bold;
   color: red;
+  font-weight: bold;
 }
