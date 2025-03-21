@@ -1,0 +1,43 @@
+/* 박스 */
+div {
+  background-color: #f5f5dc; /* 연한 베이지색 */
+  width: 50%;
+  margin: auto;
+  padding: 10px 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+/* 라벨 스타일 */
+label {
+  font-weight: bold;
+}
+/* 입력 필드 스타일 */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 5px auto;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+/* 포커스 시 입력 필드 스타일 */
+input:focus,
+select:focus,
+textarea:focus {
+  background-color: lightgray;
+}
+/* 버튼 스타일 */
+button {
+  background-color: green;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  cursor: pointer;
+}
+/* 버튼 마우스 오버 시 색상 변경 */
+button:hover {
+  background-color: darkgreen;
+}
