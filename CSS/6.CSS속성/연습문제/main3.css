@@ -1,7 +1,10 @@
-/* 박스 */
+/* 박스 스타일 */
+/* 너비는 화면의 60% */
+/* 박스를 화면 가운데 정렬 */
+/* 모서리는 둥글게 */
 div {
-  background-color: #f5f5dc; /* 연한 베이지색 */
-  width: 50%;
+  background-color: #f5f5dc;
+  width: 60%;
   margin: auto;
   padding: 10px 20px;
   border: 2px solid black;
@@ -12,6 +15,14 @@ label {
   font-weight: bold;
 }
 /* 입력 필드 스타일 */
+/* 모든 입력필드 선택 */
+/* 너비는 부모(box)의 100% */
+/* 그런데 입력필드마다 너비가 다르게 보임 */
+/* content-box가 적용되어 각각 padding과 border가 너비에 추가되어 차이가 발생함 */
+/* content-box: content => width 
+border와 padding은 별도로 추가됨
+*/
+/* border-box: border+padding+content => width */
 input,
 select,
 textarea {
@@ -20,6 +31,7 @@ textarea {
   margin: 5px auto;
   border: 1px solid gray;
   border-radius: 5px;
+  box-sizing: border-box;
 }
 /* 포커스 시 입력 필드 스타일 */
 input:focus,
