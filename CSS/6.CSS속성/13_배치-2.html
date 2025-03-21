@@ -4,32 +4,34 @@
 <head>
     <title>position-relative</title>
     <style>
+        /* 공통 스타일 */
         * {
-            margin: 0;
-            padding: 0
+            margin: 0; /* 여백 제거 */
         }
-
+        /* p태그 공통 스타일 */
         p {
             border: solid 1px;
             width: 300px;
             height: 100px;
-            text-align: right; /* 텍스트 오른쪽 정렬 */
         }
 
         .child1 {
             background-color: lavender;
         }
 
-        /* 원래 위치로부터 이동함. 왼쪽으로 50px 아래로 50px만큼 이동함 */
+        /* 원래 위치로부터 이동함. */
+        /* 오른쪽에서 50px만큼 왼쪽으로 이동함 */
+        /* right: 왼쪽으로 이동 (오른쪽을 기준으로 밀어낸다..는 느낌) */
         .child2 {
             background-color: darkgray;
             position: relative;
             right: 50px;
-            top: 50px;
         }
 
         .child3 {
             background-color: gold;
+            position: relative;
+            top: 50px;
         }
     </style>
 </head>
