@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- bootstrap 라이브러리 추가 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    /* Card 가운데 정렬 */
+    /* .card{
+      margin: 20px auto;
+    } */
+  </style>
+</head>
+<body>
+  <!-- 다양한 컴포넌트 사용하기 -->
+  <!-- component > Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">베이커리</a> <!-- 사이트 이름 변경 -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- 필요없는 메뉴 삭제 -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item ">
+            <a class="nav-link active" aria-current="page" href="./main.html">Home</a>
+          </li>
+          <!-- Order, Review 메뉴 추가 -->
+          <li class="nav-item">
+            <a class="nav-link" href="./order.html">Order</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./review.html">Review</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+    </nav>
+
+    <!-- container: 좌우에 여백을 주고, 콘텐츠를 화면 중앙에 정렬. 
+     반응형으로 화면 크기에 따라 자동으로 너비 조절 -->
+    <!-- mt5: maring top 5단계 (1~5 5가 제일 큼) -->
+    <div class="container mt-5">
+      <!-- component > card -->
+      <div class="card" style="width: 18rem;">
+        <!-- 타이틀, 내용, 링크, 이미지 변경 -->
+        <img src="./images/생크림케이크.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">생크림 케이크</h5>
+          <p class="card-text">생크림과 시트가 어우러진 클래식 케이크</p>
+          <a href="#" class="btn btn-primary">장바구니 담기</a>
+          <!-- button 추가 및 이름 변경 -->
+          <button type="button" class="btn btn-primary">구매하기</button>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>
