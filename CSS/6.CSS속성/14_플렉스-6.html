@@ -1,33 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>display-flex: flex-grow</title>
     <style>
         * {
             margin: 0;
         }
-
         div {
             display: flex;
             background-color: gainsboro;
             height: 300px;
             margin-top: 20px;
         }
-
-        /* flex-grow: 너비 비율로 남은 공간을 나누는 속성 */
-        /* 기본값은 0으로, 0이면 남은 공간을 가지지 않는다 
-        숫자가 클수록 많은 공간을 차지한다
-        */
-        .child1{
-            flex-grow: 1;
-        }
-
-        .child2{
-            flex-grow: 2;
-        }
-
         p {
             border: solid 1px;
             width: 500px;
@@ -35,6 +19,16 @@
             background-color: gold;
             font-size: 3em;
             text-align: center;
+        }
+        /* flex-grow: 너비 비율로 남은 공간을 나누는 속성 */
+        /* 기본값은 0으로, 0이면 남은 공간을 가지지 않는다 
+        숫자가 클수록 많은 공간을 차지한다
+        */
+        .child1{
+            flex-grow: 1;
+        }
+        .child2{
+            flex-grow: 2;
         }
     </style>
 </head>

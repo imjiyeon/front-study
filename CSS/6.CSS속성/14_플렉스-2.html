@@ -7,46 +7,38 @@
         * {
             margin: 0;
         }
-
         /* 모든 div를 flex 컨테이너로 지정 */
         div {
             display: flex;
             margin-top: 20px;
         }
-
-        /* 자손들이 수평으로 정렬됨 */
-        .parent1 {
-            flex-direction: row;
-
-        }
-
-        /* 자손들이 수직으로 정렬됨 */
-        .parent2 {
-            flex-direction: column;
-
-        }
-
-        /* 자손들의 가로길이가 부모보다 커지면 줄바꿈 */
-        .parent3 {
-            flex-wrap: wrap;
-        }
-
         p {
             border: solid 1px;
             width: 300px;
             height: 100px;
         }
-
         .child1 {
             background-color: lavender;
         }
-
         .child2 {
             background-color: darkgray;
         }
-
         .child3 {
             background-color: gold;
+        }
+        /* 자손들이 수평으로 정렬됨 */
+        .parent1 {
+            flex-direction: row;
+
+        }
+        /* 자손들이 수직으로 정렬됨 */
+        .parent2 {
+            flex-direction: column;
+
+        }
+        /* 자손들의 가로길이가 부모보다 커지면 줄바꿈 */
+        .parent3 {
+            flex-wrap: wrap;
         }
     </style>
 </head>
