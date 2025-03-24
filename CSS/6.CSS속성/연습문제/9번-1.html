@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <style>
+    /* 모든 텍스트를 가운데 정렬 */
+    * {
+      text-align: center;
+    }
+    body {
+      width: 600px;
+      height: 400px;
+    }
+    /* header와 footer의 높이는 화면의 10% */
+    /* height는 부모를 기준으로 %가 적용됨 */
+    header, footer {
+      background-color: gray;
+      height: 10%; /* 비율 */
+    }
+
+    /* main을 flex 컨테이너로 설정하여 수평으로 정렬 */
+    main {
+      background-color: skyblue;
+      height: 80%;
+      display: flex;
+    }
+    /* left와 right의 너비는 부모의 20% */
+    main > section:nth-child(1) {
+      background-color: skyblue;
+      width: 20%;
+    }
+    main > section:nth-child(2) {
+      background-color: gainsboro;
+      width: 60%;
+    }
+    main > section:nth-child(3) {
+      background-color: red;
+      width: 20%;
+    }
+    /* 섹션 텍스트 강조 */
+    main > section {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- flex와 width와 height를 함께 이용해서 화면 구성하기 -->
+  <header>header</header>
+  <main>
+    <section>left</section>
+    <section>center</section>
+    <section>right</section>
+  </main>
+  <footer>footer</footer>
+</body>
+</html>
+
+<!-- 
+div: 레이아웃을 나누는데 사용되는 태그 
+시맨틱 태그: div와 기능은 같지만, 의미가 부여된 태그
+header: 사이트로고, 검색창
+nav: 메뉴바
+main: 컨텐츠(본문) 
+section: 세부내용
+footer: 사이트맵, 저작권, 연락처
+-->

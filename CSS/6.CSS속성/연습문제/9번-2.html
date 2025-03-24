@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <style>
+    * {
+      text-align: center;
+    }
+    /* box를 flex 컨테이너로 설정 */
+    /* 아이템들을 수직방향으로 정렬 */
+    body {
+      width: 600px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+    }
+    /* 비율은 1:8:1 */
+    /* 남는 여백을 1:8:1 비율로 배분 */
+    header, footer {
+      background-color: gray;
+      flex-grow: 1;
+    }
+    /* main을 flex 컨테이너로 설정 */
+    /* 아이템들을 수평방향으로 정렬 */
+    main {
+      flex-grow: 8;
+      display: flex;
+      flex-direction: row;
+    }
+    /* main에서 2:6:2 비율로 남는 여백을 배분 */
+    main > section:nth-child(1) {
+      background-color: skyblue;
+      flex-grow: 2;
+    }
+    main > section:nth-child(2) {
+      background-color: gainsboro;
+      flex: 6;
+    }
+    main > section:nth-child(3) {
+      background-color: red;
+      flex-grow: 2;
+    }
+    main > section {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- flex 컨테이너만 사용해서 화면 구성하기 -->
+
+  <header>header</header>
+  <main>
+    <section>left</section>
+    <section>center</section>
+    <section>right</section>
+  </main>
+  <footer>footer</footer>  
+</body>
+</html>
