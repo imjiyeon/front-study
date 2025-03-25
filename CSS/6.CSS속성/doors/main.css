@@ -49,6 +49,7 @@ body {
 */
 .door:hover {
     background-color: orange;
+    /* skewX: x축을 기준으로 기울이는 함수 (-14 : 반시계 방향) */
     transform: skewX(-14deg) scale(1.3);
     /* 다른 요소보다 위에 쌓임 */
     z-index: 1;
