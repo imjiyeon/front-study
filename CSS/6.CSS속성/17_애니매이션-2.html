@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <style>
+        .menu {
+            display: flex;
+            list-style: none;
+            height: 50px;
+            padding: 0;
+            margin: 0;
+            background-color: whitesmoke;
+            border-bottom: 2px solid lightgrey;
+        }
+        .menu-item {
+            width: 150px;
+            text-align: center;
+            background-color: lightgrey;
+            padding: 10px 0;
+            font-weight: bold;
+            position: relative;
+        }
+        .menu-item:hover {
+            background-color: darkgray;
+        }
+        .submenu {
+            list-style: none;
+            width: 150px;
+            padding: 0;
+            margin: 0;
+            border: 1px solid lightgray;
+            position: absolute;
+            top: 50px;
+
+            /* 이전에 사용했던 display 제거 */
+            /* display: none; */
+
+            /* display를 max-height, opacity, visibility로 대체 */
+            /* 화면에서 안보이도록 설정 */
+            opacity: 0;
+            visibility: hidden;
+            /* 높이가 커지면서 스르륵 펼쳐지는 효과 */
+            max-height: 0px;
+            /* 콘텐츠가 부모보다 튀어나오지 않도록 처리 */
+            /* ul 태그인 submenu는 크기가 0->100으로 바뀌지만 그안에 있는 li 태그는 크기가 고정됨 */
+            /* 그래서 ul태그는 펼쳐지지만 li는 땋 하고 바로 나옴 */
+            /* overflow를 이용해서 부모에 맞춰서 나오도록 잘라줘야함 */
+            overflow: hidden;
+            /* 애니메이션 설정 */
+            /* transition: opacity 1s ease-out, visibility 1s ease-out, max-height 1s ease-out; */
+            transition: all 1s ease-out;
+        }
+        .submenu li {
+            padding: 10px 0;
+            border-bottom: 1px solid lightgray;
+        }
+        .submenu li:hover {
+            background-color: whitesmoke
+        }
+        .menu-item:hover .submenu {
+            /* 기존의 display 방식 제거 */
+            /* display: block; */
+
+            /* 롤링 효과 */
+            opacity: 1;
+            visibility: visible; 
+            max-height: 100px;
+        } 
+    </style>
+    
+</head>
+<body>
+    <!-- 서브메뉴가 나타날때 스르륵 펼쳐지는 롤링 애니매이션 설정 -->
+    <ul class="menu">
+        <li class="menu-item">
+          대메뉴 1
+          <ul class="submenu">
+            <li>서브메뉴 1-1</li>
+            <li>서브메뉴 1-2</li>
+          </ul>
+        </li>
+        <li class="menu-item">
+          대메뉴 2
+          <ul class="submenu">
+            <li>서브메뉴 2-1</li>
+            <li>서브메뉴 2-2</li>
+          </ul>
+        </li>
+    </ul>
+</body>
+</html>

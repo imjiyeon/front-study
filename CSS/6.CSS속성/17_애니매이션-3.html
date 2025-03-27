@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <style>
+    body {
+        background-color: whitesmoke;
+    }
+    .container {
+        width: 600px;
+        height: 150px;
+        background-color: white;
+        margin: 0 auto;
+        padding: 30px;
+        border-radius: 10px;
+        /* x y blur spread color */
+        /* x방향 y방향 그림자흐림정도 그림자퍼짐정도(옵션) 색 */
+        box-shadow: 0px 5px 10px gainsboro;
+    }
+    .text {
+      font-size: 1.4rem;
+      text-align: center;
+      /* animation: 사용자 정의 애니매이션 적용 */
+      /* 이벤트이름 지속시간 빠르기 */
+      animation: slideIn 0.8s ease-out;
+      /* 약간 지연 */
+      animation-delay: 0.5s;
+      /* 애니매이션이 끝나고 마지막 상태를 유지 */
+      animation-fill-mode: forwards;
+    }
+
+    /* @keyframes: 애니매이션 효과를 직접 만드는 기능 */
+    /* from: 시작상태 */
+    /* to: 끝상태 */
+    @keyframes slideIn {
+      from {
+        /* 투명도 100% 왼쪽으로 50만큼 이동 */
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 애니매이션 효과 직접 만들기 -->
+  <!-- 글자가 움직이는 효과 -->
+
+  <div class="container">
+    <p class="text">페이지가 열리면 텍스트가 왼쪽에서 쓱 등장</p>
+  </div>
+
+</body>
+</html>

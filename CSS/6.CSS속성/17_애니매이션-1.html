@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <style>
+        .menu {
+            display: flex;
+            list-style: none;
+            height: 50px;
+            padding: 0;
+            margin: 0;
+            background-color: whitesmoke;
+            border-bottom: 2px solid lightgrey;
+        }
+        .menu-item {
+            width: 150px;
+            text-align: center;
+            background-color: lightgrey;
+            padding: 10px 0;
+            font-weight: bold;
+            position: relative;
+        }
+        .menu-item:hover {
+            background-color: darkgray;
+        }
+        .submenu {
+            list-style: none;
+            width: 150px;
+            padding: 0;
+            margin: 0;
+            border: 1px solid lightgray;
+            position: absolute;
+            top: 50px;
+            display: none;
+
+            /* transition: 애니매이션 속성 */
+            /* transition: 속성 지속시간 빠르기 */
+            /* display은 transition(애니매이션)에 지원되지 않는 속성. 효과 없음! */
+            transition: display 1s ease-out;
+        }
+        .submenu li {
+            padding: 10px 0;
+            border-bottom: 1px solid lightgray;
+        }
+        .submenu li:hover {
+            background-color: whitesmoke
+        }
+        .menu-item:hover .submenu {
+            display: block;
+        } 
+    </style>
+    
+</head>
+<body>
+    <!-- 8-3 예제의 코드를 복사하여 재사용 -->
+
+    <!-- 서브메뉴가 나타날때 스르륵 펼쳐지는 애니매이션 효과 주기 (롤링효과) -->
+    <ul class="menu">
+        <li class="menu-item">
+          대메뉴 1
+          <ul class="submenu">
+            <li>서브메뉴 1-1</li>
+            <li>서브메뉴 1-2</li>
+          </ul>
+        </li>
+        <li class="menu-item">
+          대메뉴 2
+          <ul class="submenu">
+            <li>서브메뉴 2-1</li>
+            <li>서브메뉴 2-2</li>
+          </ul>
+        </li>
+    </ul>
+</body>
+</html>

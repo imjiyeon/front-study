@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <style>
+        /* 대메뉴 전체 스타일 */
+        .menu {
+            display: flex;
+            list-style: none;
+            height: 50px;
+            padding: 0;
+            margin: 0;
+            background-color: whitesmoke;
+            border-bottom: 2px solid lightgrey;
+        }
+        /* 대메뉴 아이템 */
+        .menu-item {
+            width: 150px;
+            text-align: center;
+            background-color: lightgrey;
+            padding: 10px 0;
+            font-weight: bold;
+
+            /* 서브메뉴 위치를 설정하기 위한 기준 */
+            position: relative;
+        }
+        /* 대메뉴에 마우스를 올리면 배경색 변경 */
+        .menu-item:hover {
+            background-color: darkgray;
+        }
+    
+        /* 서브메뉴 스타일 */
+        .submenu {
+            list-style: none;
+            width: 150px;
+            padding: 0;
+            margin: 0;
+            border: 1px solid lightgray;
+
+            /* 서브메뉴가 공간을 차지해서 대메뉴의 높이가 길어짐 */
+            /* 대메뉴 아래 서브메뉴를 바로 붙이기 */
+            position: absolute;
+            /* top: 0px; */ /* 0으로 주면 부모와 겹침 */
+            top: 50px; /* 부모의 높이 만큼 설정하면 부모의 아래부터 시작 */
+
+            /* 서브메뉴의 기본상태 (숨기기) */
+            display: none;
+        }
+        /* 서브메뉴의 아이템 */
+        .submenu li {
+            padding: 10px 0;
+            border-bottom: 1px solid lightgray;
+        }
+        /* 서브메뉴에 마우스를 올리면 배경색 변경 */
+        .submenu li:hover {
+            background-color: whitesmoke
+        }
+
+        /* 대메뉴에 마우스를 올렸을 때 서브메뉴 표시 */
+        .menu-item:hover .submenu {
+            display: block;
+        } 
+    </style>
+    
+</head>
+<body>
+
+    <!-- 스타벅스 메뉴 따라하기 -->
+
+    <ul class="menu">
+        <li class="menu-item">
+          대메뉴 1
+          <ul class="submenu">
+            <li>서브메뉴 1-1</li>
+            <li>서브메뉴 1-2</li>
+          </ul>
+        </li>
+        <li class="menu-item">
+          대메뉴 2
+          <ul class="submenu">
+            <li>서브메뉴 2-1</li>
+            <li>서브메뉴 2-2</li>
+          </ul>
+        </li>
+    </ul>
+</body>
+</html>
