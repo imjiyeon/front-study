@@ -1,4 +1,6 @@
-// 회원
+// 회원 정보 만들기
+// 객체는 {}중괄호를 사용
+// 프로퍼티는 key : value 쌍 형태로 입력할 것
 const member = {
   id: "user",
   password: "1234",

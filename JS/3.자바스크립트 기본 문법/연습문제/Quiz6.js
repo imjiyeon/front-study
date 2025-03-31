@@ -1,5 +1,4 @@
-// Q4. 배열에 있는 모든 숫자를 더해서 합를 구하세요
-// 결과: 16
+// 배열에 있는 모든 숫자를 더해서 합를 구하세요
 
 const arr = [1, 'aa', true, 5, 10];
 let sum = 0;
@@ -14,4 +13,4 @@ for (let i = 0; i < arr.length; i++) {
     }
 }
 
-console.log('합계는 ' + sum + ' 입니다!');
+console.log('합계는 ' + sum + ' 입니다!'); // 16

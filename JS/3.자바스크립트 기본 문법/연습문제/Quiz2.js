@@ -1,31 +1,21 @@
-//  Q.사람의 정보를 수정하세요
-
-// 결과:
-// 10
-// 또치
-// 인천
-
-// 정답
+// person 객체 만들고 수정하기
 const person = {
-  age: 30,
   name: "둘리",
+  age: 30,
   address: "서울",
 };
 
-// 도트연산자를 사용하여 값 변경
-person.age = 10;
+// 도트연산자를 사용하여 이름,나이,주소 변경
 person.name = "또치";
+person.age = 10;
 person.address = "인천";
-console.log(person.age);
-console.log(person.name);
-console.log(person.address);
 
-// 대괄호를 사용하여 값 변경
-// person["age"] = 10;
-// person["name"] = '또치';
-// person["address"] = '인천';
+// 대괄호를 사용하여 이름,나이,주소 변경
+person["name"] = '또치';
+person["age"] = 10;
+person["address"] = '인천';
 
-// Q.물건의 정보를 수정하세요
+// product 객체 만들고 수정하기
 const product = {
   name: "노트북",
   price: 1500000,
