@@ -1,3 +1,5 @@
+console.log();
+
 //length: 문자열의 길이
 let txt = "ABCDE";
 console.log(txt.length); //5
