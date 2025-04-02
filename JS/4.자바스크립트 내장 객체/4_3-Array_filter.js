@@ -1,7 +1,6 @@
 // filter: 조건을 만족하는 요소들만 모아 새 배열을 반환
 // 인자: 조건을 정의하는 함수
 // num: 배열의 각 요소
-
 var arr = [1,2,3,4,5,6,7,8,9,10];
 var filteredArr = arr.filter((num) => num > 5);
 
