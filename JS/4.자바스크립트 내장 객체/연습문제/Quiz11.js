@@ -1,6 +1,4 @@
-/*Date문제*/
-
-// 방문 기록 배열
+// 방문 기록
 const visits = [
   { name: "김철수", date: "2024-08-20", purpose: "회의" },
   { name: "이영희", date: "2024-08-18", purpose: "상담" },
@@ -10,6 +8,11 @@ const visits = [
 ];
 
 // 방문 날짜 기준으로 오름차순 정렬하기
+
+const a = new Date('2024-08-20');
+const b = new Date('2024-08-19');
+console.log(b-a);
+
 visits.sort((a, b) => new Date(a.date) - new Date(b.date));
 console.log("정렬된 방문 기록:", visits);
 
