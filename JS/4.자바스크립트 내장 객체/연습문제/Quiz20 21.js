@@ -1,10 +1,13 @@
-// 1에서 6까지의 숫자를 무작위로 생성하는 6면체 주사위가 있습니다
-// 주사위를 던지고 숫자를 출력하세요
-
+// 주사위 굴리기: 1~6 사이의 숫자 중 무작위로 하나 생성
 let num = Math.floor(Math.random() * 6) + 1;
 console.log("주사위 결과:", num);
 
-// 주사위를 3번 던지고, 각 결과를 배열에 저장하세요
+// 주사위 3번 던지기
+// for (let i = 0; i < 3; i++) {
+//   let num = Math.floor(Math.random() * 6) + 1;
+//   console.log(num)
+// }
+
 const arr = [];
 for (let i = 0; i < 3; i++) {
   let num = Math.floor(Math.random() * 6) + 1;
