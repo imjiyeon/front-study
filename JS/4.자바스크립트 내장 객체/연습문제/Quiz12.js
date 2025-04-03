@@ -1,7 +1,6 @@
-/* Set */
-
 // 책 목록 Set 생성
 const readBooks = new Set();
+
 // 책 추가
 readBooks.add("해리포터");
 readBooks.add("반지의 제왕");

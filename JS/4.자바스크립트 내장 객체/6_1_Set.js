@@ -13,7 +13,7 @@ mySet.add(1); //이미 1이 저장되어 있기 때문에 추가 안됨
 //set의 크기
 console.log(mySet.size); //3
 console.log(mySet); //Set { 1, 2, 3 }
-
+// e
 //값이 있는지 확인
 var result = mySet.has(1);
 console.log(result); //true
