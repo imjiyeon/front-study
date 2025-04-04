@@ -3,6 +3,7 @@
 // 각 상품의 할인율을 적용하여 최종가격을 계산해야 합니다
 // 예: 새우깡의 최종가격: 1500 * 0.9 = 1350원
 
+// rest 파라미터
 function calculateAveragePrice(...products) {
   // 상품들의 최종 가격의 합계 계산
   let sum = products.reduce((total, product) => {
