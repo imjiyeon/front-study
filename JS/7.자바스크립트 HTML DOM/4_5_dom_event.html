@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<!-- 6장 예제17 과 같이 작성 -->
+<!-- 일부만 JS로 변경 -->
+
+<head>
+    <style>
+        .menu {
+            display: flex;
+            list-style: none;
+            height: 50px;
+            padding: 0;
+            margin: 0;
+            background-color: whitesmoke;
+            border-bottom: 2px solid lightgrey;
+        }
+        .menu-item {
+            width: 150px;
+            text-align: center;
+            background-color: lightgrey;
+            padding: 10px 0;
+            font-weight: bold;
+            position: relative;
+        }
+        .menu-item:hover {
+            background-color: darkgray;
+        }
+        .submenu {
+            list-style: none;
+            width: 150px;
+            padding: 0;
+            margin: 0;
+            border: 1px solid lightgray;
+            position: absolute;
+            top: 50px;
+            display: none;
+            transition: display 1s ease-out;
+        }
+        .submenu li {
+            padding: 10px 0;
+            border-bottom: 1px solid lightgray;
+        }
+        .submenu li:hover {
+            background-color: whitesmoke
+        }
+        /* 이부분을 자바스크립트로 처리 */
+        /* .menu-item:hover .submenu {
+            display: block;
+        }  */
+    </style>
+    
+</head>
+<body>
+    <ul class="menu">
+        <li class="menu-item">
+          대메뉴 1
+          <ul class="submenu">
+            <li>서브메뉴 1-1</li>
+            <li>서브메뉴 1-2</li>
+          </ul>
+        </li>
+        <li class="menu-item">
+          대메뉴 2
+          <ul class="submenu">
+            <li>서브메뉴 2-1</li>
+            <li>서브메뉴 2-2</li>
+          </ul>
+        </li>
+    </ul>
+
+    <script>
+     
+    const menuitems = document.querySelectorAll('.menu-item');
+
+    menuitems.forEach((menuitem)=>{
+        // 마우스가 요소 위에 올라왔을 때
+        menuitem.addEventListener("mouseenter", ()=>{
+            // 해당 메뉴아이템을 기준으로 서브메뉴 찾기
+            const submenu = menuitem.querySelector('.submenu');
+            submenu.style.display = 'block';
+        });
+
+        // 마우스가 떠낫을 때
+        menuitem.addEventListener("mouseleave", ()=>{
+            const submenu = menuitem.querySelector('.submenu');
+            submenu.style.display = 'none';
+        });
+    });    
+
+    </script>
+</body>
+</html>
