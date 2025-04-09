@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <script src="./script.js"></script>
+  <!-- 해결방법 2. <script> 태그에 defer 키워드 사용 -->
+  <!-- 
+  defer는 html 문서가 완전히 만들어진 후에 스크립트를 실행하는 키워드
+  DOM 요소가 모두 생성된 후에 실행되므로, DOM 요소에 접근할 수 있음
+  오류를 방지하기 위해 <script> 태그에 defer를 추가할것
+  -->
+</head>
+<body>
+  <div id="box">BOX</div>
+</body>
+
+<!-- 해결방법 1. script를 body 뒤에 작성하기 -->
+<!-- <script>
+  const box = document.getElementById("box");
+  box.style.background = "yellow";
+</script> -->
+
+</html>
