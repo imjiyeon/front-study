@@ -6,6 +6,12 @@ let str1 = "I have 2 apples and 3 oranges."; //검색 대상
 let numbers = str1.match(/[0-9]/g); 
 console.log(numbers); // ["2", "3"]
 
+// const regex1 = /[0-9]/g;
+// const regex2 = /\d/g;
+
+// console.log(str.match(regex1));
+// console.log(regex2.exec(str));
+
 //26. 문자열 "Hello, JavaScript is fun!"에서
 //소문자 'a', 'e', 'i', 'o', 'u' 중 하나라도 포함된 문자를 모두 찾아 배열로 반환하세요.
 let str2 = "Hello, JavaScript is fun!";
